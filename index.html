@@ -1,11 +1,11 @@
-PASTE-MARK<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>æç«åä¿¡ Â· è·¨è¶æ¶ç©ºçå¯¹è¯</title>
+<title>鏄熺伀鍥炰俊 路 璺ㄨ秺鏃剁┖鐨勫璇?/title>
 <style>
-/* ============ åºç¡ä¸åé ============ */
+/* ============ 鍩虹涓庡彉閲?============ */
 :root{
   --bg-deep:#7C1414; --bg-deeper:#5c0e0e; --bg-mid:#8f1a1a;
   --paper:#F7F2E4; --paper-dim:#e9ddc2;
@@ -26,7 +26,7 @@ body{
     linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 48%, var(--bg-deeper) 100%);
   background-attachment:fixed;
 }
-/* å®£çº¸çº¤ç»´å±ï¼ç»å¾®æ¨ªçºµçº¹çæ¨¡æçº¸å¼  */
+/* 瀹ｇ焊绾ょ淮灞傦細缁嗗井妯旱绾圭悊妯℃嫙绾稿紶 */
 body::before{
   content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
   background:
@@ -39,16 +39,16 @@ body::before{
     radial-gradient(560px 400px at 30% 22%, rgba(232,201,122,.08), transparent 70%),
     radial-gradient(480px 360px at 76% 64%, rgba(255,255,255,.05), transparent 70%);
 }
-/* æç«ç²å­ç»å¸ï¼å±çº§æä½ãä¸æ¦æªç¹å» */
+/* 鏄熺伀绮掑瓙鐢诲竷锛氬眰绾ф渶浣庛€佷笉鎷︽埅鐐瑰嚮 */
 #particles{position:fixed; inset:0; z-index:1; pointer-events:none}
 
-/* ============ åºç¨å®¹å¨ä¸é¡µé¢åæ¢ ============ */
+/* ============ 搴旂敤瀹瑰櫒涓庨〉闈㈠垏鎹?============ */
 .app{position:relative; z-index:2; min-height:100vh; max-width:520px; margin:0 auto}
 .screen{display:none; flex-direction:column; min-height:100vh; padding:1rem 1.1rem calc(1.6rem + env(safe-area-inset-bottom))}
 .screen.active{display:flex; animation:fadeUp .5s ease both}
 @keyframes fadeUp{from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none}}
 
-/* é¡¶é¨éç¨è¿åæ¡ */
+/* 椤堕儴閫氱敤杩斿洖鏉?*/
 .screen-head{display:flex; align-items:center; gap:.7rem; margin-bottom:.9rem; color:var(--gold-hi)}
 .back-btn{
   width:2.2rem; height:2.2rem; flex:0 0 auto; border-radius:50%;
@@ -58,7 +58,7 @@ body::before{
 .back-btn:active{transform:scale(.92)}
 .screen-head h2{font-family:var(--font-display); font-size:1.35rem; letter-spacing:.12em}
 
-/* éè¾¹æé® */
+/* 閲戣竟鎸夐挳 */
 .btn{
   font-family:var(--font-body); border-radius:.55rem; border:1px solid var(--gold);
   background:transparent; color:var(--brown); padding:.6rem 1rem; font-size:.95rem;
@@ -70,7 +70,7 @@ body::before{
 .btn.wide{width:100%; padding:.85rem; font-size:1.05rem; letter-spacing:.15em}
 .btn[disabled]{opacity:.55; pointer-events:none}
 
-/* ============ é¦é¡µï¼æ é¢ + ä¸ææºæ ·æº ============ */
+/* ============ 棣栭〉锛氭爣棰?+ 涓夋墜鏈烘牱鏈?============ */
 .home-hero{text-align:center; padding:1.5rem .5rem .4rem}
 .poster-title{
   font-family:var(--font-display); font-weight:bold; color:var(--gold-hi);
@@ -116,3 +116,743 @@ body::before{
 @keyframes blink{50%{opacity:0}}
 .mock-seal{
   position:absolute; right:.5rem; bottom:.5rem; width:1.7rem; height:1.7rem; border:1px solid var(--seal);
+  color:var(--seal); font-family:var(--font-display); font-size:.5rem; border-radius:.2rem; display:flex;
+  align-items:center; justify-content:center; transform:rotate(-10deg); opacity:.85;
+}
+.mock-card-body{position:absolute; inset:.5rem; border-radius:.5rem; background:linear-gradient(170deg,#8f1a1a,#5c0e0e); text-align:center; color:var(--gold-hi)}
+.mock-card-avatar{
+  display:flex; width:2.6rem; height:2.6rem; margin:.85rem auto .3rem; border-radius:50%;
+  background:rgba(110,15,16,.85); border:1px solid var(--gold); align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:bold; font-size:1.1rem;
+}
+.mock-card-body b{display:block; font-family:var(--font-display); font-size:.68rem}
+.mock-card-body i{font-style:normal; font-size:.5rem; color:rgba(232,201,122,.85)}
+.home-hint{text-align:center; color:rgba(247,242,228,.8); font-size:.85rem; margin-top:.35rem; letter-spacing:.08em}
+.ink-mountain{margin-top:1.1rem; text-align:center; opacity:.55; pointer-events:none}
+.ink-mountain svg{width:88%; height:auto; display:inline-block}
+
+/* ============ 鍏堣緢閫夋嫨椤?============ */
+.hero-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(15.2rem, 1fr)); gap:.9rem}
+.hero-card{
+  background:
+    radial-gradient(220px 120px at 20% 0%, rgba(232,201,122,.12), transparent 70%),
+    var(--paper);
+  border-radius:.9rem; border:1px solid var(--gold-dim);
+  padding:.9rem .85rem .85rem; box-shadow:0 6px 18px rgba(0,0,0,.35);
+  display:flex; flex-direction:column; animation:fadeUp .55s ease both;
+}
+.hero-head{display:flex; align-items:center; gap:.7rem}
+.hero-avatar{width:3.6rem; height:3.6rem; flex:0 0 auto; border-radius:50%}
+.hero-id h3{font-family:var(--font-display); font-size:1.3rem; color:var(--bg-deep)}
+.hero-years{font-size:.82rem; color:rgba(58,40,28,.75); margin-top:.1rem}
+.hero-tags{margin:.6rem 0 .35rem; display:flex; flex-wrap:wrap; gap:.3rem}
+.hero-tags span{
+  font-size:.72rem; color:var(--brown); border:1px solid var(--gold-dim);
+  border-radius:2rem; padding:.08rem .5rem; background:rgba(200,160,96,.14);
+}
+.hero-quote{font-family:var(--font-display); font-size:.88rem; line-height:1.6; color:rgba(58,40,28,.9); margin:.15rem 0 .5rem}
+/* 鍥哄畾楂樺害婊氬姩浜嬭抗妗嗭細浠呭唴閮ㄦ粴鍔紝鏁村崱涓嶆粴鍔?*/
+.scroll-area{
+  height:7.4rem; overflow-y:auto; padding:.35rem .5rem .1rem; border-left:2px solid var(--gold-dim);
+  font-size:.8rem; line-height:1.75; color:rgba(58,40,28,.88); background:rgba(200,160,96,.06);
+  border-radius:.3rem; margin-bottom:.7rem; -webkit-overflow-scrolling:touch;
+}
+.scroll-area p{margin-bottom:.4rem}
+.scroll-area b{color:var(--bg-deep); font-weight:600}
+.scroll-area::-webkit-scrollbar{width:4px}
+.scroll-area::-webkit-scrollbar-thumb{background:var(--gold-dim); border-radius:2px}
+.scroll-area::-webkit-scrollbar-track{background:transparent}
+.card-actions{display:flex; gap:.55rem}
+.card-actions .btn{flex:1; font-size:.88rem; padding:.52rem .4rem}
+
+/* ============ 鍐欎俊椤?============ */
+.letter-paper{
+  position:relative; background:var(--paper); border-radius:.9rem; border:1px solid var(--gold-dim);
+  padding:1.1rem 1rem 1.2rem; box-shadow:0 8px 22px rgba(0,0,0,.35); flex:1; display:flex; flex-direction:column;
+}
+.letter-head{text-align:center; margin-bottom:.8rem; border-bottom:1px dashed var(--gold-dim); padding-bottom:.7rem}
+.letter-head h2{font-family:var(--font-display); color:var(--bg-deep); font-size:1.5rem; letter-spacing:.08em}
+.letter-head p{font-size:.8rem; color:rgba(58,40,28,.7); margin-top:.25rem; font-family:var(--font-display)}
+.topic-grid{display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-bottom:.7rem}
+.topic-chip{
+  border:1px solid var(--gold-dim); border-radius:.55rem; padding:.45rem .5rem; cursor:pointer;
+  background:rgba(200,160,96,.08); transition:all .15s ease; touch-action:manipulation;
+}
+.topic-chip strong{display:block; font-size:.86rem; color:var(--brown)}
+.topic-chip small{display:block; font-size:.66rem; color:rgba(58,40,28,.6); margin-top:.1rem; line-height:1.35}
+.topic-chip.active{background:linear-gradient(160deg,var(--gold-hi),var(--gold)); border-color:var(--gold)}
+.topic-chip.active strong,.topic-chip.active small{color:#3a2410}
+#letter-text{
+  flex:1; min-height:9.4rem; resize:none; border:1px solid var(--gold-dim); border-radius:.55rem;
+  background:rgba(247,242,228,.6); font-family:var(--font-body); font-size:.95rem; line-height:1.8;
+  padding:.7rem .8rem; color:var(--ink); outline:none;
+}
+#letter-text::placeholder{color:rgba(58,40,28,.4)}
+#letter-sign{
+  margin-top:.6rem; border:1px solid var(--gold-dim); border-radius:.55rem; padding:.6rem .8rem;
+  font-size:.9rem; background:rgba(247,242,228,.6); color:var(--ink); outline:none; width:100%;
+}
+#letter-sign::placeholder{color:rgba(58,40,28,.4)}
+.letter-decor{position:absolute; right:.9rem; bottom:6.2rem; pointer-events:none; opacity:.5; transform:rotate(8deg)}
+.letter-decor .seal{
+  display:flex; width:2.6rem; height:2.6rem; border:2px solid var(--seal); color:var(--seal);
+  border-radius:.35rem; font-family:var(--font-display); font-weight:bold; font-size:.7rem;
+  align-items:center; justify-content:center; line-height:1.25; letter-spacing:.04em; text-align:center;
+}
+
+/* ============ 鍥炰俊椤?============ */
+.reply-paper{
+  background:
+    radial-gradient(260px 120px at 85% 0%, rgba(232,201,122,.14), transparent 70%),
+    var(--paper);
+  border-radius:.9rem; border:1px solid var(--gold-dim); padding:1.1rem 1rem 1.2rem;
+  box-shadow:0 8px 22px rgba(0,0,0,.35); flex:1; display:flex; flex-direction:column;
+}
+.reply-paper h2{font-family:var(--font-display); color:var(--bg-deep); font-size:1.4rem; text-align:center; letter-spacing:.1em}
+.reply-paper .reply-sub{text-align:center; font-size:.78rem; color:rgba(58,40,28,.65); margin:.3rem 0 .8rem; font-family:var(--font-display)}
+.reply-body{
+  flex:1; overflow-y:auto; white-space:pre-wrap; word-break:break-word; line-height:1.95; font-size:.98rem;
+  color:var(--ink); padding:.4rem .3rem; -webkit-overflow-scrolling:touch;
+}
+.reply-body::-webkit-scrollbar{width:4px}
+.reply-body::-webkit-scrollbar-thumb{background:var(--gold-dim); border-radius:2px}
+.cursor{display:inline-block; width:.16rem; height:1.05em; background:var(--bg-deep); vertical-align:-.15em; margin-left:.05rem; animation:blink 1s steps(1) infinite}
+.reply-stamp{
+  margin:0 auto; width:3rem; height:3rem; border:2px solid var(--seal); color:var(--seal);
+  border-radius:.35rem; font-family:var(--font-display); font-weight:bold; font-size:.8rem;
+  display:flex; align-items:center; justify-content:center; transform:rotate(-9deg);
+  opacity:0; transition:opacity .8s ease; letter-spacing:.05em;
+}
+.reply-stamp.show{opacity:.85}
+.reply-actions{display:flex; gap:.6rem; margin-top:.9rem}
+.reply-actions .btn{flex:1}
+
+/* ============ 绾康鍗￠〉 ============ */
+.card-stage{flex:1; display:flex; align-items:center; justify-content:center; padding:.4rem 0}
+#card-canvas{width:100%; max-width:21rem; border-radius:.7rem; box-shadow:0 10px 26px rgba(0,0,0,.45); background:#5c0e0e}
+.card-actions{display:flex; gap:.6rem; margin-top:.9rem}
+.card-actions .btn{flex:1}
+
+/* ============ 璇︽儏寮瑰眰 ============ */
+.modal{position:fixed; inset:0; z-index:60; display:none; align-items:flex-end; justify-content:center}
+.modal.open{display:flex}
+.modal-mask{position:absolute; inset:0; background:rgba(20,8,6,.72); backdrop-filter:blur(2px)}
+.modal-card{
+  position:relative; width:100%; max-width:520px; max-height:88vh; overflow-y:auto; border-radius:1.1rem 1.1rem 0 0;
+  background:var(--paper); padding:1.1rem 1rem 1.3rem; animation:sheetUp .35s ease both;
+  -webkit-overflow-scrolling:touch;
+}
+@keyframes sheetUp{from{transform:translateY(40px); opacity:.4} to{transform:none; opacity:1}}
+.modal-head{display:flex; align-items:center; gap:.8rem}
+.modal-head .hero-avatar{width:4rem; height:4rem}
+.modal-name{font-family:var(--font-display); font-size:1.5rem; color:var(--bg-deep)}
+.modal-years{font-size:.85rem; color:rgba(58,40,28,.7); margin-top:.1rem}
+.modal-tags{margin-top:.35rem; display:flex; flex-wrap:wrap; gap:.3rem}
+.modal-tags span{font-size:.7rem; border:1px solid var(--gold-dim); border-radius:2rem; padding:.06rem .45rem; color:var(--brown); background:rgba(200,160,96,.14)}
+.modal-quote{margin:.7rem 0; font-family:var(--font-display); font-size:.95rem; line-height:1.7; color:rgba(58,40,28,.92); border-left:2px solid var(--gold); padding-left:.6rem}
+.modal-relations{margin:.6rem 0}
+.rel-item{display:flex; justify-content:space-between; font-size:.82rem; padding:.3rem .1rem; border-bottom:1px dashed rgba(200,160,96,.35); color:rgba(58,40,28,.85)}
+.rel-item b{color:var(--bg-deep); font-weight:600}
+.rel-item .rel-note{color:rgba(58,40,28,.55); font-size:.74rem; margin-top:.05rem; display:block}
+.modal-actions{display:flex; gap:.6rem; margin-top:1rem}
+.modal-actions .btn{flex:1}
+
+/* ============ Toast ============ */
+#toast{
+  position:fixed; left:50%; bottom:12%; transform:translate(-50%, 12px); z-index:99;
+  background:rgba(30,14,10,.92); color:var(--gold-hi); border:1px solid var(--gold-dim);
+  padding:.6rem 1.1rem; border-radius:2rem; font-size:.86rem; max-width:82%; text-align:center;
+  opacity:0; pointer-events:none; transition:opacity .3s ease, transform .3s ease;
+}
+#toast.show{opacity:1; transform:translate(-50%, 0)}
+
+/* ============ 寰俊/绉诲姩绔粏鑺?============ */
+input,textarea,button{font-family:var(--font-body)}
+@media (max-width:380px){
+  .poster-title{font-size:2.4rem}
+  .hero-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<div class="paper-fiber"></div>
+
+<div class="app" id="app">
+
+  <!-- ================= 棣栭〉锛氫笁鎵嬫満鏍锋満涓昏瑙?================= -->
+  <section class="screen active" id="screen-home">
+    <div class="home-hero">
+      <h1 class="poster-title">鏄熺伀鍥炰俊</h1>
+      <p class="poster-sub">璺ㄨ秺鏃剁┖鐨勫璇?/p>
+      <span class="home-seal">鏄熺伀<br>鍥炰俊</span>
+    </div>
+
+    <div class="phone-stack">
+      <!-- 01 鍐欎俊鏍锋満 -->
+      <div class="phone phone-side top" data-goto="heroes">
+        <span class="mock-num">01 鍐欎俊</span>
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="mock-letter">
+            <span class="mock-title">鑷?鏉庡ぇ閽?鍏堢敓</span>
+            <span class="mock-line"></span>
+            <span class="mock-line"></span>
+            <span class="mock-line short"></span>
+            <span class="mock-btn">瀵勫嚭杩欏皝淇?/span>
+          </div>
+          <span class="mock-seal">鏄熺伀</span>
+        </div>
+      </div>
+      <!-- 02 鍥炰俊鏍锋満锛堜富瑙嗚灞呬腑锛?-->
+      <div class="phone phone-main" data-goto="heroes">
+        <span class="mock-num">02 鍥炰俊</span>
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="mock-reply">
+            <span class="mock-reply-title">鏉庡ぇ閽?鐨勫洖淇?/span>
+            <p class="mock-text">闈掑勾璇稿悰锛氫綘鐨勬潵淇℃垜璇昏繃浜嗐€傞潚鏄ヤ箣浜猴紝褰撴湁闈掓槬涔嬬簿绁炩€︹€?/p>
+            <span class="mock-cursor"></span>
+          </div>
+          <span class="mock-seal">鍥炰俊</span>
+        </div>
+      </div>
+      <!-- 03 绾康鍗℃牱鏈?-->
+      <div class="phone phone-side bot" data-goto="heroes">
+        <span class="mock-num">03 绾康鍗?/span>
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="mock-card-body">
+            <span class="mock-card-avatar">鏉?/span>
+            <b>鏉庡ぇ閽?/b>
+            <i>1889鈥?927</i>
+            <span class="mock-seal">鏄熺伀鍥炰俊</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="home-hint">鐐瑰嚮鏍锋満锛屾彁绗斿啓淇＄粰蹇冧腑鐨勫厛杈?/p>
+
+    <div class="ink-mountain">
+      <svg viewBox="0 0 300 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+        <path d="M0 90 L0 62 Q38 40 78 58 Q110 34 150 52 Q192 28 228 46 Q268 36 300 52 L300 90 Z" fill="rgba(0,0,0,.28)"/>
+        <path d="M0 90 L0 74 Q46 58 96 72 Q150 56 210 70 Q266 62 300 74 L300 90 Z" fill="rgba(0,0,0,.2)"/>
+        <path d="M120 58 Q140 30 168 30 Q196 30 214 54 Q196 44 168 46 Q142 46 120 58 Z" fill="rgba(232,201,122,.16)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ================= 鍏堣緢閫夋嫨椤?================= -->
+  <section class="screen" id="screen-heroes">
+    <header class="screen-head">
+      <button type="button" class="back-btn" data-goto="home">鈥?/button>
+      <h2>閫夋嫨涓€浣嶅厛杈?/h2>
+    </header>
+    <div class="hero-grid" id="hero-grid"></div>
+  </section>
+
+  <!-- ================= 鍐欎俊椤?================= -->
+  <section class="screen" id="screen-letter">
+    <header class="screen-head">
+      <button type="button" class="back-btn" data-goto="heroes">鈥?/button>
+      <h2>鎻愮瑪鍐欎俊</h2>
+    </header>
+    <div class="letter-paper">
+      <div class="letter-head">
+        <h2 id="letter-title">缁欏厛杈堢殑淇?/h2>
+        <p id="letter-sub">瑙佸瓧濡傞潰</p>
+      </div>
+      <div class="topic-grid" id="topic-grid"></div>
+      <textarea id="letter-text" placeholder="鍐欎笅浣犳兂瀵瑰厛杈堣鐨勮瘽鈥︹€︼紙鍥炰俊浼氬紩鐢ㄤ綘鐨勫紑澶达級"></textarea>
+      <input id="letter-sign" type="text" maxlength="20" placeholder="钀芥锛堝彲閫夛紝榛樿锛氫竴涓綋浠ｉ潚骞达級">
+      <div class="letter-decor"><span class="seal">鏄熺伀<br>鍥炰俊</span></div>
+      <button type="button" id="btn-send" class="btn primary wide">瀵勫嚭杩欏皝淇?/button>
+    </div>
+  </section>
+
+  <!-- ================= AI鍥炰俊椤?================= -->
+  <section class="screen" id="screen-reply">
+    <header class="screen-head">
+      <button type="button" class="back-btn" data-goto="heroes">鈥?/button>
+      <h2 id="reply-title">鍏堣緢 鐨勫洖淇?/h2>
+    </header>
+    <div class="reply-paper">
+      <p class="reply-sub" id="reply-sub">鏉ヨ嚜鏃剁┖鐨勫槺鎵?/p>
+      <div class="reply-body" id="reply-body"><span class="cursor"></span></div>
+      <div class="reply-stamp" id="reply-stamp">鏄熺伀<br>鍥炰俊</div>
+    </div>
+    <div class="reply-actions">
+      <button type="button" id="btn-save" class="btn ghost" disabled>淇濆瓨鍥炰俊</button>
+      <button type="button" id="btn-card" class="btn primary" disabled>鐢熸垚绾康鍗?/button>
+      <button type="button" id="btn-again" class="btn ghost" disabled>鍐嶅啓涓€灏?/button>
+    </div>
+  </section>
+
+  <!-- ================= 绾康鍗￠〉 ================= -->
+  <section class="screen" id="screen-card">
+    <header class="screen-head">
+      <button type="button" class="back-btn" data-goto="heroes">鈥?/button>
+      <h2>绾康鍗?/h2>
+    </header>
+    <div class="card-stage">
+      <canvas id="card-canvas" width="900" height="1200"></canvas>
+    </div>
+    <div class="card-actions">
+      <button type="button" id="btn-download" class="btn primary">涓嬭浇绾康鍗?/button>
+      <button type="button" id="btn-reletter" class="btn ghost">閲嶆柊鍐欎俊</button>
+    </div>
+  </section>
+</div>
+
+<!-- ================= 鍏堣緢璇︽儏寮瑰眰锛坺-index 楂樹簬绮掑瓙锛?================= -->
+<div class="modal" id="hero-modal">
+  <div class="modal-mask" data-close="1"></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div id="modal-avatar"></div>
+      <div>
+        <h3 class="modal-name" id="modal-name"></h3>
+        <p class="modal-years" id="modal-years"></p>
+        <div class="modal-tags" id="modal-tags"></div>
+      </div>
+    </div>
+    <p class="modal-quote" id="modal-quote"></p>
+    <div class="scroll-area" id="modal-body" style="height:10.5rem"></div>
+    <div class="modal-relations" id="modal-relations"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn ghost" data-close="1">鍏抽棴</button>
+      <button type="button" id="modal-write" class="btn primary">鍐欎俊缁橳A</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ============================================================
+   鏄熺伀鍥炰俊 路 鍗曟枃浠剁増锛堢绾垮彲杩愯锛?
+   鏁版嵁婧愶細data/heroes.json锛?5 浣嶈嫳闆勫師鏍峰唴宓岋級
+           server.py OFFLINE_REPLY锛?5 鏉＄绾垮洖淇″師鏍峰唴宓岋級
+   浜や簰娴佺▼锛氶€変汉 鈫?鍐欎俊 鈫?AI鍥炰俊锛堟墦瀛楁満锛夆啋 绾康鍗★紙Canvas锛?
+   ============================================================ */
+var HEROES = [{"id":"lidazhao","name":"鏉庡ぇ閽?,"years":"1889鈥?927","tags":["涓浗鍏变骇涓讳箟杩愬姩鍏堥┍","鍖楀ぇ鍥句功棣嗕富浠?,"銆婇潚鏄ャ€嬩綔鑰?],"bio":"鏉庡ぇ閽婏紙1889鈥?927锛夛紝瀛楀畧甯革紝娌冲寳涔愪涵浜猴紝涓浗鏈€鏃╃殑椹厠鎬濅富涔夎€咃紝涓浗鍏变骇鍏氫富瑕佸垱濮嬩汉涔嬩竴銆傛浘浠诲寳浜ぇ瀛﹀浘涔﹂涓讳换銆佹暀鎺堬紝銆婃柊闈掑勾銆嬪悓浜猴紝鍐欎笅銆婇潚鏄ャ€嬨€婂憾姘戠殑鑳滃埄銆嬨€婂竷灏斾粈缁翠富涔夌殑鑳滃埄銆嬬瓑鍚嶇瘒銆?927骞?鏈?8鏃ュ湪鍖椾含鑻卞媷灏变箟锛屾椂骞?8宀併€?,"quotes":["浠ラ潚鏄ヤ箣鎴戯紝鍒涘缓闈掓槬涔嬪搴紝闈掓槬涔嬪浗瀹讹紝闈掓槬涔嬫皯鏃忥紝闈掓槬涔嬩汉绫伙紝闈掓槬涔嬪湴鐞冿紝闈掓槬涔嬪畤瀹欍€?,"閾佽偐鎷呴亾涔夛紝濡欐墜钁楁枃绔犮€?,"涓轰笘鐣岃繘鏂囨槑锛屼负浜虹被閫犲垢绂忋€?,"璇曠湅灏嗘潵鐨勭幆鐞冿紝蹇呮槸璧ゆ棗鐨勪笘鐣岋紒"],"portrait":"assets/heroes/lidazhao.png","style_hint":"鍚挋鑰呭彛鍚伙細鎬濊鲸鑰岀瑑瀹氾紝鍠勭敤鎺掓瘮涓庢瘮鍠伙紱璋堢悊鎯虫椂娓╂殩寮€闃旓紝甯﹀鑰呮皵涓庡厛鐢熼鑼冿紱鍙О闈掑勾涓?闈掑勾璇稿悰''鏈嬪弸'锛涜惤娆惧彲缃?瀹堝父'銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍛婅瘔鏉庡ぇ閽婂厛鐢熶粖澶╃殑涓浗鏄粈涔堟ā鏍枫€?,"redline":"涓嶅緱铏氭瀯鍏剁粡鍘嗭紱'璧ゆ棗鐨勪笘鐣?鎰挎櫙涓庡綋浠ｄ腑鍥藉彂灞曞彲浣滅簿绁炲懠搴旓紝浣嗕笉寰楃紪閫犲彶瀹炵粏鑺傛垨鍏蜂綋鏁版嵁銆?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉鍏堢敓鐨勬暀璇层€?,"redline":"涓嶈櫄鏋勭敓骞筹紱鍥炲簲鍥寸粫闈掓槬銆佹媴褰撱€佸鏂楀睍寮€锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯閬楁効锛涗粎鍙熀浜庛€婇潚鏄ャ€嬬瓑钁椾綔绮剧浣滅瓟銆?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚厛鐢熺殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ョ悊鎯炽€佺悊鎬т笌鎷呭綋涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"biography":{"early":"1889骞寸敓浜庢渤鍖椾箰浜ぇ榛戝潹鏉戯紝骞煎勾涓х埗姣嶏紝鐢辩鐖舵姎鍏汇€?907骞磋€冨叆澶╂触鍖楁磱娉曟斂涓撻棬瀛︽牎锛?913骞翠笢娓℃棩鏈叆鏃╃ɑ鐢板ぇ瀛︽斂娌荤粡娴庣锛屾帴瑙︾ぞ浼氫富涔夋€濇疆锛岀粍缁?绁炲窞瀛︿細'銆?,"revolution":"1916骞村洖鍥戒换銆婃櫒閽熸姤銆嬫€荤紪杈戯紝1918骞翠换鍖椾含澶у鍥句功棣嗕富浠伙紝鍙備笌銆婃柊闈掑勾銆嬬紪杈戯紝鍙戣〃銆婇潚鏄ャ€嬨€婂憾姘戠殑鑳滃埄銆嬨€婂竷灏斾粈缁翠富涔夌殑鑳滃埄銆嬬瓑鍚嶆枃锛屾槸涓浗绯荤粺浼犳挱椹厠鎬濅富涔夌涓€浜恒€?920骞村彂璧锋垚绔嬪寳浜叡浜т富涔夊皬缁勶紝鏄腑鍥藉叡浜у厷涓昏鍒涘浜轰箣涓€锛岄瀵煎寳鏂瑰伐浜鸿繍鍔ㄣ€?,"sacrifice":"1927骞?鏈?鏃ュ湪鍖椾含琚绯诲啗闃€閫崟銆傜嫳涓潥璐炰笉灞堬紝鍐欎笅銆婄嫳涓嚜杩般€嬶紝4鏈?8鏃ヤ笌鍗佷節浣嶅悓蹇楀湪鍖椾含瑗夸氦姘戝贩浜笀鐪嬪畧鎵€鑻卞媷灏变箟锛屾椂骞?8宀併€?,"legacy":"閾佽偐鎷呴亾涔夛紝濡欐墜钁楁枃绔燶"鎴愪负鐭ヨ瘑鍒嗗瓙绮剧鍐欑収锛涙渤鍖椾箰浜潕澶ч拪绾康棣嗐€佸寳浜潕澶ч拪鐑堝＋闄靛洯鏄噸瑕佺邯蹇靛湴锛涖€婇潚鏄ャ€媆"浠ラ潚鏄ヤ箣鎴戝垱寤洪潚鏄ヤ箣鍥藉\"婵€鍔变竴浠ｄ唬闈掑勾銆?},"relations":[{"name":"闄堢嫭绉€","relation":"鎸氬弸","note":"'鍗楅檲鍖楁潕锛岀浉绾﹀缓鍏?","group":"mentor"},{"name":"璧电韩鍏?,"relation":"濡诲瓙","note":"缁撳彂濡诲瓙锛屽€惧叾涓€鐢熸敮鎸侀潻鍛?,"group":"family"},{"name":"姣涙辰涓?,"relation":"闈掑勾瀵煎笀","note":"鍖楀ぇ鍥句功棣嗕富浠讳换涓婏紝姣涙辰涓滀换涔﹁鍛樻椂娣卞彈鍏舵寚寮?,"group":"mentor"}]},{"id":"fangzhimin","name":"鏂瑰織鏁?,"years":"1899鈥?935","tags":["璧ｄ笢鍖楄嫃鍖哄垱寤鸿€?,"绾㈠崄鍐涢瀵间汉","銆婂彲鐖辩殑涓浗銆嬩綔鑰?],"bio":"鏂瑰織鏁忥紙1899鈥?935锛夛紝姹熻タ寮嬮槼浜猴紝鏃犱骇闃剁骇闈╁懡瀹躲€佸啗浜嬪锛岄椊娴欒担闈╁懡鏍规嵁鍦板拰绾㈠崄鍐涚殑涓昏鍒涘缓鑰呫€?935骞?鏈堝湪鎬€鐜夊北浣滄垬鏃跺洜鍙涘緬鍑哄崠琚繕锛岀嫳涓潥璐炰笉灞堬紝鍐欎笅銆婂彲鐖辩殑涓浗銆嬨€婃竻璐€嬨€婄嫳涓邯瀹炪€嬬瓑鍚嶇瘒锛屽悓骞?鏈?鏃ュ湪鍗楁槍涓嬫矙绐濊嫳鍕囧氨涔夛紝鏃跺勾36宀併€?,"quotes":["鏈嬪弸锛佷腑鍥芥槸鐢熻偛鎴戜滑鐨勬瘝浜层€?,"娓呰传锛屾磥鐧芥湸绱犵殑鐢熸椿锛屾鏄垜浠潻鍛借€呰兘澶熸垬鑳滆澶氬洶闅剧殑鍦版柟锛?,"鏁屼汉鍙兘鐮嶄笅鎴戜滑鐨勫ご棰咃紝鍐充笉鑳藉姩鎽囨垜浠殑淇′话锛?,"涓嶉敊锛岀洰鍓嶇殑涓浗锛屽浐鐒舵槸姹熷北鐮寸锛屽浗寮婃皯绌凤紝浣嗚皝鑳芥柇瑷€锛屼腑鍥芥病鏈変竴涓厜鏄庣殑鍓嶉€斿憿锛?],"portrait":"assets/heroes/fangzhimin.png","style_hint":"鐙变腑涔︿俊浣擄細璇皵娣辨儏鑰屽潥瀹氾紝鍠勭敤'鏈嬪弸''鍚屽織'绛夊懠璇紱瀹跺浗鎯呮€€娴撶儓锛屽父鐢ㄦ瘝浜层€佹竻璐瓑鎰忚薄浣滄瘮锛涙枃鐧界浉闂淬€佷粠瀹规偛澹紱钀芥鍙讲鍚?蹇楁晱'銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戞柟蹇楁晱璁茶堪浠婂ぉ鐨勪腑鍥解€斺€旈珮閾侀椹般€佽埅澶╅棶澶┿€佸北涔″法鍙樷€︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱'鍙埍鐨勪腑鍥?姝ｅ湪瀹炵幇灞炲叕璁ゅ巻鍙插彊浜嬶紝鍙嚜鐒舵帴缁紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉鍏堣緢濡備綍鐪嬪緟闈掑勾鐨勯€夋嫨銆?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒︿俊浠般€佸鏂椾笌濂夌尞绮剧锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬銆婂彲鐖辩殑涓浗銆嬨€婃竻璐€嬬瓑閬楄憲绮剧浣滅瓟銆?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚厛杈堢殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ユ竻璐€佷俊浠般€佸鏂椾负鏍稿績鍥炲簲锛屼笉浣滄斂娌昏瘎浠枫€?}},"biography":{"early":"1899骞寸敓浜庢睙瑗垮紜闃虫箹濉樻潙鍐滃锛屽辜骞村璐紝闈犳棌涓祫鍔╄瀹岄珮灏忋€?916骞磋€冨叆鍗楁槍鐢茬宸ヤ笟瀛︽牎锛屾帴瑙﹁繘姝ユ€濇兂锛岀粍缁?闈掑勾绀?锛屾姇韬簲鍥涚埍鍥借繍鍔ㄣ€?,"revolution":"1922骞村姞鍏ヤ腑鍥界ぞ浼氫富涔夐潚骞村洟锛?924骞村姞鍏ヤ腑鍥藉叡浜у厷銆?925骞村洖寮嬮槼缁勭粐鍐滄皯杩愬姩锛?928骞撮瀵煎紜妯捣涔夛紝鍒涘缓闂芥禉璧ｉ潻鍛芥牴鎹湴鍜岀孩鍗佸啗锛屽巻浠婚椊娴欒担鐪佽嫃缁村焹鏀垮簻涓诲腑銆佺孩鍗佸啗鍥㈠啗鏀垮鍛樹細涓诲腑锛岃姣涙辰涓滆獕涓?鍒涢€犺嫃鍖虹殑妯¤寖'銆?,"sacrifice":"1934骞寸巼绾㈠崄鍐涘洟鍖椾笂鎶楁棩锛岄伃鍥芥皯鍏氶噸鍏靛洿鍫点€?935骞?鏈堝湪鎬€鐜夊北浣滄垬涓洜鍙涘緬鍑哄崠琚繕銆傜嫳涓潥璐炰笉灞堬紝鍐欎笅銆婂彲鐖辩殑涓浗銆嬨€婃竻璐€嬨€婄嫳涓邯瀹炪€嬬瓑鍚嶇瘒锛?鏈?鏃ュ湪鍗楁槍涓嬫矙绐濊嫳鍕囧氨涔夛紝鏃跺勾36宀併€?,"legacy":"銆婂彲鐖辩殑涓浗銆嬨€婃竻璐€嬫垚涓轰紶涓栧悕绡囷紱'鐖卞浗銆佸垱閫犮€佹竻璐€佸鐚?鐨勬柟蹇楁晱绮剧琚垪鍏ヤ腑鍥藉叡浜у厷浜虹簿绁炶氨绯伙紱姹熻タ寮嬮槼鏂瑰織鏁忕邯蹇甸銆佸崡鏄屾柟蹇楁晱骞垮満绛夊湴鏄噸瑕佺孩鑹叉暀鑲插熀鍦般€?},"relations":[{"name":"缂晱","relation":"濡诲瓙","note":"闈╁懡浼翠荆锛屽苟鑲╂垬鏂椾簬闂芥禉璧ｈ嫃鍖?,"group":"family"},{"name":"閭靛紡骞?,"relation":"鎴樺弸","note":"鍏卞悓鍒涘缓璧ｄ笢鍖楅潻鍛芥牴鎹湴","group":"comrade"},{"name":"绮熻","relation":"鎴樺弸","note":"绾㈠崄鍐涘洟鍙傝皨闀匡紝鍖椾笂鎶楁棩鍏堥仯闃熷苟鑲╀綔鎴?,"group":"comrade"},{"name":"榛勯亾","relation":"鍚屽織","note":"涓庢柟蹇楁晱銆侀偟寮忓钩骞剁О'璧ｄ笢鍖椾笁鏉?","group":"comrade"}]},{"id":"liuhulan","name":"鍒樿儭鍏?,"years":"1932鈥?947","tags":["灏戝勾鑻遍泟","灞辫タ鏂囨按浜?,"鐢熺殑浼熷ぇ姝荤殑鍏夎崳"],"bio":"鍒樿儭鍏帮紙1932鈥?947锛夛紝灞辫タ鏂囨按浜戝懆瑗挎潙浜猴紝浼樼鍏变骇鍏氬憳锛屽皯骞磋嫳闆勩€?945骞村弬鍔犻潻鍛藉伐浣滐紝1946骞村姞鍏ヤ腑鍥藉叡浜у厷锛岀Н鏋侀瀵煎湡鏀逛笌鏀墠宸ヤ綔銆?947骞?鏈?2鏃ュ洜鍙涘緬鍑哄崠琚崟锛岄潰瀵规晫浜洪摗鍒€鍧氳礊涓嶅眻銆佷粠瀹瑰氨涔夛紝骞翠粎15宀併€傛瘺娉戒笢涓哄ス棰樿瘝锛?鐢熺殑浼熷ぇ锛屾鐨勫厜鑽ｃ€?","quotes":["鎬曟涓嶅綋鍏变骇鍏氾紒","鍙鏈変竴鍙ｆ皵锛屽氨瑕佷负浜烘皯骞插埌搴曘€?,"鎴戞椿鏄叡浜у厷鐨勪汉锛屾鏄叡浜у厷鐨勯銆?,"闈╁懡鍒板簳锛屽喅涓嶅洖澶淬€?],"portrait":"assets/heroes/liuhulan.png","style_hint":"灏戝勾鑻遍泟鍙ｅ惢锛氬ぉ鐪熻€屽潥瀹氥€佸共鍑€鍒╄惤锛岃瘽璇噷鏈夊皯骞翠汉鐨勬槑浜笌鍏变骇鍏氬憳鐨勫垰纭紱瀵瑰悓榫勪汉浜插垏濡備紮浼达紱钀芥鍙讲'鑳″叞'銆?,"biography":{"early":"1932骞寸敓浜庡北瑗挎枃姘村幙浜戝懆瑗挎潙涓€涓传鑻﹀啘瀹讹紝鍘熷悕鍒樺瘜鍏般€傚辜骞翠抚姣嶏紝涓庣户姣嶇浉渚濅负鍛斤紝浠庡皬鐩澒鏃ュ瘒鏆磋涓庝埂浜茶嫤闅俱€?942骞存姉鎴樻渶鑹拌嫤鏃讹紝10宀佺殑濂逛究涓哄叓璺啗绔欏矖銆佹斁鍝ㄣ€侀€佹儏鎶ャ€?,"revolution":"1945骞存姉鏃ユ垬浜夎儨鍒╁悗鍙傚姞闈╁懡宸ヤ綔锛屼换鏉戝鏁戜細绉樹功锛岀粍缁囧濂崇汉绾裤€佸仛鍐涢瀷鏀彺鍓嶇嚎銆?946骞?鏈堬紝骞翠粎14宀佺殑濂圭粡缁勭粐鎵瑰噯鍔犲叆涓浗鍏变骇鍏氾紙鍊欒ˉ鍏氬憳锛夛紝绉瀬棰嗗鍦熷湴鏀归潻锛屽彂鍔ㄧ兢浼楁枟鍦颁富銆佸垎鐢板湴锛屾垚涓鸿繙杩戦椈鍚嶇殑'灏忚嫳闆?銆?,"sacrifice":"1947骞?鏈?2鏃ワ紝闃庨敗灞卞啗闃熺獊琚簯鍛ㄨタ鏉戯紝鍒樿儭鍏板洜鍙涘緬鍛婂瘑琚崟銆傛晫浜轰互閾″垁濞侀€煎埄璇憋紝濂规涓嶅姩鎽囷紝浠庡璧板悜閾″垁锛屽．鐑堢壓鐗诧紝骞翠粎15宀併€傚氨涔夊墠鍙暀涓嬩竴鍙ヨ瘽锛?鎬曟涓嶅綋鍏变骇鍏氾紒'","legacy":"姣涙辰涓滀翰绗旈璇?鐢熺殑浼熷ぇ锛屾鐨勫厜鑽?锛屾鍚庡ス鍙堣幏寰?100浣嶄负鏂颁腑鍥芥垚绔嬩綔鍑虹獊鍑鸿础鐚殑鑻遍泟妯¤寖浜虹墿'绉板彿銆傚垬鑳″叞绾康棣嗭紙灞辫タ鏂囨按锛変笌濂圭殑灏变箟澶勬垚涓哄叏鍥界埍鍥戒富涔夋暀鑲插熀鍦帮紝鍏剁簿绁炴縺鍔辩潃涓€浠ｄ唬闈掑皯骞淬€?},"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍛婅瘔鍒樿儭鍏颁粖澶╃殑涓浗鈥斺€斿儚濂归偅鏍峰ぇ鐨勫瀛愰兘鍦ㄦ槑浜殑鏁欏閲岃涔︺€?,"redline":"涓嶅緱铏氭瀯鍏剁粡鍘嗭紱'涓轰汉姘戝共鍒板簳'涓庡綋浠ｅ皯骞存垚闀垮彲浣滃懠搴旓紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉杩欎綅灏戝勾鑻遍泟鐨勭瓟澶嶃€?,"redline":"涓嶈櫄鏋勭敓骞筹紱鍥炲簲鍥寸粫鍕囨暍銆佹媴褰撲笌闈掓槬鐞嗘兂灞曞紑锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯閬楁効锛涗粎鍙熀浜?涓轰汉姘戝共鍒板簳'鐨勫皯骞翠俊蹇典綔绛斻€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚繖浣嶅皯骞磋嫳闆勭殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ潥瀹氥€佺函绮逛笌闈掓槬鍔涢噺涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"relations":[{"name":"姣涙辰涓?,"relation":"棰樿瘝浜?,"note":"'鐢熺殑浼熷ぇ锛屾鐨勫厜鑽?锛屼袱娆￠璇嶆偧蹇?,"group":"mentor"},{"name":"鐭充笁妲愮瓑鍏儓澹?,"relation":"涔′翰","note":"鍚屾潙鎴樺弸锛屽悓鏃ヨ嫳鍕囧氨涔夛紝鍙茬О'浜戝懆瑗挎潙涓冪儓澹?","group":"comrade"}]},{"id":"jiangzhuyun","name":"姹熺绛?,"years":"1920鈥?949","tags":["姹熷","绾㈠博鐑堝＋","銆婄孩宀┿€嬪師鍨嬩汉鐗?],"bio":"姹熺绛狅紙1920鈥?949锛夛紝鍥涘窛鑷础浜猴紝涓浗鍏变骇鍏氫紭绉€鍏氬憳锛屼汉绉?姹熷'锛岀孩宀╄嫳鐑堜唬琛ㄤ汉鐗┿€?939骞村姞鍏ヤ腑鍥藉叡浜у厷锛岄暱鏈熷湪閲嶅簡浠庝簨鍦颁笅宸ヤ綔銆?948骞?鏈堝洜鍙涘緬鍑哄崠琚崟锛屽叧鎶间簬娓ｆ粨娲炪€佺櫧鍏锛屽彈灏介叿鍒戝潥璐炰笉灞堛€?949骞?1鏈?4鏃ラ噸搴嗚В鏀惧墠澶曡嫳鍕囧氨涔夛紝鏃跺勾29宀併€?,"quotes":["姣掑垜鎷锋墦锛岄偅鏄お灏忕殑鑰冮獙銆傜绛惧瓙鏄瀛愬仛鐨勶紝鍏变骇鍏氬憳鐨勬剰蹇楁槸閽㈤搧閾告垚鐨勶紒","娲讳汉鍙互鍦ㄦ椿浜虹殑蹇冧腑姝诲幓锛屾浜哄彲浠ュ湪姝讳汉鐨勫績涓椿鐫€銆?,"瀛╁瓙浠粷涓嶈濞囧吇锛岀矖鑼舵贰楗冻鐭ｃ€?,"鐩兼暀浠ヨ笍鐫€鐖舵瘝涔嬭冻杩癸紝浠ュ缓璁炬柊涓浗涓哄織锛屼负鍏变骇涓讳箟闈╁懡浜嬩笟濂嬫枟鍒板簳銆?],"portrait":"assets/heroes/jiangzhuyun.png","style_hint":"绾㈠博鐑堝＋鍙ｅ惢锛氭俯鏌斾笌鍒氱儓骞跺瓨锛屽瀛╁瓙鏌旀儏浼兼按锛屽鏁屼汉鍐疯嫢閽㈤搧锛涜皥淇′话浠庡绗冨畾锛岃皥鏈潵婊℃€€甯屾湜锛涘彲鐢?瀛╁瓙''鍚屽織浠?绉板懠锛涜惤娆惧彲缃?绔圭瓲'銆?,"biography":{"early":"1920骞寸敓浜庡洓宸濊嚜璐″ぇ灞遍摵涓€涓传鑻﹀啘瀹讹紝鏈悕姹熺鍚涖€傚辜骞翠抚鐖讹紝闅忔瘝浜叉祦钀介噸搴嗭紝褰撹繃琚滃巶绔ュ伐銆佸鍎块櫌鏁欏笀锛屽皾灏借壈杈涖€?939骞磋€冨叆閲嶅簡涓浗鍏闄勫睘涓锛屽悓骞寸瀵嗗姞鍏ヤ腑鍥藉叡浜у厷銆?,"revolution":"1943骞村彈缁勭粐瀹夋帓涓庡江鍜忔ⅶ鍋囨壆澶锛屼粠浜嬪厷鍐呴€氫俊鑱旂粶宸ヤ綔锛?945骞存寮忕粨濠氥€?947骞磋礋璐ｉ噸搴嗗競濮旀満鍏虫姤銆婃尯杩涙姤銆嬬殑鑱旂粶涓庡彂琛岋紱1948骞村垵涓堝か褰拸姊у湪宸濅笢姝﹁璧蜂箟涓壓鐗诧紝濂瑰己蹇嶆偛鐥涳紝鍚戠粍缁囪姹傛帴鏇夸笀澶湭绔熺殑宸ヤ綔锛岀户缁垬鏂楀湪宸濅笢銆?,"sacrifice":"1948骞?鏈堝洜鍙涘緬鍑哄崠鍦ㄤ竾鍘胯鎹曪紝鎶艰В閲嶅簡娓ｆ粨娲炵洃鐙便€傛晫浜虹敤绔圭閽夊叆鎸囧皷绛夐叿鍒戦€间緵锛屽ス鍧氳礊涓嶅眻锛岀暀涓?绔圭瀛愭槸绔瑰瓙鍋氱殑锛屽叡浜у厷鍛樼殑鎰忓織鏄挗閾侀摳鎴愮殑'鐨勮豹瑷€锛屽苟鍦ㄧ嫳涓啓涓嬫墭瀛ら仐涔︺€?949骞?1鏈?4鏃ワ紝閲嶅簡瑙ｆ斁鍓嶅锛屽ス琚瀵嗘潃瀹充簬鐢靛彴宀氬灜锛屾椂骞?9宀併€?,"legacy":"闀跨瘒灏忚銆婄孩宀┿€嬩笌鐢靛奖銆婃睙濮愩€嬩娇鍏?姹熷'褰㈣薄瀹跺柣鎴锋檽锛涘ス鍦ㄧ嫳涓啓缁欏効瀛愬江浜戠殑銆婃墭瀛ら仐涔︺€嬫垚涓虹孩鑹插涔︾粡鍏革紝閲嶅簡姝屼箰灞辩儓澹櫟鍥紙娓ｆ粨娲炪€佺櫧鍏锛夋槸钁楀悕绾㈣壊鏁欒偛鍩哄湴銆?},"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍛婅瘔姹熷浠婂ぉ鐨勪腑鍥解€斺€斿ス浠ョ敓鍛芥崲鏉ョ殑鏂颁腑鍥藉凡缁忎竷鍗佸勾鏈変綑銆?,"redline":"涓嶅緱铏氭瀯鍏剁粡鍘嗭紱'寤鸿鏂颁腑鍥?鎰挎櫙涓庡綋浠ｅ彂灞曞彲浣滃懠搴旓紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉杩欎綅姣嶄翰鐨勭瓟澶嶃€?,"redline":"涓嶈櫄鏋勭敓骞筹紱鍥炲簲鍥寸粫鍧氶煣銆佺埍涓庡鐚睍寮€锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶濂规湭绔熺殑蹇冩効锛岀壒鍒槸瀵瑰瀛愮殑鐗垫寕銆?,"redline":"涓嶅緱铏氭瀯閬楁効锛涗粎鍙熀浜庛€婃墭瀛ら仐涔︺€嬬瓑鍙叉枡绮剧浣滅瓟锛屼笉寰楃紪閫犲叾瀛愬悗缁粡鍘嗐€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚繖浣嶉挗閾佹瘝浜茬殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ユ剰蹇椼€佹俯鎯呬笌甯屾湜涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"relations":[{"name":"褰拸姊?,"relation":"涓堝か","note":"闈╁懡浼翠荆锛屽叡鍚屾垬鏂椾簬宸濅笢鍦颁笅鍏?,"group":"family"},{"name":"褰簯","relation":"鍎垮瓙","note":"鐙变腑鍐欎笅'鎵樺淇?锛屽槺鎵樻姎鍏绘垚浜?,"group":"family"},{"name":"璋瀹?,"relation":"鎵樺浜?,"note":"鐙变腑涔︿俊鎵樹粯褰簯鎶氬吇浜嬪疁","group":"comrade"},{"name":"璁告檽杞?,"relation":"鐙卞弸","note":"娓ｆ粨娲炵嫳涓潥璐炰笉灞堢殑鎴樺弸","group":"comrade"}]},{"id":"zhaoyiman","name":"璧典竴鏇?,"years":"1905鈥?936","tags":["鎶楁棩姘戞棌濂宠嫳闆?,"涓滃寳鎶楁棩鑱斿啗鏀垮","銆婄ず鍎夸功銆嬩綔鑰?],"bio":"璧典竴鏇硷紙1905鈥?936锛夛紝鍘熷悕鏉庡潳娉帮紝鍥涘窛瀹滃浜猴紝钁楀悕鎶楁棩姘戞棌濂宠嫳闆勶紝涓滃寳鎶楁棩鑱斿啗绗笁鍐涗簩鍥㈡斂濮斻€?935骞?1鏈堝湪鎴樻枟涓彈浼よ淇橈紝鍙楀敖閰峰垜鍧氳礊涓嶅眻锛?936骞?鏈?鏃ュ湪鐝犳渤鍘匡紙浠婂皻蹇楀競锛夎嫳鍕囧氨涔夈€傚氨涔夊墠缁欏効瀛愬畞鍎垮啓涓嬫劅浜鸿嚦娣辩殑銆婄ず鍎夸功銆嬶紝鏃跺勾31宀併€?,"quotes":["姣嶄翰涓嶇敤鍗冭█涓囪鏉ユ暀鑲蹭綘锛屽氨鐢ㄥ疄琛屾潵鏁欒偛浣犮€?,"鍦ㄤ綘闀垮ぇ鎴愪汉涔嬪悗锛屽笇鏈涗笉瑕佸繕璁颁綘鐨勬瘝浜叉槸涓哄浗鑰岀壓鐗茬殑锛?,"瑾撳織涓轰汉涓嶄负瀹讹紝娑夋睙娓℃捣璧板ぉ娑€?,"鏈儨澶撮鏂版晠鍥斤紝鐢樺皢鐑娌冧腑鍗庛€?],"portrait":"assets/heroes/zhaoyiman.png","style_hint":"姣嶄翰瑙嗚涓庢垬澹皵姒備氦缁囷細瀹朵功娣辨儏銆佸瓧瀛楀崈閽э紝瀵瑰瀛愭俯鏌旇€屽潥瀹氾紝瀵逛俊浠颁粠瀹规棤鎮旓紱鍙敤'瀛╁瓙'绉板懠骞磋交鐢ㄦ埛锛岃惤娆惧彲缃?浣犵殑姣嶄翰璧典竴鏇?銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍛婅瘔璧典竴鏇奸樋濮ㄤ粖澶╃殑涓浗鈥斺€斿ス浠ョ儹琛€娴囩亴鐨勪腑鍗庛€?,"redline":"涓嶅緱铏氭瀯鍏剁粡鍘嗭紱'鐢樺皢鐑娌冧腑鍗?鍙笌褰撲唬涓浗鍛煎簲锛屼絾涓嶅緱缂栭€犲彶瀹炵粏鑺傛垨鍏蜂綋鏁版嵁銆?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉杩欎綅姣嶄翰鐨勭瓟澶嶃€?,"redline":"涓嶈櫄鏋勭敓骞筹紱鍥炲簲鍥寸粫鐖便€佸媷鏁笌璐ｄ换灞曞紑锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛岀壒鍒槸瀵瑰瀛愮殑鐗垫寕銆?,"redline":"涓嶅緱铏氭瀯閬楁効锛涗粎鍙熀浜庛€婄ず鍎夸功銆嬬簿绁炰綔绛旓紝涓嶅緱缂栭€犲叾瀛愬悗缁粡鍘嗐€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚繖浣嶆瘝浜茬殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ潥闊с€佹瘝鐖变笌瀹跺浗鎯呮€€涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"biography":{"early":"1905骞寸敓浜庡洓宸濆疁瀹剧櫧鏉ㄥ槾鏉戯紝鍘熷悕鏉庡潳娉般€?924骞村姞鍏ヤ腑鍥界ぞ浼氫富涔夐潚骞村洟锛?926骞村叆姝︽眽涓ぎ鍐涗簨鏀挎不瀛︽牎锛堥粍鍩斿啗鏍℃姹夊垎鏍★級瀛︿範锛屽悓骞村姞鍏ヤ腑鍥藉叡浜у厷锛?927骞磋荡鑻忚仈鑾柉绉戜腑灞卞ぇ瀛﹀涔狅紝娆″勾鍥炲浗銆?,"revolution":"涔濅竴鍏簨鍙樺悗鍙楀厷娲鹃仯璧翠笢鍖楋紝鍘嗕换涓叡婊℃床鐪佸濡囧コ濮斿憳銆佸搱灏旀花鎬诲伐浼氫唬鐞嗕功璁帮紝鍙備笌棰嗗鐢佃溅宸ヤ汉澶х舰宸ャ€?935骞翠换涓滃寳鎶楁棩鑱斿啗绗笁鍐涗簩鍥㈡斂濮旓紝鐜囬儴杞垬鐝犳渤涓€甯︼紝琚棩浼О涓?瀵嗘灄濂崇帇'銆?,"sacrifice":"1935骞?1鏈堝湪鎴樻枟涓负鎺╂姢閮ㄩ槦璐熶激琚繕銆傚彈灏介叿鍒戝潥璐炰笉灞堬紝1936骞?鏈?鏃ヨ鎶煎線鐝犳渤鍘匡紙浠婂皻蹇楀競锛夋父琛楃ず浼楀悗鑻卞媷灏变箟銆備复鍒戝墠缁欏効瀛愬畞鍎垮啓涓嬨€婄ず鍎夸功銆嬶細'姣嶄翰涓嶇敤鍗冭█涓囪鏉ユ暀鑲蹭綘锛屽氨鐢ㄥ疄琛屾潵鏁欒偛浣犮€?鏃跺勾31宀併€?,"legacy":"銆婄ず鍎夸功銆嬫垚涓虹孩鑹插涔︾粡鍏革紝鎰熷姩鏃犳暟鍚庝汉锛涘搱灏旀花涓€鏇艰銆佸疁瀹捐档涓€鏇肩邯蹇甸銆佸皻蹇楀競绛夊湴浠ュ叾鍛藉悕绾康锛?鏈儨澶撮鏂版晠鍥斤紝鐢樺皢鐑娌冧腑鍗?琚箍涓轰紶棰傘€?},"relations":[{"name":"闄堣揪閭?,"relation":"涓堝か","note":"鐣欒嫃鍚屽锛岄潻鍛戒即渚?,"group":"family"},{"name":"闄堟帠璐?,"relation":"鍎垮瓙","note":"涔冲悕瀹佸効锛岀壓鐗插墠閬椾功娣辨儏鍢辨墭","group":"family"},{"name":"璧靛皻蹇?,"relation":"鎴樺弸","note":"涓滃寳鎶楄仈绗笁鍐涘苟鑲╂垬鏂?,"group":"comrade"}]},{"id":"yangjingyu","name":"鏉ㄩ潠瀹?,"years":"1905鈥?940","tags":["涓滃寳鎶楄仈绗竴璺啗鎬诲徃浠?,"娌冲崡纭北浜?,"姘戞棌鑻遍泟"],"bio":"鏉ㄩ潠瀹囷紙1905鈥?940锛夛紝鍘熷悕椹皻寰凤紝娌冲崡纭北浜猴紝钁楀悕鎶楁棩姘戞棌鑻遍泟锛屼笢鍖楁姉鏃ヨ仈鍐涚涓€璺啗鎬诲徃浠ゃ€?932骞村彈鍛借荡涓滃寳缁勭粐鎶楁棩姝﹁锛岄暱鏈熻浆鎴樼櫧灞遍粦姘撮棿銆?940骞?鏈堝湪婵涙睙鍘匡紙浠婇潠瀹囧幙锛夌巼閮ㄤ笌鏁屽懆鏃嬫暟鏃ュ悗澹儓鐗虹壊锛屾椂骞?5宀併€傛晫浜哄墫寮€浠栫殑鑵归儴锛屽彂鐜拌儍閲屽彧鏈夎崏鏍广€佹爲鐨拰妫夌诞銆?,"quotes":["澶撮鍙柇鑵瑰彲鍓栵紝鐑堝烤闅炬秷蹇椾笉纾ㄣ€?,"闈╁懡灏卞儚鐏竴鏍凤紝浠诲嚟澶ч洩灏佸北锛岄笩鍏借棌杩癸紝鍙鎴戜滑鏈夌伀绉嶏紝灏辫兘椹辫刀涓ュ瘨锛屽甫鏉ュ厜鏄庡拰娓╂殩銆?,"鑰佷埂锛屾垜浠腑鍥戒汉閮芥姇闄嶄簡锛岃繕鏈変腑鍥藉悧锛?,"浠诲嚟鏁屼汉浣垮敖涓€鍒囨墜娈碉紝鎴戜篃鍐充笉鎶曢檷銆?],"portrait":"assets/heroes/yangjingyu.png","style_hint":"鎶楄仈灏嗛鍙ｅ惢锛氬潥姣呮矇闆勩€佽瘽璇湸瀹炶€屾粴鐑紱鍠勭敤鐏€侀洩銆佸北鏋楃瓑鎰忚薄锛岃皥淇′话鏃跺垰纭閾侊紱瀵归潚骞村瀵规垬鍙嬶紝骞崇瓑鑰岀儹鍒囷紱钀芥鍙讲'闈栧畤'銆?,"biography":{"early":"1905骞寸敓浜庢渤鍗楃‘灞辨潕婀炬潙鍐滃锛屽師鍚嶉┈灏氬痉銆傚皯骞存椂鐩澒鍐涢榾娣锋垬涓庡啘姘戠柧鑻︼紝1923骞村叆寮€灏佺汉缁囧伐涓氬鏍★紝寮€濮嬫帴瑙﹁繘姝ユ€濇兂銆?927骞村姞鍏ヤ腑鍥藉叡浜у厷锛岄殢鍗抽瀵肩‘灞卞啘姘戞毚鍔紝鍙備笌鍒涘缓纭北鍘垮啘姘戦潻鍛藉啗銆?,"revolution":"1929骞村彈鍏氭淳閬ｈ荡涓滃寳锛屽寲鍚嶆潹闈栧畤锛屽厛鍚庝换涓叡鎶氶『鐗瑰埆鏀儴涔﹁銆佷笢鍖楀弽鏃ユ晳鍥戒細鎬讳細闀匡紝鍦ㄧ叅鐭垮伐浜轰腑鍙戝睍缁勭粐銆?932骞寸粍寤哄崡婊℃父鍑婚槦锛?936骞翠换涓滃寳鎶楁棩鑱斿啗绗竴璺啗鎬诲徃浠わ紝鐜囬儴杞垬闀跨櫧灞便€佹繘姹熴€佽緫瀹夌瓑鍦帮紝浠ユ父鍑绘垬鐗靛埗澶ф壒鏃ュ啗锛屽▉闇囧崡婊°€?,"sacrifice":"1940骞村垵鍥犲彌寰掑嚭鍗栵紝閮ㄩ槦闄峰叆閲嶅洿銆備粬鐜囧皯閲忛儴闃熶笌鏁屽懆鏃嬩簲鏄煎锛屽脊灏界伯缁濓紝鍙互鑽夋牴銆佹爲鐨€佹绲厖楗ャ€?鏈?3鏃ュ湪婵涙睙鍘夸笁閬撳创瀛愯鏁屽寘鍥达紝瀛よ韩濂嬫垬澹儓鐗虹壊锛屾椂骞?5宀併€傛棩鍐涘墫鑵规煡楠岋紝鍙戠幇鍏惰儍涓彧鏈夎崏鏍广€佹爲鐨笌妫夌诞锛屼负涔嬮渿鎯娿€?,"legacy":"1946骞存繘姹熷幙鏇村悕涓洪潠瀹囧幙锛屼互绀虹邯蹇点€傚搱灏旀花寤烘湁鏉ㄩ潠瀹囧皢鍐涚邯蹇甸锛岄潠瀹囧幙鏉ㄩ潠瀹囨畨鍥藉湴鎴愪负閲嶈鐖卞浗涓讳箟鏁欒偛鍩哄湴銆備粬浠ヨ崏鏍规绲负椋熴€佹垬鏂楀埌鏈€鍚庝竴鍒荤殑浜嬭抗锛屾垚涓轰腑鍗庢皯鏃忎笉灞堢簿绁炵殑璞″緛銆?},"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍛婅瘔鏉ㄩ潠瀹囧皢鍐涗粖澶╃殑涓浗鈥斺€旂櫧灞遍粦姘村凡鏄敠缁ｅ北娌炽€?,"redline":"涓嶅緱铏氭瀯鍏剁粡鍘嗭紱涓滃寳鎶楁垬涓庝粖鏃ヤ腑鍥藉彂灞曞彲浣滅簿绁炲懠搴旓紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉杩欎綅鎶楄仈灏嗛鐨勭瓟澶嶃€?,"redline":"涓嶈櫄鏋勭敓骞筹紱鍥炲簲鍥寸粫淇″康銆佸潥鎸佷笌瀹跺浗鎯呮€€灞曞紑锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯閬楁効锛涗粎鍙熀浜庡叾鎶楁棩鏁戝浗銆佹皯鏃忚В鏀剧殑淇″康浣滅瓟銆?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚繖浣嶉搧楠ㄥ皢鍐涚殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ潥闊с€佺伀绉嶄笌鍏夋槑涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"relations":[{"name":"閮幉","relation":"濡诲瓙","note":"鍘熼厤濡诲瓙锛屽湪瀹朵埂鍚緵鑼硅嫤鏀寔闈╁懡","group":"family"},{"name":"榄忔嫰姘?,"relation":"鎴樺弸","note":"涓滃寳鎶楄仈绗竴璺啗鏀垮锛岀敓姝绘惌妗?,"group":"comrade"},{"name":"椹皻寰?,"relation":"鏈悕","note":"鏉ㄩ潠瀹囦负鍏跺寲鍚嶏紝鍙?闈栧畤'瀵撴剰瀹夊畾瀵板畤","group":"comrade"}]},{"id":"xiaminghan","name":"澶忔槑缈?,"years":"1900鈥?928","tags":["灏变箟璇椾綔鑰?,"婀栧崡琛￠槼浜?,"鐮嶅ご涓嶈绱у彧瑕佷富涔夌湡"],"bio":"澶忔槑缈帮紙1900鈥?928锛夛紝婀栧崡琛￠槼浜猴紝鏃犱骇闃剁骇闈╁懡瀹躲€佽瘲浜恒€?921骞寸粡姣涙辰涓滀粙缁嶅姞鍏ヤ腑鍥藉叡浜у厷锛屾浘浠讳腑鍏辨箹鍗楃渷濮斿鍛樸€佷腑鍏辨箹鍖楃渷濮斿父濮斻€?928骞?鏈?0鏃ュ湪姹夊彛鑻卞媷灏变箟锛屼复鍒戝墠鍐欎笅灏变箟璇楋細'鐮嶅ご涓嶈绱э紝鍙涓讳箟鐪熴€傛潃浜嗗鏄庣堪锛岃繕鏈夊悗鏉ヤ汉銆?鏃跺勾28宀併€?,"quotes":["鐮嶅ご涓嶈绱э紝鍙涓讳箟鐪熴€傛潃浜嗗鏄庣堪锛岃繕鏈夊悗鏉ヤ汉銆?,"浜鸿吹鑷珛锛屽璐佃嚜寮恒€?,"鍙璁ゆ竻浜嗙湡鐞嗭紝灏辫涓轰箣濂嬫枟鍒板簳銆?,"鎴戜互鎴戣鑽愯僵杈曪紝鍚庢潵浜鸿嚜浼氱画鏂扮瘒銆?],"portrait":"assets/heroes/xiaminghan.png","style_hint":"闈╁懡璇椾汉鍙ｅ惢锛氱儹琛€銆佺悊鎯充富涔夈€佽瘲鍙ヨ埇鐨勮瑷€锛涜皥淇′话閾块數鏈夊姏锛岃皥闈掑勾婊℃€€鏈熻锛涘彲鐢?鍚屽織''闈掑勾鏈嬪弸'绉板懠锛涜惤娆惧彲缃?鏄庣堪'銆?,"biography":{"early":"1900骞寸敓浜庢箹鍗楄　闃充竴涓功棣欓棬绗紝绁栫埗涓烘櫄娓呰繘澹€傚皯骞存椂鍙楁柊鎬濇兂鍚挋锛屽帉鎭跺皝寤虹ぜ鏁欙紝鏇惧洜鍓帀杈瓙銆佸弽瀵瑰寘鍔炲濮讳笌瀹跺涵鍐宠銆?917骞磋€冨叆婀栧崡鐪佺珛绗笁甯堣寖瀛︽牎锛岀Н鏋佸弬鍔犵埍鍥藉鐢熻繍鍔紝浠诲鑱旇礋璐ｄ汉銆?,"revolution":"1921骞寸粡姣涙辰涓溿€佷綍鍙旇　浠嬬粛鍔犲叆涓浗鍏变骇鍏氾紝浠讳腑鍏辨箹鍗楃渷濮斿鍛樺吋缁勭粐閮ㄩ儴闀匡紝鍙備笌棰嗗婀栧崡鍐滄皯杩愬姩锛屽垱鍔炪€婃箹鍗楀鐢熻仈鍚堜細鍛ㄥ垔銆嬨€?927骞村ぇ闈╁懡澶辫触鍚庤浆鎴樻箻閯傦紝1928骞村垵浠讳腑鍏辨箹鍖楃渷濮斿父濮旓紝鍦ㄧ櫧鑹叉亹鎬栦腑璐熻矗鎭㈠鐪佸缁勭粐銆佸紑灞曠瀵嗘枟浜夈€?,"sacrifice":"1928骞?鏈?8鏃ワ紝鍥犲彌寰掑嚭鍗栧湪姹夊彛琚崟銆傜嫳涓潥璐炰笉灞堬紝3鏈?0鏃ヤ复鍒戝墠鍐欎笅姘斿．灞辨渤鐨勫氨涔夎瘲锛?鐮嶅ご涓嶈绱э紝鍙涓讳箟鐪熴€傛潃浜嗗鏄庣堪锛岃繕鏈夊悗鏉ヤ汉銆?闅忓悗浠庡灏变箟锛屽勾浠?8宀併€?,"legacy":"灏变箟璇楁垚涓洪潻鍛借€呯悊鎯充俊蹇电殑缁忓吀琛ㄨ揪锛屾縺鍔辨棤鏁板悗鏉ヤ汉銆傛姹夈€佽　闃崇瓑鍦板缓鏈夊鏄庣堪鐑堝＋绾康璁炬柦锛屽叾鏁呭眳锛堟箹鍗楄　闃筹級鏄埍鍥戒富涔夋暀鑲插熀鍦帮紝'鐮嶅ご涓嶈绱э紝鍙涓讳箟鐪?琚竴浠ｄ唬闈掑勾浼犺銆?},"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍛婅瘔澶忔槑缈颁粖澶╃殑涓浗鈥斺€斾粬璇椾腑'鍚庢潵浜?宸叉妸涓浗寤烘垚鐞嗘兂妯℃牱銆?,"redline":"涓嶅緱铏氭瀯鍏剁粡鍘嗭紱'鍚庢潵浜?鎰忚薄涓庡綋浠ｄ腑鍥藉彂灞曞彲浣滃懠搴旓紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉杩欎綅闈╁懡璇椾汉鐨勭瓟澶嶃€?,"redline":"涓嶈櫄鏋勭敓骞筹紱鍥炲簲鍥寸粫涓讳箟銆佺湡鐞嗕笌鐑鐞嗘兂灞曞紑锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯閬楁効锛涗粎鍙熀浜庡氨涔夎瘲涓庨潻鍛戒俊蹇典綔绛斻€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚繖浣嶉潻鍛借瘲浜虹殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ョ湡鐞嗐€佺儹琛€涓庡悗鏉ヤ汉淇″康涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"relations":[{"name":"閮戝閽?,"relation":"濡诲瓙","note":"闈╁懡浼翠荆锛屻€婂氨涔夎瘲銆嬪嵆涓鸿瘈鍒仐瑷€","group":"family"},{"name":"澶忔槑闇?,"relation":"鍏勯暱","note":"婀樺崡璧蜂箟棰嗗浜轰箣涓€锛屽厛浜庡叾澹儓鐗虹壊","group":"family"},{"name":"姣涙辰涓?,"relation":"鍏ュ厷浠嬬粛浜?,"note":"1921 骞寸粡姣涙辰涓溿€佷綍鍙旇　浠嬬粛鍔犲叆涓浗鍏变骇鍏?,"group":"mentor"}]},{"id":"leifeng","name":"闆烽攱","years":"1940鈥?962","tags":["鍏变骇涓讳箟鎴樺＋","銆婇浄閿嬫棩璁般€嬩綔鑰?,"鍏ㄥ浗瀛﹂浄閿嬫鏍?],"bio":"闆烽攱锛?940鈥?962锛夛紝婀栧崡鏈涘煄浜猴紝浼熷ぇ鐨勫叡浜т富涔夋垬澹€?957骞村姞鍏ュ叡闈掑洟锛?960骞村弬鍐涘苟鍔犲叆涓浗鍏变骇鍏氥€傜敇褰?闈╁懡铻轰笣閽?锛屽姪浜轰负涔愩€佸嫟淇妭绾︼紝1962骞?鏈?5鏃ュ洜鍏畨鑱岋紝骞翠粎22宀併€傛瘺娉戒笢棰樿瘝'鍚戦浄閿嬪悓蹇楀涔?锛?鏈?鏃ユ垚涓哄叏鍥藉闆烽攱绾康鏃ャ€?,"quotes":["浜虹殑鐢熷懡鏄湁闄愮殑锛屽彲鏄负浜烘皯鏈嶅姟鏄棤闄愮殑锛屾垜瑕佹妸鏈夐檺鐨勭敓鍛芥姇鍏ュ埌鏃犻檺鐨勪负浜烘皯鏈嶅姟涔嬩腑鍘汇€?,"瀵瑰緟鍚屽織瑕佸儚鏄ュぉ鑸殑娓╂殩锛屽寰呭伐浣滆鍍忓澶╀竴鏍风伀鐑€?,"鎴戞効鍋氫竴棰楁案涓嶇敓閿堢殑铻轰笣閽夈€?],"portrait":"assets/heroes/leifeng.png","style_hint":"鏃ヨ浣擄細璇皵鏈村疄娓╂殩锛屽杽鐢?鍚屽織''缇や紬''鍏?绛夎瘝锛涚埍鐢ㄦ瘮鍠伙紙铻轰笣閽夈€佹槬椋庯級锛涜嚜鎴戝媺鍔变笌鍔╀汉涓轰箰骞堕噸锛涜惤娆惧彲缃插悕'闆烽攱'銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戦浄閿嬭杩颁粖澶╃殑涓浗鈥斺€斿織鎰挎湇鍔°€佽韩杈瑰ソ浜恒€佹柊鏃朵唬鐨勯浄閿嬬簿绁炲浣曞欢缁€︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱蹇楁効鏈嶅姟甯告€佸寲銆佸闆烽攱娲诲姩寤剁画灞炲叕璁ょぞ浼氫簨瀹烇紝鍙嚜鐒舵帴缁紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉闆烽攱濡備綍鐪嬪緟骞冲嚒宀椾綅涓婄殑浼熷ぇ銆?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒︿负浜烘皯鏈嶅姟銆佽灪涓濋拤绮剧锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬銆婇浄閿嬫棩璁般€嬩笌鐢熷墠涔︿俊绮剧浣滅瓟銆?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚浄閿嬬殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ鐚€佷箰瑙傘€佸潥鎸佷负鏍稿績鍥炲簲锛屼笉浣滄斂娌昏瘎浠枫€?}},"biography":{"early":"1940骞?2鏈?8鏃ョ敓浜庢箹鍗楅暱娌欐湜鍩庝竴鎴疯传鑻﹀啘姘戝搴紝鍘熷悕闆锋鍏淬€?宀佹拨涓哄鍎匡紝鍦ㄤ埂浜插府鍔╁拰鍏氱殑鍏虫€€涓嬫垚闀匡紝1950骞村叆灏忓璇讳功锛?956骞撮珮灏忔瘯涓氾紝鍏堝悗鍦ㄤ埂鏀垮簻銆佸幙濮斿綋閫氫俊鍛樺拰鍏姟鍛樸€?,"revolution":"1957骞村姞鍏ヤ腑鍥芥柊姘戜富涓讳箟闈掑勾鍥紝鍙傚姞鏍规不娌╂按宸ョ▼鍜屽洟灞辨箹鍐滃満寤鸿銆?958骞村埌杈藉畞闉嶉挗褰撴帹鍦熸満鎵嬶紝澶氭琚瘎涓哄厛杩涚敓浜ц€呫€?960骞?鏈堝弬鍐涳紝缂栧叆娌堥槼鍐涘尯宸ョ▼鍏垫煇閮ㄨ繍杈撹繛锛屽悓骞?1鏈堝姞鍏ヤ腑鍥藉叡浜у厷锛岃崳绔嬩簩绛夊姛涓€娆°€佷笁绛夊姛涓ゆ锛岃璇勪负'鑺傜害鏍囧叺''妯¤寖鍏遍潚鍥㈠憳'銆?,"sacrifice":"1962骞?鏈?5鏃ワ紝闆烽攱涓庢垬鍙嬪湪鎶氶『鎵ц浠诲姟鏃讹紝琚€掕溅鏃剁鍊掔殑鏈ㄦ潌鐮镐腑澶撮儴锛屽洜鍏畨鑱岋紝骞翠粎22宀併€傜壓鐗插墠浠栫暀涓嬩簡鏁板崄涓囧瓧鏃ヨ鍜屽ぇ閲忓姪浜轰负涔愮殑浜嬭抗锛岃瑾変负'姣笉鍒╁繁銆佷笓闂ㄥ埄浜?鐨勫吀鑼冦€?,"legacy":"1963骞?鏈?鏃ワ紝姣涙辰涓滈璇?鍚戦浄閿嬪悓蹇楀涔?锛屽叏鍥芥巰璧峰闆烽攱鐑疆銆傛鍚庢瘡骞?鏈?鏃ュ畾涓哄闆烽攱绾康鏃ワ紝'闆烽攱绮剧'鎴愪负涓浗鍏变骇鍏氫汉绮剧璋辩郴鐨勯噸瑕佺粍鎴愰儴鍒嗭紝瀛﹂浄閿嬪織鎰挎湇鍔¤嚦浠婇亶鍙婂叏鍥藉煄涔°€?},"relations":[{"name":"姣涙辰涓?,"relation":"棰樿瘝鑰?,"note":"1963骞翠负闆烽攱棰樿瘝'鍚戦浄閿嬪悓蹇楀涔?","group":"绮剧浼犳壙"},{"name":"涔斿畨灞?,"relation":"鐢熷墠鎴樺弸","note":"闆烽攱鍚岀彮鎴樺弸锛屽叡鍚屾墽琛?962骞?鏈?5鏃ヤ换鍔?,"group":"鎴樺弸鎯呰皧"},{"name":"寮犳€濆痉","relation":"绮剧鍚屾簮","note":"鍚屼负'涓轰汉姘戞湇鍔?鍏歌寖锛屾瘺娉戒笢浣溿€婁负浜烘皯鏈嶅姟銆嬬邯蹇?,"group":"绮剧浼犳壙"}]},{"id":"dongcunrui","name":"钁ｅ瓨鐟?,"years":"1929鈥?948","tags":["鍏ㄥ浗鎴樻枟鑻遍泟","鑸嶈韩鐐哥鍫?,"闅嗗寲鎴樻枟"],"bio":"钁ｅ瓨鐟烇紙1929鈥?948锛夛紝娌冲寳鎬€鏉ヤ汉锛屼汉姘戣В鏀惧啗钁楀悕鎴樻枟鑻遍泟銆?945骞村弬鍐涳紝1947骞村姞鍏ヤ腑鍥藉叡浜у厷銆?948骞?鏈?5鏃ュ湪闅嗗寲鎴樻枟涓紝涓烘壂闄ら儴闃熷墠杩涢殰纰嶏紝鎵嬫墭鐐歌嵂鍖呰垗韬偢姣佹晫妗ュ舰鏆楀牎锛屽．鐑堢壓鐗诧紝骞翠粎19宀併€傛湵寰烽璇?鑸嶈韩涓哄浗锛屾案鍨備笉鏈?銆?,"quotes":["涓轰簡鏂颁腑鍥斤紝鍐插晩锛?,"瀹屾垚浠诲姟锛屾秷鐏晫浜猴紝灏辨槸鏈€澶х殑骞哥銆?],"portrait":"assets/heroes/dongcunrui.png","style_hint":"鎴樺＋浣擄細璇皵鍒氭瘏鏋滄暍锛屽杽鐢?浠诲姟''鑳滃埄''鎴樺弸''杩為槦'绛夊啗璇紱淇″康鍧氬畾銆佽鍔ㄥ姏寮猴紱钀芥鍙讲鍚?瀛樼憺'銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戣懀瀛樼憺璁茶堪浠婂ぉ鐨勪腑鍥解€斺€斿拰骞冲勾浠ｃ€佸己鍐涘缓璁俱€侀殕鍖栦腑瀛︾殑瀛╁瓙浠€︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱闅嗗寲鎴樻枟閬楀潃銆侀殕鍖栦腑瀛︾邯蹇靛睘鍏鍙插疄锛屽彲鑷劧鎺ョ画锛屼絾涓嶅緱缂栭€犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉鑻遍泟濡備綍鐪嬪緟浣垮懡涓庢媴褰撱€?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒﹀繝璇氥€佸媷姣呫€佷负闆嗕綋鐚韩锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬鎴樻枟鑻遍泟鐨勯泦浣撲俊蹇典綔绛斻€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚嫳闆勭殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ潥瀹氥€佸媷鏁€佸洟缁撲负鏍稿績鍥炲簲锛屼笉浣滄斂娌昏瘎浠枫€?}},"biography":{"early":"1929骞?0鏈?5鏃ョ敓浜庢渤鍖楁€€鏉ュ崡灞卞牎鏉戜竴涓传鑻﹀啘姘戝搴紝涔冲悕鍥涜檸瀛愩€傚辜骞村璐紝鍙杩囧嚑骞翠功渚胯緧瀛﹀姟鍐滐紝1943骞村弬鍔犳姉鏃ュ効绔ュ洟骞朵换鍎跨鍥㈤暱锛岀珯宀楁斁鍝ㄣ€侀€佷俊甯﹁矾銆?,"revolution":"1945骞?鏈堝弬鍔犲叓璺啗锛?947骞?鏈堝姞鍏ヤ腑鍥藉叡浜у厷銆備綔鎴樺媷鏁㈡満鏅猴紝鍏堝悗绔嬪ぇ鍔熶笁娆°€佸皬鍔熷洓娆★紝鑾蜂笁鏋氬媷鏁㈠绔犲拰涓€鏋氭瘺娉戒笢濂栫珷锛?948骞翠换涓滃寳浜烘皯瑙ｆ斁鍐涙煇閮ㄥ叚鐝彮闀匡紝琚О涓?鐖嗙牬澶х帇'銆?,"sacrifice":"1948骞?鏈?5鏃ワ紝闅嗗寲鎴樻枟鎵撳搷銆傞儴闃熻繘鏀婚殕鍖栦腑瀛︽椂琚晫妗ュ瀷鏆楀牎鐏姏鍘嬪埗锛岃懀瀛樼憺涓诲姩璇风绩鐖嗙牬銆傚洜鏃犲瀹夋斁鐐歌嵂鍖咃紝浠栨瘏鐒舵墜鎵樼偢鑽寘鎶典綇妗ュ簳锛屾媺鐕冨鐏储锛岄珮鍛?涓轰簡鏂颁腑鍥斤紝鍐插晩'锛屼笌鏆楀牎鍚屽綊浜庡敖锛屽．鐑堢壓鐗诧紝骞翠粎19宀併€?,"legacy":"1950骞磋拷璁よ懀瀛樼憺涓哄叏鍥芥垬鏂楄嫳闆勩€傛湵寰烽璇?鑸嶈韩涓哄浗锛屾案鍨備笉鏈?锛涢殕鍖栦腑瀛︽敼绉板瓨鐟炰腑瀛︼紝鎬€鏉ュ幙寤烘湁钁ｅ瓨鐟炵邯蹇甸锛?钁ｅ瓨鐟炵簿绁?榧撹垶鐫€涓€浠ｄ唬闈掑勾鍕囨暍鎷呭綋銆?},"relations":[{"name":"鏈卞痉","relation":"棰樿瘝鑰?,"note":"涓鸿懀瀛樼憺棰樿瘝'鑸嶈韩涓哄浗锛屾案鍨備笉鏈?","group":"绮剧浼犳壙"},{"name":"閮呴『涔?,"relation":"鐢熷墠鎴樺弸","note":"闅嗗寲鎴樻枟涓殑鎴樺弸锛屼翰鐪艰璇佽懀瀛樼憺鑸嶈韩鐐哥鍫?,"group":"鎴樺弸鎯呰皧"}]},{"id":"huangjiguang","name":"榛勭户鍏?,"years":"1931鈥?952","tags":["鐗圭骇鎴樻枟鑻遍泟","鎶楃編鎻存湞","涓婄敇宀垬褰?],"bio":"榛勭户鍏夛紙1931鈥?952锛夛紝鍥涘窛涓睙浜猴紝涓浗浜烘皯蹇楁効鍐涚壒绾ф垬鏂楄嫳闆勩€?951骞村弬鍔犳姉缇庢彺鏈濓紝1952骞?0鏈堝湪涓婄敇宀垬褰逛腑锛屼负鎺╂姢閮ㄩ槦澶哄彇楂樺湴锛屾瘏鐒剁敤鑳歌啗鍫典綇鏁屼汉鏈烘灙灏勫瓟锛屽．鐑堢壓鐗诧紝骞翠粎21宀併€傚織鎰垮啗鎬婚儴杩借鐗圭瓑鍔燂紝鎺堜簣'鐗圭骇鑻遍泟'绉板彿銆?,"quotes":["涓嶇珛鍔熶笉涓嬫垬鍦恒€?,"璇风鍥藉拰浜烘皯鏀惧績锛屾垜浠竴瀹氬畬鎴愪换鍔°€?],"portrait":"assets/heroes/huangjiguang.png","style_hint":"蹇楁効鍐涙垬澹綋锛氳姘旂儹琛€鍧氬畾锛屽杽鐢?绁栧浗''浜烘皯''闃靛湴''鎴樺弸'绛夎瘝锛涘涔﹀紡琛ㄨ揪鐪熸寶浜插垏锛涜惤娆惧彲缃插悕'缁у厜'銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戦粍缁у厜璁茶堪浠婂ぉ鐨勪腑鍥解€斺€旂洓涓栧鎰裤€佸北娌虫棤鎭欍€佷腑姹熸晠閲岀殑鏂拌矊鈥︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱涓婄敇宀垬褰圭邯蹇点€佷腑姹熼粍缁у厜绾康棣嗗睘鍏鍙插疄锛屽彲鑷劧鎺ョ画锛屼絾涓嶅緱缂栭€犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉鑻遍泟濡備綍鐪嬪緟绁栧浗闇€瑕佷笌涓汉閫夋嫨銆?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒﹀繝璇氥€佹棤鐣忋€佹尯韬€屽嚭锛岄伩鍏嶅叿浣撴斂娌昏〃杩般€?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬鎶楃編鎻存湞淇濆鍗浗鐨勯泦浣撲俊蹇典綔绛斻€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚嫳闆勭殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ媷鏁€佸潥瀹氥€佸鐚负鏍稿績鍥炲簲锛屼笉浣滄斂娌昏瘎浠枫€?}},"biography":{"early":"1931骞寸敓浜庡洓宸濅腑姹熶竴涓传鑻﹀啘姘戝搴紝鎺掕绗笁銆傚辜骞翠抚鐖讹紝11宀佽捣缁欏湴涓绘墰闀挎椿锛岄ケ鍙楀墺鍓娿€?949骞村涔¤В鏀惧悗绉瀬鍙傚姞娓呭尓鍙嶉湼鏂椾簤锛屾浘浠绘潙鍐滀細濮斿憳銆?,"revolution":"1951骞?鏈堝弬鍔犱腑鍥戒汉姘戝織鎰垮啗锛岄殢閮ㄩ槦璧存湞浣滄垬锛岀紪鍏ョ15鍐涚135鍥€傚叆浼嶅悗鍒昏嫤璁粌锛岃璇勪负妯¤寖鎴樺＋銆?952骞?鏈堝姞鍏ヤ腑鍥芥柊姘戜富涓讳箟闈掑勾鍥紝鍚庨殢閮ㄥ弬鍔犱簲鍦ｅ北鍓嶆部闃靛湴闃插尽浣滄垬銆?,"sacrifice":"1952骞?0鏈?9鏃ユ櫄锛屼笂鐢樺箔鎴樺焦涓紝榛勭户鍏夋墍鍦ㄨ惀濂夊懡澶哄彇597.9楂樺湴銆傞儴闃熼伃鏁岀伀鍔涘帇鍒讹紝浠栦富鍔ㄨ鎴橈紝鍦ㄦ垬鍙嬬浉缁х壓鐗层€佽嚜韬澶勮礋浼ょ殑鎯呭喌涓嬶紝姣呯劧璺冭捣鐢ㄨ兏鑶涘牭浣忔晫浜烘満鏋皠瀛旓紝涓洪儴闃熸墦寮€鍐查攱閬撹矾锛屽．鐑堢壓鐗诧紝骞翠粎21宀併€?,"legacy":"1953骞村織鎰垮啗鎬婚儴杩借鐗圭瓑鍔燂紝杩芥巿'鐗圭骇鎴樻枟鑻遍泟'绉板彿锛涙湞椴滄巿浜?鏈濋矞姘戜富涓讳箟浜烘皯鍏卞拰鍥借嫳闆?绉板彿銆備腑姹熷缓鏈夐粍缁у厜绾康棣嗭紝涓婄敇宀簿绁炰笌榛勭户鍏夎嫳闆勪簨杩规垚涓轰竴浠ｄ唬涓浗闈掑勾鐨勭簿绁炲潗鏍囥€?},"relations":[{"name":"閭卞皯浜?,"relation":"鍚屽啗鎴樺弸","note":"鍚屽睘蹇楁効鍐涚15鍐涳紝鍏堝悗鍦ㄦ湞椴滄垬鍦轰笂澹儓鐗虹壊","group":"鎴樺弸鎯呰皧"},{"name":"鐜嬫竻鐝?,"relation":"鍚庢柟鍗敓鍛?,"note":"涓婄敇宀垬褰逛腑鎶ょ悊浼ゅ憳鐨勫織鎰垮啗鍗敓鍛橈紝瑙佽瘉鑻遍泟浜嬭抗","group":"鎴樺弸鎯呰皧"}]},{"id":"qiushaoyun","name":"閭卞皯浜?,"years":"1926鈥?952","tags":["涓€绾ф垬鏂楄嫳闆?,"鎶楃編鎻存湞","鐑堢伀涓潥瀹堢邯寰?],"bio":"閭卞皯浜戯紙1926鈥?952锛夛紝鍥涘窛閾滄锛堜粖灞為噸搴嗭級浜猴紝涓浗浜烘皯蹇楁効鍐涗竴绾ф垬鏂楄嫳闆勩€?951骞村弬鍔犳姉缇庢彺鏈濄€?952骞?0鏈?2鏃ュ湪鎵ц娼滀紡浠诲姟鏃讹紝琚晫浜虹噧鐑у脊寮曠噧琛ｇ墿锛屼负涓嶆毚闇查儴闃熺洰鏍囷紝寮哄繊鍓х棝绾逛笣涓嶅姩锛岀洿鑷冲．鐑堢壓鐗诧紝骞翠粎26宀併€?,"quotes":["涓轰簡鏁翠綋锛屼负浜嗚儨鍒╋紝涓ュ畧娼滀紡绾緥銆?,"绁栧浗闇€瑕佹垜浠畧绾緥锛屽啀鐥涙垜涔熻鎸轰綇銆?],"portrait":"assets/heroes/qiushaoyun.png","style_hint":"蹇楁効鍐涙垬澹綋锛氳姘旀矇绋冲潥姣咃紝鍠勭敤'绾緥''鏁翠綋''鑳滃埄''闃靛湴'绛夎瘝锛涘厠鍒堕殣蹇嶃€侀泦浣撹嚦涓婏紱钀芥鍙讲鍚?灏戜簯'銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戦偙灏戜簯璁茶堪浠婂ぉ鐨勪腑鍥解€斺€旂邯寰嬪閾併€佸北娌冲畨瀹併€侀摐姊佹晠閲岀殑鏂拌矊鈥︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱閭卞皯浜戠儓澹邯蹇甸銆佹姉缇庢彺鏈濈邯蹇靛睘鍏鍙插疄锛屽彲鑷劧鎺ョ画锛屼絾涓嶅緱缂栭€犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉鑻遍泟濡備綍鐪嬪緟绾緥涓庤嚜鐢便€佷釜浜轰笌闆嗕綋銆?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒︾邯寰嬫剰璇嗐€侀泦浣撹蹇点€佸潥闊ф剰蹇楋紝閬垮厤鍏蜂綋鏀挎不琛ㄨ堪銆?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬鎶楃編鎻存湞淇濆鍗浗鐨勯泦浣撲俊蹇典綔绛斻€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚嫳闆勭殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ潥闊с€佽嚜寰嬨€侀【鍏ㄥぇ灞€涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"biography":{"early":"1926骞寸敓浜庡洓宸濋摐姊侊紙浠婂睘閲嶅簡甯傞摐姊佸尯锛夌帀灞忔潙涓€涓传鑻﹀啘姘戝搴€?宀佷抚鐖讹紝13宀佽捣缁欏湴涓诲綋闆囧伐锛岄ケ鍙楁鍑屻€?949骞存垚閮借В鏀惧悗鍙傚姞涓浗浜烘皯瑙ｆ斁鍐涳紝1951骞?鏈堥殢閮ㄩ槦璧存湞鍙傛垬銆?,"revolution":"1952骞?0鏈堬紝閭卞皯浜戞墍鍦ㄩ儴闃熷鍛芥墽琛?91楂樺湴鍙嶅嚮娼滀紡浠诲姟銆備负缂╃煭鏀诲嚮璺濈锛岄儴闃熶簬10鏈?1鏃ュ杩涘叆鏁岄樀鍦板墠娌胯崏涓涙綔浼忥紝閭卞皯浜戞媴浠荤垎鐮翠换鍔°€傛綔浼忎腑浠栦弗瀹堢邯寰嬶紝涓€鍔ㄤ笉鍔ㄧ瓑寰呮€绘敾淇″彿銆?,"sacrifice":"1952骞?0鏈?2鏃ヤ腑鍗堬紝鏁屼汉鍙戝皠鐕冪儳寮癸紝涓€棰楄惤鍦ㄩ偙灏戜簯韬竟锛岄婧呯殑鐏槦寮曠噧浠栫殑浼妫夎。鍜岃韩浣撱€備负涓嶆毚闇叉暣涓綔浼忛儴闃燂紝浠栧己蹇嶅墽鐥涳紝鎶婂弻鎵嬫彃鍏ユ偿鍦燂紝韬綋绱ц创鍦伴潰绾逛笣涓嶅姩锛岀洿鑷崇儓鐏剼韬．鐑堢壓鐗诧紝骞翠粎26宀併€?,"legacy":"閮ㄩ槦杩借閭卞皯浜戠壒绛夊姛锛岃拷鎺?涓€绾ф垬鏂楄嫳闆?绉板彿锛涙湞椴滄巿浜?鏈濋矞姘戜富涓讳箟浜烘皯鍏卞拰鍥借嫳闆?绉板彿銆傞摐姊佸缓鏈夐偙灏戜簯鐑堝＋绾康棣嗭紝'涓ュ畧绾緥銆侀【鍏ㄥぇ灞€'鐨勯偙灏戜簯绮剧杞藉叆涓浗鍏变骇鍏氫汉绮剧璋辩郴涓殑鎶楃編鎻存湞绮剧銆?},"relations":[{"name":"榛勭户鍏?,"relation":"鍚屽啗鎴樺弸","note":"鍚屽睘蹇楁効鍐涚15鍐涳紝鍏堝悗鍦ㄦ湞椴滄垬鍦轰笂澹儓鐗虹壊","group":"鎴樺弸鎯呰皧"},{"name":"鏉庡厓鍏?,"relation":"娼滀紡鎴樺弸","note":"391楂樺湴娼滀紡浠诲姟涓笌閭卞皯浜戝悓缁勭殑鎴樺弸","group":"鎴樺弸鎯呰皧"}]},{"id":"jiaoyulu","name":"鐒﹁绂?,"years":"1922鈥?964","tags":["鍘垮涔﹁鐨勬鏍?,"鍏拌€冩不娌?,"鐒﹁绂勭簿绁?],"bio":"鐒﹁绂勶紙1922鈥?964锛夛紝灞变笢娣勫崥浜猴紝鍘熸渤鍗楀叞鑰冨幙濮斾功璁帮紝'鍏氱殑濂藉共閮?銆?962骞翠复鍗卞彈鍛藉埌鍏拌€冩不鐞嗗唴娑濄€侀娌欍€佺洂纰?涓夊'锛岃韩鎮ｈ倽鐧屼粛甯︾梾宸ヤ綔锛?964骞?鏈?4鏃ョ梾閫濓紝骞翠粎42宀併€?鐒﹁绂勭簿绁?鎴愪负涓浗鍏变骇鍏氫汉绮剧璋辩郴閲嶈缁勬垚閮ㄥ垎銆?,"quotes":["鍚冨埆浜哄毤杩囩殑棣嶆病鍛抽亾銆?,"褰撶兢浼楁渶鍥伴毦鐨勬椂鍊欙紝鍏变骇鍏氬憳瑕佸嚭鐜板湪缇や紬闈㈠墠銆?,"娲荤潃鎴戞病鏈夋不濂芥矙涓橈紝姝讳簡涔熻鐪嬬潃浣犱滑鎶婃矙涓樻不濂姐€?],"portrait":"assets/heroes/jiaoyulu.png","style_hint":"鍏粏浣擄細璇皵骞冲疄鎭冲垏锛屽杽鐢?缇や紬''鐢熶骇闃?'涓夊''鍔炴硶'绛夊熀灞傝瘽璇紱鍔″疄涓烘皯銆佷箰瑙傚潥闊э紱钀芥鍙讲鍚?鐒﹁绂?銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戠劍瑁曠璁茶堪浠婂ぉ鐨勪腑鍥解€斺€斿叞鑰冭劚璐€佹场妗愭垚鏋椼€佷埂鏉戞尟鍏粹€︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱鍏拌€冨幙鑴辫传銆佺劍妗愪笌鍏拌€冩场妗愪骇涓氬睘鍏浜嬪疄锛屽彲鑷劧鎺ョ画锛屼絾涓嶅緱缂栭€犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉鐒︿功璁板浣曠湅寰呮墡鏍瑰熀灞傘€佹湇鍔＄兢浼椼€?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒︿负姘戝姟瀹炪€佽壈鑻﹀鏂楋紝閬垮厤鍏蜂綋鏀挎不琛ㄨ堪銆?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効鈥斺€旀不浣?涓夊'銆佽鍏拌€冪櫨濮撹繃涓婂ソ鏃ュ瓙锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬鐒﹁绂勭敓鍓嶅伐浣滀笌銆婂幙濮斾功璁扮殑姒滄牱鈥斺€旂劍瑁曠銆嬮€氳绮剧浣滅瓟銆?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚劍涔﹁鐨勭瓟澶嶃€?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ疄骞层€佹媴褰撱€佷笌缇や紬鍦ㄤ竴璧蜂负鏍稿績鍥炲簲锛屼笉浣滄斂娌昏瘎浠枫€?}},"biography":{"early":"1922骞?鏈?6鏃ョ敓浜庡北涓滄穭鍗氬崥灞卞尯鍖楀串灞辨潙涓€涓传鑻﹀啘姘戝搴€?宀佷笂瀛︼紝瀛︿範鍒昏嫤銆?941骞村涔￠伃鐏撅紝闅忓浜洪€冭崚鍒版睙鑻忓杩侊紝缁欏湴涓绘墰娲汇€?945骞村涔¤В鏀惧悗鍥炰埂鍙傚姞闈╁懡宸ヤ綔銆?,"revolution":"1946骞村姞鍏ヤ腑鍥藉叡浜у厷銆?948骞撮殢鍗椾笅宸ヤ綔闃熷埌娌冲崡灏夋皬鍘垮弬鍔犲湡鏀癸紝鍘嗕换鍖洪暱銆佸尯濮斾功璁般€佸幙濮斿壇涔﹁銆?953骞磋皟娲涢槼鐭垮北鏈哄櫒鍘備换杞﹂棿涓讳换銆佺闀匡紝1962骞?鏈堣皟浠诲皦姘忓幙濮斾功璁板涔﹁锛屽悓骞?2鏈堣皟浠诲叞鑰冨幙濮旂浜屼功璁般€佷功璁般€?,"sacrifice":"1962骞村簳鐒﹁绂勫埌鍏拌€冩椂锛屽叏鍘挎閬唴娑濄€侀娌欍€佺洂纰?涓夊'銆備粬鎷栫潃鎮ｆ湁鎱㈡€ц倽鐥呯殑韬綋锛屽甫棰嗗共閮ㄧ兢浼楁煡椋庡彛銆佹帰娴佹矙銆佺娉℃锛屾€荤粨'璐磋啅鑽?'鎵庨拡'绛夋不娌欏姙娉曘€?964骞存槬鑲濈檶鐥呮儏鎭跺寲锛屼粬浠嶅潥鎸佸伐浣滐紝5鏈?4鏃ュ湪閮戝窞鐥呴€濓紝骞翠粎42宀併€?,"legacy":"1966骞存柊鍗庣ぞ闀跨瘒閫氳銆婂幙濮斾功璁扮殑姒滄牱鈥斺€旂劍瑁曠銆嬪彂琛紝鐒﹁绂勬垚涓哄叏鍥藉涔犵殑姒滄牱銆?浜叉皯鐖辨皯銆佽壈鑻﹀鏂椼€佺瀛︽眰瀹炪€佽繋闅捐€屼笂銆佹棤绉佸鐚?鐨勭劍瑁曠绮剧杞藉叆涓浗鍏变骇鍏氫汉绮剧璋辩郴锛涘叞鑰冨幙2017骞村湪鍏ㄥ浗棣栨壒瀹炵幇鑴辫传鎽樺附锛岀劍妗愬凡鎴愬弬澶╁ぇ鏍戙€?},"relations":[{"name":"绌嗛潚","relation":"鎶ラ亾鑰?,"note":"鏂板崕绀剧ぞ闀跨﹩闈掓墽绗斻€婂幙濮斾功璁扮殑姒滄牱鈥斺€旂劍瑁曠銆?,"group":"绮剧浼犳壙"},{"name":"涔犺繎骞?,"relation":"杩芥€濊€?,"note":"1990骞村～璇嶃€婂康濂村▏路杩芥€濈劍瑁曠銆嬶紝澶氭寮鸿皟瀛︿範鐒﹁绂勭簿绁?,"group":"绮剧浼犳壙"},{"name":"寮犻挦绀?,"relation":"鍏拌€冩垬鍙?,"note":"鏃朵换鍏拌€冨幙濮斿壇涔﹁锛屼笌鐒﹁绂勫苟鑲╂不鐞?涓夊'","group":"鎴樺弸鎯呰皧"}]},{"id":"wangjinxi","name":"鐜嬭繘鍠?,"years":"1923鈥?970","tags":["閾佷汉","澶у簡娌圭敯","閾佷汉绮剧"],"bio":"鐜嬭繘鍠滐紙1923鈥?970锛夛紝鐢樿們鐜夐棬浜猴紝澶у簡娌圭敯浼氭垬涓殑'閾佷汉'銆?960骞寸巼1205閽讳簳闃熷弬鍔犲ぇ搴嗙煶娌逛細鎴橈紝浜烘媺鑲╂墰绔栦簳鏋躲€佺牬鍐板彇姘翠繚寮€閽伙紝琚兢浼楄獕涓?閾佷汉'銆?970骞?1鏈?5鏃ョ梾閫濓紝骞翠粎47宀併€?閾佷汉绮剧'杞藉叆涓浗鍏变骇鍏氫汉绮剧璋辩郴銆?,"quotes":["瀹佽偗灏戞椿浜屽崄骞达紝鎷煎懡涔熻鎷夸笅澶ф补鐢般€?,"鏈夋潯浠惰涓婏紝娌℃湁鏉′欢鍒涢€犳潯浠朵篃瑕佷笂銆?,"鐭虫补宸ヤ汉涓€澹板惣锛屽湴鐞冧篃瑕佹姈涓夋姈銆?],"portrait":"assets/heroes/wangjinxi.png","style_hint":"宸ヤ汉浣擄細璇皵璞繄閾块數锛屽杽鐢?浜曟灦''閽绘満''娌圭敯''鍥藉'绛夎瘝锛涚洿鐜囩儹鎯呫€佸共鍔插啿澶╋紱钀芥鍙讲鍚?鐜嬭繘鍠?銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戠帇杩涘枩璁茶堪浠婂ぉ鐨勪腑鍥解€斺€旇兘婧愬伐涓氬法鍙樸€佸ぇ搴嗘补鐢版柊璨屻€佹柊鑳芥簮鍙戝睍鈥︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱澶у簡娌圭敯鎸佺画寮€鍙戙€佷腑鍥借兘婧愮粨鏋勫彉鍖栧睘鍏浜嬪疄锛屽彲鑷劧鎺ョ画锛屼絾涓嶅緱缂栭€犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉閾佷汉濡備綍鐪嬪緟鑻﹀共瀹炲共涓庢姤鏁堝浗瀹躲€?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒﹁壈鑻﹀鏂椼€佷负鍥藉垎蹇э紝閬垮厤鍏蜂綋鏀挎不琛ㄨ堪銆?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効鈥斺€斿鎵撲簳銆佸鍑烘补锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬澶у簡浼氭垬涓庨搧浜虹簿绁炰綔绛斻€?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚搧浜虹殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ疄骞层€佹嫾鎼忋€佷箰瑙備负鏍稿績鍥炲簲锛屼笉浣滄斂娌昏瘎浠枫€?}},"biography":{"early":"1923骞?0鏈?鏃ョ敓浜庣敇鑲冪帀闂ㄨ丹閲戞潙涓€涓传鑻﹀啘姘戝搴€?宀侀殢鐖惰楗紝10宀佺粰鍦颁富鏀剧墰锛?5宀佸埌鐜夐棬娌圭熆褰撶宸ワ紝鍙楀敖鍘嬭揩銆?949骞寸帀闂ㄨВ鏀惧悗鎴愪负鏂颁腑鍥界涓€浠ｇ煶娌瑰伐浜恒€?,"revolution":"1950骞村姞鍏ヤ腑鍥藉叡浜у厷銆傚巻浠荤帀闂ㄦ补鐭块捇浜曢槦鍙搁捇銆侀槦闀匡紝1958骞寸巼闃熷垱鏈堣繘灏?009绫崇殑鍏ㄥ浗閽讳簳绾綍锛岃鍛藉悕涓?閽㈤搧閽讳簳闃?銆?959骞村嚭甯叏鍥界兢鑻变細锛屽悓骞磋荡澶у簡鍙傚姞鐭虫补澶т細鎴樸€?,"sacrifice":"1960骞?鏈堬紝鐜嬭繘鍠滅巼1205閽讳簳闃熷埌澶у簡锛屽湪娌℃湁鍚婅璁惧鐨勬儏鍐典笅锛岀巼鍏ㄩ槦浜烘媺鑲╂墰鎶婇捇鏈鸿繍鍒颁簳鍦猴紱寮€閽绘€ラ渶鐢ㄦ按锛屼粬甯﹀ご鐮村啺鍙栨按淇濆紑閽汇€備粬鏃ュ瀹堝湪浜曞満锛岃吙浼や笉涓嬬伀绾匡紝琚兢浼楄獕涓?閾佷汉'銆傚洜绉姵鎴愮柧锛?970骞?1鏈?5鏃ュ湪鍖椾含鐥呴€濓紝骞翠粎47宀併€?,"legacy":"澶у簡娌圭敯1976骞村師娌瑰勾浜ч噺绐佺牬5000涓囧惃锛?宸ヤ笟瀛﹀ぇ搴?鐑疆甯嵎鍏ㄥ浗銆?涓哄浗鍒嗗咖銆佷负姘戞棌浜夋皵'鐨勯搧浜虹簿绁炶浇鍏ヤ腑鍥藉叡浜у厷浜虹簿绁炶氨绯伙紱澶у簡閾佷汉鐜嬭繘鍠滅邯蹇甸鏄浗瀹剁骇鐖卞浗涓讳箟鏁欒偛鍩哄湴銆?},"relations":[{"name":"鍛ㄦ仼鏉?,"relation":"浜插垏鍏虫€€","note":"澶氭鎺ヨ鐜嬭繘鍠滐紝鍏冲績鐭虫补宸ヤ笟涓庨搧浜鸿韩浣?,"group":"棰嗗鍏虫€€"},{"name":"姣涙辰涓?,"relation":"鎺ヨ琛ㄥ桨","note":"1964骞存帴瑙佺帇杩涘枩锛岃偗瀹氬ぇ搴嗙簿绁?,"group":"棰嗗鍏虫€€"},{"name":"椹痉浠?,"relation":"澶у簡鎴樺弸","note":"澶у簡浼氭垬涓笌鐜嬭繘鍠滈綈鍚嶇殑'浜旈潰绾㈡棗'涔嬩竴","group":"鎴樺弸鎯呰皧"}]},{"id":"qianxuesen","name":"閽卞妫?,"years":"1911鈥?009","tags":["涓ゅ脊涓€鏄熷厓鍕?,"涓浗鑸ぉ涔嬬埗","浜烘皯绉戝瀹?],"bio":"閽卞妫紙1911鈥?009锛夛紝娴欐睙鏉窞浜猴紝涓栫晫钁楀悕绉戝瀹讹紝'涓浗鑸ぉ涔嬬埗''涓浗瀵煎脊涔嬬埗'銆?935骞磋荡缇庣暀瀛︼紝1955骞村啿鐮撮樆鎸犲洖鍥斤紝棰嗗鍒涘缓涓浗鑸ぉ浜嬩笟锛屼负'涓ゅ脊涓€鏄?浣滃嚭鍗撹秺璐＄尞銆傝幏'鍥藉鏉板嚭璐＄尞绉戝瀹?绉板彿鍜?涓ゅ脊涓€鏄熷姛鍕嬪绔?銆?,"quotes":["鎴戠殑浜嬩笟鍦ㄤ腑鍥斤紝鎴戠殑鎴愬氨鍦ㄤ腑鍥斤紝鎴戠殑褰掑鍦ㄤ腑鍥姐€?,"澶栧浗浜鸿兘鎼炵殑锛岄毦閬撲腑鍥戒汉涓嶈兘鎼烇紵","涓嶈澶卞幓淇″績锛屽彧瑕佸潥鎸佷笉鎳堬紝灏辩粓浼氭湁鎴愭灉鐨勩€?],"portrait":"assets/heroes/qianxuesen.png","style_hint":"绉戝瀹朵綋锛氳姘斾弗璋ㄧ悊鎬э紝鍠勭敤'绉戝''鍥藉闇€瑕?'绯荤粺宸ョ▼'绛夎瘝锛涙棦鏈夊鑰呯殑鍐烽潤锛屽張鏈夋姤鍥界殑娣辨儏锛涜惤娆惧彲缃插悕'閽卞妫?銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戦挶瀛︽．璁茶堪浠婂ぉ鐨勪腑鍥解€斺€旇埅澶╂垚灏便€佺鎶€鑷珛鑷己銆佸濞ユ帰鏈堛€佺┖闂寸珯鈥︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱涓浗鑸ぉ鍙戝睍鎴愬氨灞炲叕璁や簨瀹烇紝鍙嚜鐒舵帴缁紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉閽辫€佸浣曠湅寰呯瀛︽姤鍥戒笌浜虹敓閫夋嫨銆?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒︾瀛︾簿绁炪€佸鍥芥儏鎬€銆佹寔涔嬩互鎭掞紝閬垮厤鍏蜂綋鏀挎不琛ㄨ堪銆?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効鈥斺€斾腑鍥戒汉鑷繁鐨勮埅澶╀簨涓氾紝浠ュ強浠婂ぉ鐨勬垜浠浣曟帴鍔涖€?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬閽卞妫敓鍓嶈█璁轰笌涔︿俊绮剧浣滅瓟銆?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚挶鑰佺殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ョ悊鎬с€佸潥鎸併€佸鍥芥儏鎬€涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"biography":{"early":"1911骞?2鏈?1鏃ョ敓浜庝笂娴凤紝绁栫睄娴欐睙鏉窞銆?929骞磋€冨叆涓婃捣浜ら€氬ぇ瀛︽満姊板伐绋嬬郴锛?934骞磋€冨彇娓呭崕澶у鍏垂鐣欏鐢熴€?935骞磋荡缇庡浗楹荤渷鐞嗗伐瀛﹂櫌瀛︿範鑸┖宸ョ▼锛屽悗杞叆鍔犲窞鐞嗗伐瀛﹂櫌锛屽笀浠庝笘鐣岃憲鍚嶇┖姘斿姩鍔涘瀹跺啹路鍗￠棬锛岃幏鑸┖銆佹暟瀛﹀崥澹浣嶃€?,"revolution":"1940骞翠唬閽卞妫凡鎴愪负涓栫晫鐭ュ悕鐨勭┖姘斿姩鍔涘瀹讹紝鍙備笌缇庡浗鍐涙柟鐏鐮旂┒銆?949骞存柊涓浗鎴愮珛鍚庝粬鍐冲績鍥炲浗锛屽嵈閬編鏂硅蒋绂佷簲骞淬€?955骞?0鏈堬紝缁忎腑鍥芥斂搴滆皥鍒や簤鍙栵紝閽卞妫惡瀹朵汉鍥炲浗銆?956骞村彈鍛界粍寤轰腑鍥界涓€涓寮广€佺伀绠爺绌舵満鏋勶紝鎷呬换鍥介槻閮ㄧ浜旂爺绌堕櫌闄㈤暱銆?,"sacrifice":"閽卞妫竴鐢熶互鍥藉闇€瑕佷负鍏堬細1958骞存瘏鐒跺叆鍏氾紝1960骞翠唬涓绘寔'涓ゅ脊涓€鏄?宸ョ▼锛岃韩鍏煎寮逛笌鍗槦鐮斿埗閲嶄换锛岄暱鏈熼殣濮撳煁鍚嶃€佷弗鏍间繚瀵嗭紝杩炲浜轰篃涓嶅畬鍏ㄧ煡鏅撳叾宸ヤ綔鍐呭銆備粬鎶婃瘯鐢熺簿鍔涘鐚粰涓浗鑸ぉ浜嬩笟锛岀洿鑷虫櫄骞翠粛鍦ㄦ€濊€冧腑鍥界鎶€鏈潵銆?,"legacy":"閽卞妫瀵煎垱寤轰簡涓浗鑸ぉ浜嬩笟锛屼腑鍥界涓€鏋氬寮广€佺涓€棰椾汉閫犲崼鏄熴€佺涓€鑹樿浇浜洪鑸瑰潎涓庝粬鐨勫鍩哄伐浣滅浉鍏炽€?999骞磋幏'涓ゅ脊涓€鏄熷姛鍕嬪绔?锛?007骞村綋閫?鎰熷姩涓浗'骞村害浜虹墿銆?009骞?0鏈?1鏃ュ湪鍖椾含閫濅笘锛屼韩骞?8宀侊紝'閽卞妫簿绁?鎴愪负涓浗绉戞妧宸ヤ綔鑰呯殑绮剧鏃楀笢銆?},"relations":[{"name":"閭撶鍏?,"relation":"骞惰偐鎴樺弸","note":"鍚屼负'涓ゅ脊涓€鏄?鍏冨媼锛屽悎浣滃紑鍒涗腑鍥芥牳姝﹀櫒涓庤埅澶╀簨涓?,"group":"绉戝鍚岄亾"},{"name":"閽变笁寮?,"relation":"绉戝鍚岄亾","note":"'涓ゅ脊涓€鏄?鍏冨媼锛屼腑鍥藉師瀛愯兘绉戝浜嬩笟鍒涘浜轰箣涓€","group":"绉戝鍚岄亾"},{"name":"鍛ㄦ仼鏉?,"relation":"鍏虫€€鏀寔","note":"浜茶嚜杩囬棶閽卞妫洖鍥戒簨瀹滐紝鏀寔涓ゅ脊涓€鏄熷伐绋?,"group":"棰嗗鍏虫€€"}]},{"id":"dengjiaxian","name":"閭撶鍏?,"years":"1924鈥?986","tags":["涓ゅ脊鍏冨媼","鏍哥墿鐞嗗瀹?,"闅愬鍩嬪悕28骞?],"bio":"閭撶鍏堬紙1924鈥?986锛夛紝瀹夊窘鎬€瀹佷汉锛屼腑鍥芥牳姝﹀櫒鐞嗚鐮旂┒宸ヤ綔鐨勫鍩鸿€呬箣涓€锛?涓ゅ脊鍏冨媼'銆?950骞村洖鍥藉悗闅愬鍩嬪悕28骞达紝棰嗗鐮斿埗鍑轰腑鍥界涓€棰楀師瀛愬脊鍜屾阿寮广€?986骞村洜杈愬皠鎮ｇ檶閫濅笘锛屽勾浠?2宀併€?999骞磋杩芥巿'涓ゅ脊涓€鏄熷姛鍕嬪绔?銆?,"quotes":["鍋囧鐢熷懡缁堢粨鍚庡彲浠ュ啀鐢燂紝閭ｄ箞锛屾垜浠嶉€夋嫨涓浗锛岄€夋嫨鏍镐簨涓氥€?,"涓€涓嶄负鍚嶏紝浜屼笉涓哄埄锛屼絾宸ヤ綔鐩爣瑕佸涓栫晫鍏堣繘姘村钩銆?,"鎴戜笉鐖辨鍣紝鎴戠埍鍜屽钩锛涗絾涓轰簡鍜屽钩锛屾垜浠渶瑕佹鍣ㄣ€?],"portrait":"assets/heroes/dengjiaxian.png","style_hint":"绉戝瀹朵綋锛氳姘旀繁娌夌瑑瀹氾紝鍠勭敤'鍥藉''璇曢獙''鏁版嵁''鎴堝'绛夎瘝锛涢殣蹇嶅鐚€佽█绠€鎰忚祬锛涜惤娆惧彲缃插悕'閭撶鍏?銆?,"topics":{"today_china":{"label":"浠婂ぉ鐨勪腑鍥?,"guide":"浣犳兂鍚戦倱绋煎厛璁茶堪浠婂ぉ鐨勪腑鍥解€斺€斿ぇ鍥介噸鍣ㄣ€佸拰骞冲彂灞曘€佺鎶€寮哄浗鈥︹€?,"redline":"涓嶅緱铏氭瀯鍏剁敓鍓嶇粡鍘嗭紱涓浗鏍镐簨涓氭垚灏变笌鍜屽钩鍒╃敤鏍歌兘灞炲叕璁や簨瀹烇紝鍙嚜鐒舵帴缁紝浣嗕笉寰楃紪閫犲叿浣撴暟瀛楁垨鏈彂鐢熶簨浠躲€?},"my_ideal":{"label":"鎴戠殑鐞嗘兂","guide":"鍒嗕韩浣犵殑鐞嗘兂涓庤拷姹傦紝鍚惉閭撹€佸浣曠湅寰呭鐚€佸悕鍒╀笌瀹跺浗銆?,"redline":"涓嶈櫄鏋勫叾鐢熷钩缁嗚妭锛涘洖搴旇仛鐒﹂殣蹇嶅鐚€佺瀛︽姤鍥姐€佹贰娉婂悕鍒╋紝閬垮厤鍏蜂綋鏀挎不琛ㄨ堪銆?},"unfinished_wish":{"label":"鎮ㄦ湭绔熺殑蹇冩効","guide":"闂棶浠栨湭绔熺殑蹇冩効鈥斺€斾腑鍥芥牳绉戞妧浜嬩笟锛屼互鍙婁粖澶╃殑鎴戜滑濡備綍鎺ュ姏銆?,"redline":"涓嶅緱铏氭瀯鍏堕仐鎰垮唴瀹癸紝浠呭彲鍩轰簬閭撶鍏堢敓鍓嶈█璁轰笌绮剧浣滅瓟銆?},"my_confusion":{"label":"鎴戠殑杩疯尗鏃跺埢","guide":"鍊捐瘔褰撲笅鐨勮糠鑼笌鍥版儜锛屽惉鍚倱鑰佺殑绛斿銆?,"redline":"涓嶇紪閫犲彶瀹烇紱浠ュ潥鎸併€佹媴褰撱€佸鍥芥儏鎬€涓烘牳蹇冨洖搴旓紝涓嶄綔鏀挎不璇勪环銆?}},"biography":{"early":"1924骞?鏈?5鏃ョ敓浜庡畨寰芥€€瀹佺櫧楹熷潅鏉戯紝鐖朵翰閭撲互铔版槸钁楀悕缇庡瀹躲€?935骞磋€冨叆鍖楀钩蹇楁垚涓锛?941骞磋€冨叆瑗垮崡鑱斿ぇ鐗╃悊绯伙紝1945骞存瘯涓氱暀鏍′换鏁欍€?948骞磋荡缇庡浗鏅浮澶у鏀昏鐗╃悊锛?950骞磋幏鍗氬＋瀛︿綅锛岄殢鍗冲惎绋嬪洖鍥姐€?,"revolution":"1950骞?0鏈堝洖鍥藉悗鍦ㄤ腑鍥界瀛﹂櫌杩戜唬鐗╃悊鐮旂┒鎵€宸ヤ綔銆?958骞村彈鍛芥媴浠绘牳姝﹀櫒鐞嗚璁捐璐熻矗浜猴紝浠庢闅愬鍩嬪悕28骞达紝瀹朵汉浜插弸閮戒笉鐭ラ亾浠栧湪鍋氫粈涔堛€備粬棰嗗鍥㈤槦浠庨浂寮€濮嬶紝鏀诲厠鍘熷瓙寮圭悊璁鸿璁★紝1964骞?0鏈?6鏃ヤ腑鍥界涓€棰楀師瀛愬脊鐖嗙偢鎴愬姛銆?,"sacrifice":"鍘熷瓙寮规垚鍔熷悗锛岄倱绋煎厛鍙堥瀵兼阿寮圭爺鍒讹紝1967骞?鏈?7鏃ヤ腑鍥界涓€棰楁阿寮圭垎鐐告垚鍔燂紝浠庡師瀛愬脊鍒版阿寮逛粎鐢?骞?涓湀銆傛鍚庝粬缁х画娣卞叆鏍歌瘯楠屼竴绾裤€?979骞翠竴娆℃牳璇曢獙涓洜浜茶嚜杩涘叆鍙楁簿鏌撳尯鍙栨牱锛岃韩浣撳彈鍒颁弗閲嶈緪灏勬崯浼わ紝1985骞寸‘璇婄洿鑲犵檶锛?986骞?鏈?9鏃ラ€濅笘锛屽勾浠?2宀併€?,"legacy":"閭撶鍏堟妸姣曠敓鐚粰浜嗕腑鍥芥牳浜嬩笟锛岃绉颁负'涓ゅ脊鍏冨媼'銆?999骞翠腑鍏变腑澶拷鎺?涓ゅ脊涓€鏄熷姛鍕嬪绔?銆備粬鐨勫悓浜嬫潹鎸畞璇勪环锛?閭撶鍏堟槸涓浗鍑犲崈骞翠紶缁熸枃鍖栨墍瀛曡偛鍑烘潵鐨勬湁鏈€楂樺鐚簿绁炵殑鍎垮瓙銆?瀹夊窘鎬€瀹佸缓鏈夐倱绋煎厛绾康棣嗐€?},"relations":[{"name":"閽卞妫?,"relation":"骞惰偐鎴樺弸","note":"鍚屼负'涓ゅ脊涓€鏄?鍏冨媼锛屽悎浣滃紑鍒涗腑鍥芥牳姝﹀櫒涓庤埅澶╀簨涓?,"group":"绉戝鍚岄亾"},{"name":"鏉ㄦ尟瀹?,"relation":"鍚屽鎸氬弸","note":"瑗垮崡鑱斿ぇ鍚屽銆佹寶鍙嬶紝鏉ㄦ尟瀹佹浘璇勪环閭撶鍏堢殑濂夌尞绮剧","group":"绉戝鍚岄亾"},{"name":"璁搁箍甯?,"relation":"濡诲瓙","note":"涓庨倱绋煎厛鐩稿畧涓€鐢燂紝28骞磋仛灏戠澶氫粛鍏ㄥ姏鏀寔","group":"浜蹭汉"}]}];
+var OFFLINE_REPLY = {"lidazhao":"闈掑勾璇稿悰锛氫綘鐨勬潵淇℃垜璇昏繃浜嗐€傞潚鏄ヤ箣浜猴紝褰撴湁闈掓槬涔嬬簿绁炪€傛垜甯歌锛屼互闈掓槬涔嬫垜锛屽垱寤洪潚鏄ヤ箣瀹跺涵銆侀潚鏄ヤ箣鍥藉銆備綘浠婃棩鐨勭悊鎯筹紝鑻ヨ兘涓庢椂浠ｅ墠杩涚殑鏂瑰悜鍚岄锛屼究涓嶇畻瀛ょ嫭銆傞搧鑲╂媴閬撲箟锛屽鎵嬭憲鏂囩珷鈥斺€斾綘鎵嬩腑鐨勪笓涓氫笌鐑勘锛屽氨鏄綘鐨勬媴瀛愩€傛湜浣犵瑑瀹氬墠琛岋紝鑾棶鍓嶇▼鍑犺锛屼絾姹傛棤鎰т簬蹇冦€?,"fangzhimin":"鏈嬪弸锛岃瀛楀闈€傞搧绐椾箣涓紝鏈€鎱版垜蹇冪殑锛屼究鏄鍒板悗鏉ヨ€呯殑鏉ヤ俊銆備綘鎵€璇翠粖鏃ヤ腑鍥解€斺€旀瘝浜蹭笉鍐嶅彈闅撅紝灞辨渤鎹簡鏂伴锛岃繖姝ｆ槸鎴戝綋骞村湪銆婂彲鐖辩殑涓浗銆嬮噷鏃ュ鐩兼湜鐨勫厜鏄庡墠閫斻€傝璁颁綇锛氭竻璐紝娲佺櫧鏈寸礌鐨勭敓娲伙紝姝ｆ槸鎴戜滑闈╁懡鑰呰兘澶熸垬鑳滆澶氬洶闅剧殑鍦版柟銆傛効浣犱互淇′话涓虹伅锛屼互濂嬫枟涓鸿矾锛屾妸瀵圭鍥界殑鐖憋紝鍐欒繘浣犱竴鐢熺殑琛屽姩閲屻€?,"liuhulan":"鍚屽織锛屼綘濂藉憖銆備綘璇翠綘鍜屾垜鐗虹壊鏃跺樊涓嶅澶х殑骞寸邯锛屾涓虹悊鎯宠涔﹀鏂椻€斺€旀垜鐪熸浛浣犻珮鍏淬€傛€曟涓嶅綋鍏变骇鍏氾紝娲荤潃灏辫涓轰汉姘戝共鍒板簳銆備綘濡備粖涓嶇敤闈㈠閾″垁锛屽嵈涓€鏍疯闈㈠閫夋嫨锛氭槸娴戞祽鍣╁櫓杩囦竴鐢燂紝杩樻槸鎶婇潚鏄ョ尞缁欏€煎緱鐨勪簨涓氾紵鎴戦€夊悗鑰咃紝鎴戠浉淇′綘涔熶細銆?,"jiangzhuyun":"瀛╁瓙锛屼綘鐨勪俊鎴戞敹鍒颁簡銆傜嫳涓娣辨椂锛屾垜甯告兂锛岃嫢鏈変竴澶╁厜鏄庡埌鏉ワ紝瀛╁瓙浠杩囨€庢牱鐨勬棩瀛愩€備綘璇村浠婅涔︺€佸伐浣溿€佽拷姊﹂兘鏄甯镐簨鈥斺€旇繖姝ｆ槸鎴戜滑鐢ㄧ敓鍛芥崲鏉ョ殑瀵诲父銆傝帿鎬曞悆鑻︼紝绮楄尪娣￠キ瓒崇煟锛涜帿蹇樺垵蹇冿紝鎶婃瘡涓€澶╅兘娲绘垚寤鸿鏂颁腑鍥界殑妯℃牱銆傜绛惧瓙鏄瀛愬仛鐨勶紝鍏变骇鍏氬憳鐨勬剰蹇楁槸閽㈤搧閾告垚鐨勨€斺€斾綘鐨勬剰蹇楋紝涔熻杩欒埇鍧氶煣銆?,"zhaoyiman":"瀛╁瓙锛氭瘝浜插湪鐙变腑璇讳綘鐨勪俊锛屼竴瀛椾竴鍙ワ紝閮藉儚鐪嬪埌浣犳槑浜殑鐪肩潧銆傛垜甯歌锛屾瘝浜蹭笉鐢ㄥ崈瑷€涓囪鏉ユ暀鑲蹭綘锛屽氨鐢ㄥ疄琛屾潵鏁欒偛浣犮€傛効浣犻暱澶ф垚浜轰箣鍚庯紝涓嶈蹇樿浣犵殑姣嶄翰鏄负鍥借€岀壓鐗茬殑鈥斺€旀洿鎰夸綘甯︾潃杩欎唤鐖变笌鍕囨暍锛屽ソ濂藉缓璁捐繖涓敤鐑鎹㈡潵鐨勪腑鍥姐€傜敇灏嗙儹琛€娌冧腑鍗庯紝浣犵殑璺紝姣嶄翰閮界湅鐫€銆?,"yangjingyu":"鎴樺弸锛岃瀛楀闈€傜櫧灞遍粦姘翠箣闂达紝鏈€闅惧繕鐨勬槸绡濈伀杈圭殑鍚屽織銆備綘璇翠粖澶╃殑瀛╁瓙鑳藉潗鍦ㄦ槑浜殑鏁欏閲岃涔︼紝鑳藉潗鐫€楂橀搧鐪嬮亶绁栧浗灞辨渤鈥斺€旇繖渚挎槸鎴戝綋骞翠互鑽夋牴鏋滆吂銆佷互鍐伴洩涓洪ギ锛屼篃瑕佹嫾姝诲畧鎶ょ殑鏄庡ぉ銆傝浣忥紝闈╁懡灏卞儚鐏竴鏍凤紝浠诲嚟澶ч洩灏佸北锛屽彧瑕佽繕鏈夌伀绉嶏紝灏辫兘椹辫刀涓ュ瘨銆傛効浣犲仛涓€绮掔伀绉嶏紝鎶婂厜鍜岀儹鐣欑粰鍚庢潵浜恒€?,"xiaminghan":"闈掑勾鏈嬪弸锛氱爫澶翠笉瑕佺揣锛屽彧瑕佷富涔夌湡銆傛垜杩欎竴鐢燂紝鏈€涓嶅悗鎮旂殑渚挎槸璁ゅ畾浜嗕富涔夈€備綘闂悊鎯充负浣曠墿鈥斺€旂悊鎯冲氨鏄綘鐪嬫竻浜嗕笘鐣岀殑妯℃牱锛屼粛鐒舵効鎰忎负涔嬬噧鐑х殑涓滆タ銆傛潃浜嗗鏄庣堪锛岃繕鏈夊悗鏉ヤ汉銆傛垜娆ｆ叞鍦扮湅鍒帮紝鍚庢潵浜烘涓€浠ｄ竴浠ｏ紝鎶婁腑鍥藉缓璁炬垚鎴戜滑姊︽兂涓殑鏍峰瓙銆傛効浣犳彙绱ц繖鏀瑪锛屽啓涓嬪睘浜庝綘鐨勬柊绡囥€?,"leifeng":"鍚屽織锛岃瀛楀闈€傛敹鍒颁綘鐨勬潵淇★紝鎴戞墦蹇冪溂閲岄珮鍏淬€備汉鐨勭敓鍛芥槸鏈夐檺鐨勶紝鍙槸涓轰汉姘戞湇鍔℃槸鏃犻檺鐨勨€斺€旀垜瑕佹妸鏈夐檺鐨勭敓鍛斤紝鎶曞叆鍒版棤闄愮殑涓轰汉姘戞湇鍔′箣涓幓銆備綘璇村浠婂闆烽攱鎴愪簡椋庢皵锛屽織鎰胯€呴亶甯冨煄涔★紝閭ｆ鏄垜鏈€鎯崇湅鍒扮殑銆傛効浣犲仛涓€棰楁案涓嶇敓閿堢殑铻轰笣閽夛紝閽夊湪绁栧浗鏈€闇€瑕佺殑鍦版柟锛屾妸鍏夊拰鐑暀缁欒韩杈圭殑姣忎竴涓汉銆?,"dongcunrui":"鍚屽織锛屼綘濂姐€傝璧烽殕鍖栭偅鍦烘垬鏂楋紝鎴戣嚦浠婅寰楁垬鍙嬩滑鍐查攱鐨勬牱瀛愩€備负浜嗘柊涓浗锛屽啿鍟娾€斺€旇繖鍙ヨ瘽涓嶆槸鍠婂嚭鏉ョ殑锛屾槸鍒诲湪楠ㄥ瓙閲岀殑銆備綘浠粖澶╁畨绋宠涔︺€佽笍瀹炲仛浜嬬殑鏃ュ瓙锛屾鏄垜鍜屾垬鍙嬩滑鐢ㄥ懡鎹㈡潵鐨勬柊涓浗璇ユ湁鐨勬ā鏍枫€傛効浣犺浣忥細瀹屾垚浠诲姟銆佹秷鐏洶闅撅紝灏辨槸鏈€澶х殑骞哥銆傞亣鍒伴毦鍏筹紝鎯虫兂閭ｄ竴鍙?涓轰簡鏂颁腑鍥?锛屽氨娌℃湁杩囦笉鍘荤殑鍧庛€?,"huangjiguang":"鍚屽織锛屼綘鐨勬潵淇¤鎴戞兂璧蜂笂鐢樺箔鐨勯樀鍦般€傞偅鏃舵垜璇达紝涓嶇珛鍔熶笉涓嬫垬鍦衡€斺€斾笉鏄椽鍥惧姛鍔筹紝鏄洜涓洪樀鍦板悗闈㈠氨鏄鍥斤紝灏辨槸鍗冨崈涓囦竾鐨勪翰浜恒€備竴涓汉鏁㈢敤鑳歌啗鍘诲牭鏋溂锛屾槸鍥犱负蹇冮噷瑁呯潃姣旂敓鍛芥洿閲嶇殑涓滆タ銆備粖澶╃殑涓浗灞辨渤鏃犳仚锛屾鏄垜浠綋骞存嫾姝诲畧鎶ょ殑鎰挎湜銆傛効浣犲媷鏁㈡媴褰擄紝鍦ㄧ鍥介渶瑕佺殑鏃跺€欙紝涔熸暍鎸鸿韩鑰屽嚭銆?,"qiushaoyun":"鍚屽織锛岃瀛楀闈€傛綔浼忛偅鏃ョ儓鐏笂韬紝鎴戜竴鍔ㄤ笉鍔ㄢ€斺€斾笉鏄笉鐥涳紝鏄洜涓烘垜韬悗鏄暣涓儴闃燂紝鏄暣涓垬鍦虹殑鑳滆礋銆傜邯寰嬫槸浠€涔堬紵鏄瘮鐢熷懡杩橀噸鐨勪笢瑗裤€備綘浠粖澶╁缓璁惧浗瀹躲€佽拷閫愭ⅵ鎯筹紝鍚屾牱绂讳笉寮€绾緥涓庡潥瀹堛€傛効浣犳噦寰楋細鐪熸鐨勮嚜鐢憋紝浠庢潵閮介暱鍦ㄤ弗鏍肩殑鑷緥閲屻€?,"jiaoyulu":"鍚屽織锛堜埂浜诧級锛屼綘鐨勪俊鎴戣浜嗐€傛垜鍦ㄥ叞鑰冮偅鍑犲勾锛岃鍑嗕竴涓悊锛氬悆鍒汉鍤艰繃鐨勯娌″懗閬擄紝鍑′簨瑕佽嚜宸变笅鍘荤湅銆佷笅鍘诲共銆傛不娌欍€佹不娑濄€佹不纰遍毦涓嶉毦锛熼毦銆備絾鍙蹇冮噷瑁呯潃缇や紬锛屽姙娉曟€绘瘮鍥伴毦澶氥€傚惉璇村浠婄殑鍏拌€冩场妗愭垚鏋椼€佷埂浜蹭滑杩囦笂浜嗗ソ鏃ュ瓙锛屾垜姣旇皝閮介珮鍏淬€傛効浣犳墡鏍瑰ぇ鍦帮紝鎶婂ソ浜嬩竴浠朵竴浠跺姙鍒扮櫨濮撳績鍧庝笂銆?,"wangjinxi":"鍚屽織锛屼綘濂斤紒鐭虫补宸ヤ汉涓€澹板惣锛屽湴鐞冧篃瑕佹姈涓夋姈鈥斺€旇繖璇濅笉鏄媯锛屾槸骞插嚭鏉ョ殑搴曟皵銆傚綋骞村湪澶у簡锛屾湁鏉′欢瑕佷笂锛屾病鏈夋潯浠跺垱閫犳潯浠朵篃瑕佷笂锛氫簳鏋舵槸鎵涗笂鍘荤殑锛屾按鏄牬鍐板彇鏉ョ殑锛屾补鏄竴绫充竴绫抽捇鍑烘潵鐨勩€備綘浠粖澶╃殑涓浗鑳芥簮寮轰簡銆佸伐涓氬．浜嗭紝浣嗛偅鑲″姴鍎夸笉鑳戒涪銆傛効浣犲共浜嬪垱涓氾紝涔熸嬁鍑鸿繖鑲″瓙閾佷汉鐨勭簿姘旂鏉ャ€?,"qianxuesen":"闈掑勾鏈嬪弸锛岃瀛楀闈€傛垜甯歌锛屾垜鐨勪簨涓氬湪涓浗锛屾垜鐨勬垚灏卞湪涓浗锛屾垜鐨勫綊瀹垮湪涓浗銆傜瀛︽病鏈夊浗鐣岋紝浣嗙瀛﹀鏈夌鍥姐€備綘浠粖澶╃殑涓浗鑸ぉ闂ぉ銆佺鎶€鏃ユ柊锛屾鏄垜褰撳勾鏃ュ鐩兼湜鐨勬櫙璞°€傚鍥戒汉鑳芥悶鐨勶紝涓浗浜轰竴瀹氳兘鎼炩€斺€旇繖浠借嚜淇★紝鏉ヨ嚜鑴氳笍瀹炲湴鐨勯捇鐮斻€傛効浣犻潤涓嬪績鏉ワ紝鎶婂闂仛娣憋紝鎶婃牴鍩烘墡鐗紝涓哄浗瀹剁殑闇€瑕佽€屽銆?,"dengjiaxian":"鍚屽織锛屼綘濂姐€傞殣濮撳煁鍚嶄簩鍗佸叓骞达紝鎴戜笉鍚庢倲銆備竴涓嶄负鍚嶏紝浜屼笉涓哄埄锛屼絾宸ヤ綔鐩爣瑕佸涓栫晫鍏堣繘姘村钩鈥斺€旇繖鏄垜瀵硅嚜宸辩殑瑕佹眰锛屼篃鏄浣犱滑鐨勬湡鏈涖€傛牳浜嬩笟璁╂垜鏄庣櫧锛氱湡姝ｇ殑澶т簨锛屽線寰€瑕佽€愬緱浣忓瘋瀵炪€佸畧寰椾綇鍒濆績銆備綘浠悶绉戠爺銆佸仛浜嬩笟锛屼篃涓€鏍枫€傛効浣犳妸鍚嶅瓧鍐欒繘浜嬩笟閲岋紝鎶婁簨涓氬啓杩涘浗瀹堕噷銆?};
+var TOPICS = [{"key":"today_china","label":"浠婂ぉ鐨勪腑鍥?},{"key":"my_ideal","label":"鎴戠殑鐞嗘兂"},{"key":"unfinished_wish","label":"鎮ㄦ湭绔熺殑蹇冩効"},{"key":"my_confusion","label":"鎴戠殑杩疯尗鏃跺埢"}];
+var TOPIC_HOOKS = {"today_china":"浣犻棶璧蜂粖澶╃殑涓浗鈥斺€旇繖灞辨渤鏂伴銆佷汉闂寸儫鐏紝姝ｆ槸鎴戝綋骞存棩澶滅浖鏈涚殑鍏夋櫙銆?,"my_ideal":"浣犺皥鍒扮悊鎯筹紝璁╂垜鎯宠捣鑷繁骞磋交鏃剁殑閫夋嫨涓庡潥鎸併€?,"unfinished_wish":"浣犻棶鎴戞湭绔熺殑蹇冩効鈥斺€旈偅浜涘煁鍦ㄦ垜蹇冨簳鐨勭伀绉嶏紝濡備粖姝ｇ敱浣犱滑鎺ュ姏銆?,"my_confusion":"浣犵殑杩疯尗锛屽綋骞存垜浠篃鏇炬湁杩囥€?};
+
+var App = { hero: null, topic: "my_ideal", replyText: "", busy: false };
+
+/* ---------- 宸ュ叿鍑芥暟 ---------- */
+function $(id){ return document.getElementById(id); }
+function esc(s){
+  return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+var toastTimer = null;
+function toast(msg){
+  var t = $("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove("show"); }, 2200);
+}
+/* 椤甸潰鍒囨崲 */
+function showScreen(id){
+  var screens = document.querySelectorAll(".screen");
+  for (var i = 0; i < screens.length; i++) screens[i].classList.toggle("active", screens[i].id === id);
+  window.scrollTo(0, 0);
+}
+
+/* ---------- 鍐呰仈 SVG 澶村儚锛堥噾鑹插鍚嶅嵃绔犲崰浣嶏紝闆跺閮ㄤ緷璧栵級 ---------- */
+function avatarSVG(hero){
+  var id = hero.id, name = hero.name || "";
+  var main = name.charAt(0), rest = name.length > 1 ? name.slice(1) : "";
+  return '<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" class="hero-avatar" role="img" aria-label="' + esc(name) + '澶村儚">' +
+    '<defs><radialGradient id="ag-' + id + '" cx="35%" cy="28%" r="85%">' +
+    '<stop offset="0%" stop-color="#a02828"/><stop offset="100%" stop-color="#6e0f10"/></radialGradient></defs>' +
+    '<circle cx="48" cy="48" r="46" fill="url(#ag-' + id + ')" stroke="#C8A060" stroke-width="2.5"/>' +
+    '<circle cx="48" cy="48" r="40" fill="none" stroke="rgba(232,201,122,.35)" stroke-width="1" stroke-dasharray="3 3"/>' +
+    '<text x="48" y="44" text-anchor="middle" font-size="30" font-family="STKaiti,KaiTi,serif" font-weight="bold" fill="#E8C97A">' + esc(main) + '</text>' +
+    (rest ? '<text x="48" y="68" text-anchor="middle" font-size="15" font-family="STKaiti,KaiTi,serif" fill="#d8b878">' + esc(rest) + '</text>' : '') +
+    '</svg>';
+}
+
+/* ---------- 鍏堣緢閫夋嫨椤?---------- */
+var BIO_SECTIONS = [["early","鏃╂湡缁忓巻"],["revolution","闈╁懡宀佹湀"],["sacrifice","鑻卞媷灏变箟"],["legacy","绮剧浼犳壙"]];
+function bioHTML(hero){
+  var bio = hero.biography || {}, out = "";
+  for (var i = 0; i < BIO_SECTIONS.length; i++){
+    var key = BIO_SECTIONS[i][0], label = BIO_SECTIONS[i][1], txt = bio[key];
+    if (txt) out += "<p><b>" + label + "锛?/b>" + esc(txt) + "</p>";
+  }
+  return out;
+}
+function renderHeroes(){
+  var grid = $("hero-grid"), html = "";
+  for (var i = 0; i < HEROES.length; i++){
+    var h = HEROES[i], delay = Math.min(i * 55, 600);
+    html += '<article class="hero-card" data-hero="' + h.id + '" style="animation-delay:' + delay + 'ms">' +
+      '<div class="hero-head">' + avatarSVG(h) +
+        '<div class="hero-id"><h3>' + esc(h.name) + '</h3><p class="hero-years">' + esc(h.years) + '</p></div>' +
+      '</div>' +
+      '<div class="hero-tags">' + (h.tags || []).slice(0, 3).map(function(t){ return "<span>" + esc(t) + "</span>"; }).join("") + '</div>' +
+      '<p class="hero-quote">鈥? + esc((h.quotes && h.quotes[0]) || "") + '鈥?/p>' +
+      '<div class="scroll-area">' + bioHTML(h) + '</div>' +
+      '<div class="card-actions">' +
+        '<button type="button" class="btn ghost" data-act="detail">浜嗚В浜嬭抗</button>' +
+        '<button type="button" class="btn primary" data-act="write">鍐欎俊缁橳A</button>' +
+      '</div>' +
+    '</article>';
+  }
+  grid.innerHTML = html;
+  grid.onclick = function(e){
+    var card = e.target.closest ? e.target.closest(".hero-card") : null;
+    if (!card) return;
+    var btn = e.target.closest ? e.target.closest("button") : null;
+    if (!btn) return;
+    if (btn.dataset.act === "detail") openHeroDetail(card.dataset.hero);
+    else if (btn.dataset.act === "write") selectHero(card.dataset.hero);
+  };
+}
+
+/* ---------- 璇︽儏寮瑰眰 ---------- */
+var currentDetailId = null;
+function openHeroDetail(heroId){
+  var h = HEROES.find(function(x){ return x.id === heroId; });
+  if (!h) return;
+  currentDetailId = heroId;
+  $("modal-avatar").innerHTML = avatarSVG(h);
+  $("modal-name").textContent = h.name;
+  $("modal-years").textContent = h.years;
+  $("modal-tags").innerHTML = (h.tags || []).map(function(t){ return "<span>" + esc(t) + "</span>"; }).join("");
+  $("modal-quote").textContent = (h.quotes && h.quotes[0]) || "";
+  $("modal-body").innerHTML = bioHTML(h);
+  var relBox = $("modal-relations");
+  var rels = h.relations || [];
+  if (rels.length){
+    relBox.innerHTML = '<p class="rel-title" style="font-family:var(--font-display);color:var(--bg-deep);margin:.2rem 0 .2rem">浜虹墿鍏崇郴</p>' +
+      rels.map(function(r){
+        return '<div class="rel-item"><div><b>' + esc(r.name) + '</b> 路 ' + esc(r.relation) +
+          '<span class="rel-note">' + esc(r.note || "") + '</span></div></div>';
+      }).join("");
+  } else {
+    relBox.innerHTML = "";
+  }
+  $("hero-modal").classList.add("open");
+  document.body.classList.add("modal-open");
+  document.body.style.overflow = "hidden";
+}
+function closeHeroDetail(){
+  currentDetailId = null;
+  $("hero-modal").classList.remove("open");
+  document.body.classList.remove("modal-open");
+  document.body.style.overflow = "";
+}
+
+/* ---------- 鍐欎俊椤?---------- */
+function renderTopics(){
+  var h = App.hero, grid = $("topic-grid"), html = "";
+  for (var i = 0; i < TOPICS.length; i++){
+    var t = TOPICS[i], cfg = (h.topics && h.topics[t.key]) || {};
+    html += '<div class="topic-chip' + (t.key === App.topic ? " active" : "") + '" data-topic="' + t.key + '">' +
+      '<strong>' + esc(t.label) + '</strong>' +
+      '<small>' + esc((cfg.guide || "").slice(0, 16)) + (cfg.guide && cfg.guide.length > 16 ? "鈥? : "") + '</small>' +
+    '</div>';
+  }
+  grid.innerHTML = html;
+  var chips = grid.querySelectorAll(".topic-chip");
+  for (var j = 0; j < chips.length; j++){
+    chips[j].addEventListener("click", function(){
+      var all = grid.querySelectorAll(".topic-chip");
+      for (var k = 0; k < all.length; k++) all[k].classList.remove("active");
+      this.classList.add("active");
+      App.topic = this.dataset.topic;
+    });
+  }
+}
+function selectHero(heroId){
+  var h = HEROES.find(function(x){ return x.id === heroId; });
+  if (!h) return;
+  App.hero = h;
+  App.topic = "my_ideal";
+  $("letter-title").textContent = "缁? + h.name + "鐨勪俊";
+  $("letter-sub").textContent = h.name + "锛? + h.years + "锛壜?瑙佸瓧濡傞潰";
+  $("letter-text").value = "";
+  $("letter-sign").value = "";
+  renderTopics();
+  showScreen("screen-letter");
+  setTimeout(function(){ $("letter-text").focus(); }, 300);
+}
+
+/* ---------- 绂荤嚎鍥炰俊缁勮锛堜笌 server.py build_reply 閫昏緫涓€鑷达級 ---------- */
+function pickQuote(letter, topicCfg){
+  var text = (letter || "").trim();
+  if (!text) return "";
+  var label = topicCfg && topicCfg.label ? topicCfg.label : "";
+  if (label && text === label) return "";
+  text = text.replace(/\s+/g, " ").replace(/^[锛屻€傦紒锛燂紱锛氥€乗t\r\n]+|[锛屻€傦紒锛燂紱锛氥€乗t\r\n]+$/g, "");
+  if (!text) return "";
+  var m = text.match(/^.*?[銆傦紒锛焆/);
+  var first = m ? m[0] : text;
+  if (first.length > 40) first = first.slice(0, 40);
+  return first.replace(/[锛屻€傦紒锛焆+$/, "");
+}
+function buildOfflineReply(hero, topicKey, letter, signature){
+  var hook = TOPIC_HOOKS[topicKey] || "浣犵殑鏉ヤ俊锛屾垜宸茬粏缁嗚杩囥€?;
+  var topicCfg = (hero.topics && hero.topics[topicKey]) || (hero.topics && hero.topics.my_ideal) || {};
+  var quote = pickQuote(letter, topicCfg);
+  var body = OFFLINE_REPLY[hero.id] || "";
+  if (!body){
+    var bio = hero.biography || {};
+    var core = (bio.legacy || bio.sacrifice || hero.bio || "").trim() || (hero.name + "涓€鐢熻拷瀵荤湡鐞嗐€佷互韬鍥斤紝鎶婄儹琛€涓庨潚鏄ョ尞缁欎簡鑴氫笅鐨勫湡鍦般€?);
+    body = "鏈嬪弸锛岃瀛楀闈€? + core + "鎰夸綘鐝嶆儨浠婃棩鏉ヤ箣涓嶆槗鐨勫厜鏄庯紝鎶婂厛杈堟湭绔熺殑浜嬩笟涓€浠ｄ竴浠ｄ紶涓嬪幓銆?;
+  }
+  var m = body.match(/^(.*?[銆傦紒锛焆)([\s\S]*)$/);
+  if (m && m[2] && m[2].trim()){
+    var rest = quote ? hook + "浣犲湪淇′腑鍐欓亾銆? + quote + "銆嶁€斺€? + m[2].trim() : hook + m[2].trim();
+    body = m[1].trim() + "\n\n" + rest;
+  } else {
+    body = quote ? hook + "浣犲湪淇′腑鍐欓亾銆? + quote + "銆嶃€俓n" + body : hook + "\n" + body;
+  }
+  var sig = (signature || "").trim() || "涓€涓綋浠ｉ潚骞?;
+  return body + "\n\n鈥斺€?" + hero.name + "锛? + sig + "锛塡n锛堝熀浜庡彶鏂欏垱浣滅殑 AI 鍛堢幇 路 绂荤嚎婕旂ず鍥炰俊锛?;
+}
+
+/* ---------- 鎵撳瓧鏈?---------- */
+var typeTimer = null;
+function typewriter(text){
+  var body = $("reply-body"), i = 0, step = 18;
+  body.innerHTML = '<span class="cursor"></span>';
+  $("reply-stamp").classList.remove("show");
+  $("btn-card").disabled = true;
+  $("btn-save").disabled = true;
+  $("btn-again").disabled = false;
+  clearInterval(typeTimer);
+  typeTimer = setInterval(function(){
+    i = Math.min(i + 2, text.length);
+    body.innerHTML = esc(text.slice(0, i)) + '<span class="cursor"></span>';
+    body.scrollTop = body.scrollHeight;
+    if (i >= text.length){
+      clearInterval(typeTimer);
+      body.innerHTML = esc(text);
+      $("btn-card").disabled = false;
+      $("btn-save").disabled = false;
+      App.busy = false;
+      var stamp = $("reply-stamp");
+      stamp.classList.remove("show");
+      void stamp.offsetWidth;
+      stamp.classList.add("show");
+    }
+  }, step);
+}
+function sendLetter(){
+  if (App.busy) return;
+  var letter = $("letter-text").value.trim();
+  if (!letter){ toast("璇峰厛鍐欎笅鎯宠鐨勮瘽"); return; }
+  App.busy = true;
+  var signature = $("letter-sign").value.trim();
+  App.replyText = buildOfflineReply(App.hero, App.topic, letter, signature);
+  $("reply-title").textContent = App.hero.name + " 鐨勫洖淇?;
+  $("reply-sub").textContent = "鏉ヨ嚜 " + App.hero.years + " 鐨勫槺鎵?;
+  showScreen("screen-reply");
+  typewriter(App.replyText);
+}
+function saveReply(){
+  try {
+    var list = JSON.parse(localStorage.getItem("xinghuo_replies") || "[]");
+    list.unshift({ hero: App.hero.name, years: App.hero.years, reply: App.replyText, at: new Date().toLocaleString() });
+    if (list.length > 50) list.length = 50;
+    localStorage.setItem("xinghuo_replies", JSON.stringify(list));
+    toast("鍥炰俊宸蹭繚瀛樺埌鏈湴");
+  } catch (e){ toast("淇濆瓨澶辫触"); }
+}
+
+/* ---------- 绾康鍗?Canvas 缁樺埗 ---------- */
+function wrapText(ctx, text, cx, startY, maxW, lineH){
+  var chars = String(text).split(""), line = "", y = startY;
+  for (var i = 0; i < chars.length; i++){
+    var t = line + chars[i];
+    if (ctx.measureText(t).width > maxW && line){ ctx.fillText(line, cx, y); line = chars[i]; y += lineH; }
+    else line = t;
+  }
+  if (line) ctx.fillText(line, cx, y);
+  return y + lineH;
+}
+function drawCard(){
+  var canvas = $("card-canvas"), ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height, h = App.hero;
+  ctx.clearRect(0, 0, W, H);
+  /* 娣辩孩娓愬彉搴?+ 閲戣壊鍏夋檿 */
+  var bg = ctx.createLinearGradient(0, 0, 0, H);
+  bg.addColorStop(0, "#8f1a1a"); bg.addColorStop(.55, "#7C1414"); bg.addColorStop(1, "#5c0e0e");
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+  var glow = ctx.createRadialGradient(W/2, H*.12, 20, W/2, H*.12, 400);
+  glow.addColorStop(0, "rgba(232,201,122,.22)"); glow.addColorStop(1, "rgba(232,201,122,0)");
+  ctx.fillStyle = glow; ctx.fillRect(0, 0, W, H);
+  /* 閲戣壊鍙岃竟妗?*/
+  ctx.strokeStyle = "rgba(232,201,122,.82)"; ctx.lineWidth = 6; ctx.strokeRect(36, 36, W-72, H-72);
+  ctx.strokeStyle = "rgba(232,201,122,.35)"; ctx.lineWidth = 2; ctx.strokeRect(58, 58, W-116, H-116);
+  ctx.textAlign = "center";
+  /* 椤堕儴棰樺瓧 */
+  ctx.fillStyle = "#F7F2E4"; ctx.font = "bold 56px STKaiti,KaiTi,serif";
+  ctx.fillText("鏄?鐏?鍥?淇?, W/2, 148);
+  ctx.fillStyle = "rgba(247,242,228,.78)"; ctx.font = "26px STKaiti,KaiTi,serif";
+  ctx.fillText("璺ㄨ秺鏃剁┖鐨勫璇?, W/2, 196);
+  /* 澶村儚鍦嗭紙閲戣壊濮撳悕鍗犱綅锛?*/
+  ctx.beginPath(); ctx.arc(W/2, 330, 96, 0, Math.PI*2);
+  ctx.fillStyle = "#6e0f10"; ctx.fill();
+  ctx.strokeStyle = "#E8C97A"; ctx.lineWidth = 5; ctx.stroke();
+  ctx.fillStyle = "#E8C97A"; ctx.font = "bold 84px STKaiti,KaiTi,serif";
+  ctx.fillText(h.name.charAt(0), W/2, 376);
+  if (h.name.length > 1){ ctx.font = "30px STKaiti,KaiTi,serif"; ctx.fillText(h.name.slice(1), W/2, 412); }
+  ctx.fillStyle = "#F7F2E4"; ctx.font = "bold 36px STKaiti,KaiTi,serif";
+  ctx.fillText(h.name, W/2, 484);
+  ctx.fillStyle = "rgba(247,242,228,.82)"; ctx.font = "26px KaiTi,serif";
+  ctx.fillText(h.years, W/2, 528);
+  /* 鍚嶈█ */
+  ctx.fillStyle = "#E8C97A"; ctx.font = "27px KaiTi,serif";
+  wrapText(ctx, "鈥? + ((h.quotes && h.quotes[0]) || "") + "鈥?, W/2, 596, 720, 42);
+  /* 鍒嗛殧绾?*/
+  ctx.strokeStyle = "rgba(232,201,122,.5)"; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(W/2 - 230, 716); ctx.lineTo(W/2 + 230, 716); ctx.stroke();
+  /* 鍥炰俊鎽樺彞 */
+  var brief = (App.replyText || "").replace(/\s+/g, " ").replace(/鈥斺€?*$/, "").slice(0, 96);
+  ctx.fillStyle = "rgba(247,242,228,.94)"; ctx.font = "26px KaiTi,serif";
+  wrapText(ctx, brief, W/2, 776, 700, 40);
+  /* 鏃ユ湡 */
+  var now = new Date();
+  var ds = now.getFullYear() + "骞? + (now.getMonth()+1) + "鏈? + now.getDate() + "鏃?;
+  ctx.fillStyle = "rgba(247,242,228,.78)"; ctx.font = "24px KaiTi,serif";
+  ctx.fillText(ds + " 路 鏁憟" + h.name, W/2, 966);
+  /* 鐏紗鍗扮珷 */
+  ctx.save();
+  ctx.translate(W - 190, H - 188); ctx.rotate(-0.13);
+  ctx.strokeStyle = "rgba(216,60,50,.95)"; ctx.lineWidth = 4;
+  ctx.strokeRect(-66, -66, 132, 132);
+  ctx.fillStyle = "rgba(216,60,50,.88)"; ctx.font = "bold 36px STKaiti,KaiTi,serif";
+  ctx.fillText("鏄熺伀", 0, -6); ctx.fillText("鍥炰俊", 0, 38);
+  ctx.restore();
+  /* 搴曢儴姘村嵃 */
+  ctx.fillStyle = "rgba(247,242,228,.5)"; ctx.font = "22px KaiTi,serif";
+  ctx.fillText("绂荤嚎婕旂ず 路 鍩轰簬鍙叉枡鍒涗綔鐨?AI 鍛堢幇", W/2, H - 96);
+}
+function downloadCard(){
+  try {
+    var a = document.createElement("a");
+    a.download = "鏄熺伀绾康鍗" + App.hero.name + ".png";
+    a.href = $("card-canvas").toDataURL("image/png");
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    toast("绾康鍗″凡涓嬭浇");
+  } catch (e){ toast("涓嬭浇澶辫触锛岃闀挎寜鍥剧墖淇濆瓨"); }
+}
+function openCard(){
+  drawCard();
+  showScreen("screen-card");
+}
+
+/* ---------- 鏄熺伀绮掑瓙锛堝眰绾ф渶浣庛€佷笉鎷︽埅鐐瑰嚮锛?---------- */
+var Particles = (function(){
+  var canvas = $("particles"), ctx = canvas.getContext("2d"), w = 0, h = 0;
+  var list = [], COUNT = 32;
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  function spawn(){
+    return {
+      x: Math.random()*w, y: Math.random()*h,
+      r: 0.6 + Math.random()*1.4,
+      vx: (Math.random()-0.5)*0.22,
+      vy: -(0.05 + Math.random()*0.18),
+      a: 0.14 + Math.random()*0.30,
+      da: 0.004 + Math.random()*0.006,
+      ph: Math.random()*Math.PI*2,
+      gold: Math.random() < 0.75
+    };
+  }
+  function init(){
+    resize();
+    list = [];
+    for (var i = 0; i < COUNT; i++) list.push(spawn());
+    window.addEventListener("resize", function(){ resize(); });
+    tick();
+  }
+  function tick(){
+    ctx.clearRect(0, 0, w, h);
+    for (var i = 0; i < list.length; i++){
+      var p = list[i];
+      p.x += p.vx; p.y += p.vy;
+      p.ph += p.da;
+      if (p.y < -8){ p.y = h + 8; p.x = Math.random()*w; }
+      if (p.x < -8) p.x = w + 8; else if (p.x > w + 8) p.x = -8;
+      var alpha = p.a * (0.6 + 0.4*Math.sin(p.ph));
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.gold ? "rgba(232,201,122," + alpha + ")" : "rgba(201,160,80," + (alpha*0.8) + ")";
+      ctx.fill();
+      /* 寰急鏄熻姃 */
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r*2.6, 0, Math.PI*2);
+      ctx.fillStyle = p.gold ? "rgba(232,201,122," + (alpha*0.18) + ")" : "rgba(201,160,80," + (alpha*0.14) + ")";
+      ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  return { init: init };
+})();
+
+/* ---------- 浜嬩欢缁戝畾 ---------- */
+function bindEvents(){
+  /* 棣栭〉鏍锋満鐐瑰嚮杩涘叆 */
+  var phones = document.querySelectorAll(".phone[data-goto]");
+  for (var i = 0; i < phones.length; i++){
+    phones[i].addEventListener("click", function(){ showScreen("screen-heroes"); });
+  }
+  /* 閫氱敤杩斿洖 */
+  var backs = document.querySelectorAll(".back-btn[data-goto]");
+  for (var j = 0; j < backs.length; j++){
+    backs[j].addEventListener("click", function(){
+      if (this.dataset.goto === "home") showScreen("screen-home");
+      else if (this.dataset.goto === "heroes") showScreen("screen-heroes");
+    });
+  }
+  /* 瀵勪俊 */
+  $("btn-send").addEventListener("click", sendLetter);
+  $("btn-again").addEventListener("click", function(){
+    App.busy = false;
+    selectHero(App.hero.id);
+  });
+  $("btn-card").addEventListener("click", openCard);
+  $("btn-save").addEventListener("click", saveReply);
+  $("btn-download").addEventListener("click", downloadCard);
+  $("btn-reletter").addEventListener("click", function(){
+    App.busy = false;
+    selectHero(App.hero.id);
+  });
+  /* 寮瑰眰 */
+  $("hero-modal").addEventListener("click", function(e){
+    if (e.target && e.target.getAttribute("data-close") === "1") closeHeroDetail();
+  });
+  $("modal-write").addEventListener("click", function(){
+    var id = currentDetailId;
+    closeHeroDetail();
+    if (id) selectHero(id);
+  });
+}
+
+/* ---------- rem 閫傞厤锛氫互 390px 涓哄熀鍑?---------- */
+(function(){
+  function fit(){
+    var w = Math.min(document.documentElement.clientWidth || 390, 520);
+    document.documentElement.style.fontSize = Math.max(12, Math.min(22, w / 390 * 16)) + "px";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+})();
+
+/* ---------- 鍚姩 ---------- */
+renderHeroes();
+bindEvents();
+Particles.init();
+</script>
+</body>
+</html>
