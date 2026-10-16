@@ -1,0 +1,118 @@
+PASTE-MARK<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>æç«åä¿¡ Â· è·¨è¶æ¶ç©ºçå¯¹è¯</title>
+<style>
+/* ============ åºç¡ä¸åé ============ */
+:root{
+  --bg-deep:#7C1414; --bg-deeper:#5c0e0e; --bg-mid:#8f1a1a;
+  --paper:#F7F2E4; --paper-dim:#e9ddc2;
+  --gold:#C8A060; --gold-hi:#E8C97A; --gold-dim:rgba(200,160,96,.45);
+  --brown:#3A281C; --ink:#2c1c12; --seal:#d83c32;
+  --font-display:"STKaiti","KaiTi","SimSun",serif;
+  --font-body:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body); color:var(--brown);
+  min-height:100vh; overflow-x:hidden;
+  background:
+    radial-gradient(1200px 620px at 18% -10%, rgba(232,201,122,.16), transparent 60%),
+    radial-gradient(900px 520px at 88% 12%, rgba(255,255,255,.06), transparent 60%),
+    radial-gradient(1000px 700px at 50% 110%, rgba(0,0,0,.35), transparent 70%),
+    linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 48%, var(--bg-deeper) 100%);
+  background-attachment:fixed;
+}
+/* å®£çº¸çº¤ç»´å±ï¼ç»å¾®æ¨ªçºµçº¹çæ¨¡æçº¸å¼  */
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+  background:
+    repeating-linear-gradient(0deg, rgba(247,242,228,.015) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.02) 0 1px, transparent 1px 4px);
+}
+.paper-fiber{
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background:
+    radial-gradient(560px 400px at 30% 22%, rgba(232,201,122,.08), transparent 70%),
+    radial-gradient(480px 360px at 76% 64%, rgba(255,255,255,.05), transparent 70%);
+}
+/* æç«ç²å­ç»å¸ï¼å±çº§æä½ãä¸æ¦æªç¹å» */
+#particles{position:fixed; inset:0; z-index:1; pointer-events:none}
+
+/* ============ åºç¨å®¹å¨ä¸é¡µé¢åæ¢ ============ */
+.app{position:relative; z-index:2; min-height:100vh; max-width:520px; margin:0 auto}
+.screen{display:none; flex-direction:column; min-height:100vh; padding:1rem 1.1rem calc(1.6rem + env(safe-area-inset-bottom))}
+.screen.active{display:flex; animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none}}
+
+/* é¡¶é¨éç¨è¿åæ¡ */
+.screen-head{display:flex; align-items:center; gap:.7rem; margin-bottom:.9rem; color:var(--gold-hi)}
+.back-btn{
+  width:2.2rem; height:2.2rem; flex:0 0 auto; border-radius:50%;
+  border:1px solid var(--gold-dim); background:rgba(58,40,28,.25); color:var(--gold-hi);
+  font-size:1.1rem; line-height:1; display:flex; align-items:center; justify-content:center;
+}
+.back-btn:active{transform:scale(.92)}
+.screen-head h2{font-family:var(--font-display); font-size:1.35rem; letter-spacing:.12em}
+
+/* éè¾¹æé® */
+.btn{
+  font-family:var(--font-body); border-radius:.55rem; border:1px solid var(--gold);
+  background:transparent; color:var(--brown); padding:.6rem 1rem; font-size:.95rem;
+  cursor:pointer; transition:transform .12s ease, box-shadow .12s ease; touch-action:manipulation;
+}
+.btn:active{transform:scale(.95)}
+.btn.primary{background:linear-gradient(160deg, var(--gold-hi), var(--gold)); color:#3a2410; box-shadow:0 3px 10px rgba(0,0,0,.22)}
+.btn.ghost{background:rgba(247,242,228,.92); border-color:var(--gold-dim)}
+.btn.wide{width:100%; padding:.85rem; font-size:1.05rem; letter-spacing:.15em}
+.btn[disabled]{opacity:.55; pointer-events:none}
+
+/* ============ é¦é¡µï¼æ é¢ + ä¸ææºæ ·æº ============ */
+.home-hero{text-align:center; padding:1.5rem .5rem .4rem}
+.poster-title{
+  font-family:var(--font-display); font-weight:bold; color:var(--gold-hi);
+  font-size:2.9rem; letter-spacing:.28em; text-shadow:0 2px 14px rgba(0,0,0,.4);
+}
+.poster-sub{margin-top:.5rem; color:var(--paper); font-family:var(--font-display); font-size:1.1rem; letter-spacing:.5em; opacity:.92}
+.home-seal{
+  display:inline-block; margin-top:.9rem; width:3.1rem; height:3.1rem; line-height:1;
+  border:2px solid rgba(216,60,50,.9); color:#e8796f; border-radius:.4rem;
+  font-family:var(--font-display); font-size:.95rem; font-weight:bold; padding:.28rem 0;
+  transform:rotate(-8deg); letter-spacing:.05em; opacity:.9;
+}
+.phone-stack{display:flex; align-items:center; justify-content:center; gap:.55rem; padding:1.6rem .2rem .6rem}
+.phone{
+  position:relative; flex:0 0 auto; width:6.4rem; border-radius:1.1rem; cursor:pointer;
+  background:linear-gradient(160deg,#3a2a1e,#1d130d); padding:.42rem; touch-action:manipulation;
+  box-shadow:0 10px 26px rgba(0,0,0,.5), inset 0 0 0 1px rgba(232,201,122,.28);
+  transition:transform .2s ease;
+}
+.phone:hover{transform:translateY(-3px)}
+.phone:active{transform:scale(.96)}
+.phone-main{width:9rem; transform:translateY(-.35rem); box-shadow:0 14px 30px rgba(0,0,0,.55), inset 0 0 0 1px rgba(232,201,122,.5)}
+.phone-side.top{transform:translateY(.45rem)}
+.phone-side.bot{transform:translateY(1.1rem)}
+.phone-notch{width:2rem; height:.3rem; border-radius:.15rem; background:rgba(0,0,0,.65); margin:0 auto .35rem}
+.phone-screen{background:var(--paper); border-radius:.75rem; overflow:hidden; height:11rem; position:relative; color:var(--ink); font-size:.52rem; padding:.5rem .55rem}
+.phone-main .phone-screen{height:12.6rem}
+.mock-num{
+  position:absolute; top:-.55rem; left:50%; transform:translateX(-50%); z-index:3;
+  background:var(--gold); color:#3a2410; font-weight:bold; font-size:.6rem; letter-spacing:.08em;
+  border-radius:1rem; padding:.12rem .5rem; box-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+.mock-title{display:block; font-family:var(--font-display); font-weight:bold; font-size:.68rem; margin-bottom:.4rem; color:var(--bg-deep)}
+.mock-line{display:block; height:.34rem; background:rgba(58,40,28,.18); border-radius:.1rem; margin:.3rem 0}
+.mock-line.short{width:62%}
+.mock-btn{
+  display:inline-block; margin-top:.45rem; padding:.18rem .6rem; border-radius:.3rem;
+  background:linear-gradient(160deg,var(--gold-hi),var(--gold)); color:#3a2410; font-size:.52rem;
+}
+.mock-reply-title{display:block; font-family:var(--font-display); font-weight:bold; font-size:.66rem; color:var(--bg-deep); margin-bottom:.3rem}
+.mock-text{line-height:1.5; color:rgba(44,28,18,.85)}
+.mock-cursor{display:inline-block; width:.18rem; height:.62rem; background:var(--bg-deep); vertical-align:-.08rem; animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.mock-seal{
+  position:absolute; right:.5rem; bottom:.5rem; width:1.7rem; height:1.7rem; border:1px solid var(--seal);
