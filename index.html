@@ -143,6 +143,47 @@ body{
   *{animation:none !important;transition:none !important}
   .card,.fade,.typed .ch{opacity:1 !important}
 }
+
+/* ============ 模块15：事迹弹层 + 人物关系星图（红金国风） ============ */
+body.modal-open{overflow:hidden}
+.bio-modal-mask{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;padding:.7rem;background:rgba(28,6,6,.72);opacity:0;visibility:hidden;transition:opacity .3s ease-out,visibility .3s ease-out;z-index:90}
+.bio-modal-mask.show{opacity:1;visibility:visible}
+.bio-modal{width:min(94vw,27rem);max-height:88vh;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(165deg,#FBF5E4 0%,#F3E7C9 78%,#EAD9B4 100%);border:1px solid rgba(200,160,96,.8);border-radius:.9rem;box-shadow:0 .6rem 2.2rem rgba(10,2,2,.55);transform:translateY(.6rem) scale(.97);opacity:0;transition:transform .3s ease-out,opacity .3s ease-out}
+.bio-modal-mask.show .bio-modal{transform:translateY(0) scale(1);opacity:1}
+.bio-close{position:absolute;top:.55rem;right:.6rem;width:1.9rem;height:1.9rem;border:1px solid rgba(200,160,96,.75);border-radius:50%;background:rgba(124,20,20,.92);color:var(--gold-light,#E8CC8F);font-size:1.05rem;line-height:1;cursor:pointer;z-index:6;transition:background .2s ease-out;display:flex;align-items:center;justify-content:center;padding:0}
+.bio-close:hover{background:#8F1A1A}
+.bio-head{padding:.85rem 2.2rem .5rem;text-align:center;border-bottom:1px dashed rgba(200,160,96,.65);flex:none}
+.bio-title{font-family:var(--font-serif,"Noto Serif SC","STZhongsong","SimSun",serif);font-size:1.15rem;color:#6E1A1A;letter-spacing:.14em;margin:0 0 .15rem}
+.bio-years{font-size:.72rem;color:#8A6A3A;letter-spacing:.08em;margin-bottom:.2rem}
+.bio-quote{font-size:.8rem;color:#7C1414;font-style:normal;line-height:1.55;padding:.35rem .7rem;background:rgba(200,160,96,.16);border-left:2px solid rgba(200,160,96,.9);border-radius:0 .35rem .35rem 0;margin:.15rem .4rem 0}
+.bio-scroll{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;padding:.75rem 1rem .55rem;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.bio-scroll::-webkit-scrollbar{width:4px}
+.bio-scroll::-webkit-scrollbar-track{background:rgba(200,160,96,.12);border-radius:4px}
+.bio-scroll::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#D9B877,#B8860B);border-radius:4px}
+.bio-sec{margin:0 0 .65rem;animation:bioFade .55s ease-out both}
+.bio-sec h4{margin:0 0 .28rem;font-size:.86rem;color:#8A5A1E;letter-spacing:.1em;font-family:var(--font-serif,"Noto Serif SC","STZhongsong","SimSun",serif);font-weight:600;display:flex;align-items:center;gap:.35rem}
+.bio-sec h4::before{content:"";display:inline-block;width:.62rem;height:.62rem;border:1px solid rgba(200,160,96,.85);transform:rotate(45deg);flex:none}
+.bio-sec p{margin:0;font-size:.83rem;line-height:1.78;color:#3A2418;white-space:pre-line;text-align:justify}
+@keyframes bioFade{from{opacity:0;transform:translateY(.35rem)}to{opacity:1;transform:translateY(0)}}
+.bio-tip{font-size:.7rem;color:#9A7A4A;text-align:center;padding:.1rem 0 .35rem}
+.hero-chip .bio-entry{margin-top:.32rem;padding:.12rem .42rem;font-size:.64rem;line-height:1.3;color:#F3E7C9;background:rgba(200,160,96,.16);border:1px solid rgba(200,160,96,.7);border-radius:999px;cursor:pointer;transition:background .2s ease-out,color .2s ease-out;font-family:inherit;display:inline-block}
+.hero-chip .bio-entry:hover{background:#C8A060;color:#3A1208}
+.star-wrap{flex:none;padding:.55rem 1rem .8rem;border-top:1px dashed rgba(200,160,96,.7);background:rgba(200,160,96,.07)}
+.star-map-title{font-size:.72rem;color:#8A6A3A;text-align:center;letter-spacing:.12em;margin-bottom:.25rem}
+.star-map{position:relative;height:8.6rem;touch-action:none;-webkit-user-select:none;user-select:none;cursor:grab}
+.star-map.dragging{cursor:grabbing}
+.star-map svg{width:100%;height:100%;display:block}
+.star-map .star-line{stroke:rgba(200,160,96,.55);stroke-width:1;pointer-events:none}
+.star-map .star-center-circle{fill:#7C1414;stroke:#C8A060;stroke-width:1.4;pointer-events:none}
+.star-map .star-center-text{fill:#F7F2E4;font-size:12px;text-anchor:middle;dominant-baseline:middle;pointer-events:none;font-family:var(--font-serif,"Noto Serif SC","STZhongsong","SimSun",serif);letter-spacing:.06em}
+.star-map .star-node{cursor:pointer}
+.star-map .star-node circle{stroke:#C8A060;stroke-width:1.2;transition:stroke-width .18s ease-out}
+.star-map .star-node.hit circle{stroke:#FFFFFF;stroke-width:2.4}
+.star-map .star-node text{font-size:10px;text-anchor:middle;dominant-baseline:middle;fill:#2A1212;pointer-events:none;font-family:var(--font-serif,"Noto Serif SC","STZhongsong","SimSun",serif);letter-spacing:.02em}
+.star-map .star-deco{pointer-events:none}
+.rel-hint{min-height:2.3rem;font-size:.78rem;line-height:1.5;color:#5A1E1E;text-align:center;padding:.32rem .5rem;margin-top:.35rem;background:rgba(200,160,96,.18);border:1px solid rgba(200,160,96,.35);border-radius:.42rem;opacity:0;transform:translateY(.2rem);transition:opacity .3s ease-out,transform .3s ease-out}
+.rel-hint.show{opacity:1;transform:translateY(0)}
+.rel-hint b{color:#7C1414}
 </style>
 </head>
 <body>
@@ -264,6 +305,24 @@ body{
 
 <div class="toast" id="toast"></div>
 
+<!-- ============ 模块15：事迹弹层（信纸卡 + 可滚动事迹 + 关系星图） ============ -->
+<div class="bio-modal-mask" id="bio-modal-mask" aria-hidden="true">
+  <div class="bio-modal" role="dialog" aria-modal="true" aria-label="先辈事迹">
+    <button class="bio-close" id="bio-close" type="button" aria-label="关闭事迹介绍">✕</button>
+    <div class="bio-head">
+      <h3 class="bio-title" id="bio-title"></h3>
+      <div class="bio-years" id="bio-years"></div>
+      <div class="bio-quote" id="bio-quote"></div>
+    </div>
+    <div class="bio-scroll" id="bio-scroll"></div>
+    <div class="star-wrap">
+      <div class="star-map-title">人物关系 · 拖动星图旋转 · 点击节点查看说明</div>
+      <div class="star-map" id="star-map"></div>
+      <div class="rel-hint" id="rel-hint"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ============ 模块16：内嵌数据（全量 heroes.json / OFFLINE_REPLY / TOPIC_HOOKS） ============ -->
 <script id="heroes-data" type="application/json">[{"id":"lidazhao","name":"李大钊","years":"1889—1927","tags":["中国共产主义运动先驱","北大图书馆主任","《青春》作者"],"bio":"李大钊（1889—1927），字守常，河北乐亭人，中国最早的马克思主义者，中国共产党主要创始人之一。曾任北京大学图书馆主任、教授，《新青年》同人，写下《青春》《庶民的胜利》《布尔什维主义的胜利》等名篇。1927年4月28日在北京英勇就义，时年38岁。","quotes":["以青春之我，创建青春之家庭，青春之国家，青春之民族，青春之人类，青春之地球，青春之宇宙。","铁肩担道义，妙手著文章。","为世界进文明，为人类造幸福。","试看将来的环球，必是赤旗的世界！"],"portrait":"assets/heroes/lidazhao.png","style_hint":"启蒙者口吻：思辨而笃定，善用排比与比喻；谈理想时温暖开阔，带学者气与先生风范；可称青年为'青年诸君''朋友'；落款可署'守常'。","topics":{"today_china":{"label":"今天的中国","guide":"你想告诉李大钊先生今天的中国是什么模样。","redline":"不得虚构其经历；'赤旗的世界'愿景与当代中国发展可作精神呼应，但不得编造史实细节或具体数据。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听先生的教诲。","redline":"不虚构生平；回应围绕青春、担当、奋斗展开，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构遗愿；仅可基于《青春》等著作精神作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听先生的答复。","redline":"不编造史实；以理想、理性与担当为核心回应，不作政治评价。"}},"biography":{"early":"1889年生于河北乐亭大黑坨村，幼年丧父母，由祖父抚养。1907年考入天津北洋法政专门学校，1913年东渡日本入早稻田大学政治经济科，接触社会主义思潮，组织'神州学会'。","revolution":"1916年回国任《晨钟报》总编辑，1918年任北京大学图书馆主任，参与《新青年》编辑，发表《青春》《庶民的胜利》《布尔什维主义的胜利》等名文，是中国系统传播马克思主义第一人。1920年发起成立北京共产主义小组，是中国共产党主要创始人之一，领导北方工人运动。","sacrifice":"1927年4月6日在北京被奉系军阀逮捕。狱中坚贞不屈，写下《狱中自述》，4月28日与十九位同志在北京西交民巷京师看守所英勇就义，时年38岁。","legacy":"铁肩担道义，妙手著文章\"成为知识分子精神写照；河北乐亭李大钊纪念馆、北京李大钊烈士陵园是重要纪念地；《青春》\"以青春之我创建青春之国家\"激励一代代青年。"},"relations":[{"name":"陈独秀","relation":"挚友","note":"'南陈北李，相约建党'","group":"mentor"},{"name":"赵纫兰","relation":"妻子","note":"结发妻子，倾其一生支持革命","group":"family"},{"name":"毛泽东","relation":"青年导师","note":"北大图书馆主任任上，毛泽东任书记员时深受其指引","group":"mentor"}]},{"id":"fangzhimin","name":"方志敏","years":"1899—1935","tags":["赣东北苏区创建者","红十军领导人","《可爱的中国》作者"],"bio":"方志敏（1899—1935），江西弋阳人，无产阶级革命家、军事家，闽浙赣革命根据地和红十军的主要创建者。1935年1月在怀玉山作战时因叛徒出卖被俘，狱中坚贞不屈，写下《可爱的中国》《清贫》《狱中纪实》等名篇，同年8月6日在南昌下沙窝英勇就义，时年36岁。","quotes":["朋友！中国是生育我们的母亲。","清贫，洁白朴素的生活，正是我们革命者能够战胜许多困难的地方！","敌人只能砍下我们的头颅，决不能动摇我们的信仰！","不错，目前的中国，固然是江山破碎，国弊民穷，但谁能断言，中国没有一个光明的前途呢？"],"portrait":"assets/heroes/fangzhimin.png","style_hint":"狱中书信体：语气深情而坚定，善用'朋友''同志'等呼语；家国情怀浓烈，常用母亲、清贫等意象作比；文白相间、从容悲壮；落款可署名'志敏'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向方志敏讲述今天的中国——高铁飞驰、航天问天、山乡巨变……","redline":"不得虚构其生前经历；'可爱的中国'正在实现属公认历史叙事，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听先辈如何看待青年的选择。","redline":"不虚构其生平细节；回应聚焦信仰、奋斗与奉献精神，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于《可爱的中国》《清贫》等遗著精神作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听先辈的答复。","redline":"不编造史实；以清贫、信仰、奋斗为核心回应，不作政治评价。"}},"biography":{"early":"1899年生于江西弋阳湖塘村农家，幼年家贫，靠族中资助读完高小。1916年考入南昌甲种工业学校，接触进步思想，组织'青年社'，投身五四爱国运动。","revolution":"1922年加入中国社会主义青年团，1924年加入中国共产党。1925年回弋阳组织农民运动，1928年领导弋横起义，创建闽浙赣革命根据地和红十军，历任闽浙赣省苏维埃政府主席、红十军团军政委员会主席，被毛泽东誉为'创造苏区的模范'。","sacrifice":"1934年率红十军团北上抗日，遭国民党重兵围堵。1935年1月在怀玉山作战中因叛徒出卖被俘。狱中坚贞不屈，写下《可爱的中国》《清贫》《狱中纪实》等名篇，8月6日在南昌下沙窝英勇就义，时年36岁。","legacy":"《可爱的中国》《清贫》成为传世名篇；'爱国、创造、清贫、奉献'的方志敏精神被列入中国共产党人精神谱系；江西弋阳方志敏纪念馆、南昌方志敏广场等地是重要红色教育基地。"},"relations":[{"name":"缪敏","relation":"妻子","note":"革命伴侣，并肩战斗于闽浙赣苏区","group":"family"},{"name":"邵式平","relation":"战友","note":"共同创建赣东北革命根据地","group":"comrade"},{"name":"粟裕","relation":"战友","note":"红十军团参谋长，北上抗日先遣队并肩作战","group":"comrade"},{"name":"黄道","relation":"同志","note":"与方志敏、邵式平并称'赣东北三杰'","group":"comrade"}]},{"id":"liuhulan","name":"刘胡兰","years":"1932—1947","tags":["少年英雄","山西文水人","生的伟大死的光荣"],"bio":"刘胡兰（1932—1947），山西文水云周西村人，优秀共产党员，少年英雄。1945年参加革命工作，1946年加入中国共产党，积极领导土改与支前工作。1947年1月12日因叛徒出卖被捕，面对敌人铡刀坚贞不屈、从容就义，年仅15岁。毛泽东为她题词：'生的伟大，死的光荣。'","quotes":["怕死不当共产党！","只要有一口气，就要为人民干到底。","我活是共产党的人，死是共产党的鬼。","革命到底，决不回头。"],"portrait":"assets/heroes/liuhulan.png","style_hint":"少年英雄口吻：天真而坚定、干净利落，话语里有少年人的明亮与共产党员的刚硬；对同龄人亲切如伙伴；落款可署'胡兰'。","biography":{"early":"1932年生于山西文水县云周西村一个贫苦农家，原名刘富兰。幼年丧母，与继母相依为命，从小目睹日寇暴行与乡亲苦难。1942年抗战最艰苦时，10岁的她便为八路军站岗、放哨、送情报。","revolution":"1945年抗日战争胜利后参加革命工作，任村妇救会秘书，组织妇女纺线、做军鞋支援前线。1946年6月，年仅14岁的她经组织批准加入中国共产党（候补党员），积极领导土地改革，发动群众斗地主、分田地，成为远近闻名的'小英雄'。","sacrifice":"1947年1月12日，阎锡山军队突袭云周西村，刘胡兰因叛徒告密被捕。敌人以铡刀威逼利诱，她毫不动摇，从容走向铡刀，壮烈牺牲，年仅15岁。就义前只留下一句话：'怕死不当共产党！'","legacy":"毛泽东亲笔题词'生的伟大，死的光荣'，此后她又获得'100位为新中国成立作出突出贡献的英雄模范人物'称号。刘胡兰纪念馆（山西文水）与她的就义处成为全国爱国主义教育基地，其精神激励着一代代青少年。"},"topics":{"today_china":{"label":"今天的中国","guide":"你想告诉刘胡兰今天的中国——像她那样大的孩子都在明亮的教室里读书。","redline":"不得虚构其经历；'为人民干到底'与当代少年成长可作呼应，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听这位少年英雄的答复。","redline":"不虚构生平；回应围绕勇敢、担当与青春理想展开，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构遗愿；仅可基于'为人民干到底'的少年信念作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听这位少年英雄的答复。","redline":"不编造史实；以坚定、纯粹与青春力量为核心回应，不作政治评价。"}},"relations":[{"name":"毛泽东","relation":"题词人","note":"'生的伟大，死的光荣'，两次题词悼念","group":"mentor"},{"name":"石三槐等六烈士","relation":"乡亲","note":"同村战友，同日英勇就义，史称'云周西村七烈士'","group":"comrade"}]},{"id":"jiangzhuyun","name":"江竹筠","years":"1920—1949","tags":["江姐","红岩烈士","《红岩》原型人物"],"bio":"江竹筠（1920—1949），四川自贡人，中国共产党优秀党员，人称'江姐'，红岩英烈代表人物。1939年加入中国共产党，长期在重庆从事地下工作。1948年6月因叛徒出卖被捕，关押于渣滓洞、白公馆，受尽酷刑坚贞不屈。1949年11月14日重庆解放前夕英勇就义，时年29岁。","quotes":["毒刑拷打，那是太小的考验。竹签子是竹子做的，共产党员的意志是钢铁铸成的！","活人可以在活人的心中死去，死人可以在死人的心中活着。","孩子们绝不要娇养，粗茶淡饭足矣。","盼教以踏着父母之足迹，以建设新中国为志，为共产主义革命事业奋斗到底。"],"portrait":"assets/heroes/jiangzhuyun.png","style_hint":"红岩烈士口吻：温柔与刚烈并存，对孩子柔情似水，对敌人冷若钢铁；谈信仰从容笃定，谈未来满怀希望；可用'孩子''同志们'称呼；落款可署'竹筠'。","biography":{"early":"1920年生于四川自贡大山铺一个贫苦农家，本名江竹君。幼年丧父，随母亲流落重庆，当过袜厂童工、孤儿院教师，尝尽艰辛。1939年考入重庆中国公学附属中学，同年秘密加入中国共产党。","revolution":"1943年受组织安排与彭咏梧假扮夫妻，从事党内通信联络工作，1945年正式结婚。1947年负责重庆市委机关报《挺进报》的联络与发行；1948年初丈夫彭咏梧在川东武装起义中牺牲，她强忍悲痛，向组织请求接替丈夫未竟的工作，继续战斗在川东。","sacrifice":"1948年6月因叛徒出卖在万县被捕，押解重庆渣滓洞监狱。敌人用竹签钉入指尖等酷刑逼供，她坚贞不屈，留下'竹签子是竹子做的，共产党员的意志是钢铁铸成的'的豪言，并在狱中写下托孤遗书。1949年11月14日，重庆解放前夕，她被秘密杀害于电台岚垭，时年29岁。","legacy":"长篇小说《红岩》与电影《江姐》使其'江姐'形象家喻户晓；她在狱中写给儿子彭云的《托孤遗书》成为红色家书经典，重庆歌乐山烈士陵园（渣滓洞、白公馆）是著名红色教育基地。"},"topics":{"today_china":{"label":"今天的中国","guide":"你想告诉江姐今天的中国——她以生命换来的新中国已经七十年有余。","redline":"不得虚构其经历；'建设新中国'愿景与当代发展可作呼应，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听这位母亲的答复。","redline":"不虚构生平；回应围绕坚韧、爱与奉献展开，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问她未竟的心愿，特别是对孩子的牵挂。","redline":"不得虚构遗愿；仅可基于《托孤遗书》等史料精神作答，不得编造其子后续经历。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听这位钢铁母亲的答复。","redline":"不编造史实；以意志、温情与希望为核心回应，不作政治评价。"}},"relations":[{"name":"彭咏梧","relation":"丈夫","note":"革命伴侣，共同战斗于川东地下党","group":"family"},{"name":"彭云","relation":"儿子","note":"狱中写下'托孤信'，嘱托抚养成人","group":"family"},{"name":"谭竹安","relation":"托孤人","note":"狱中书信托付彭云抚养事宜","group":"comrade"},{"name":"许晓轩","relation":"狱友","note":"渣滓洞狱中坚贞不屈的战友","group":"comrade"}]},{"id":"zhaoyiman","name":"赵一曼","years":"1905—1936","tags":["抗日民族女英雄","东北抗日联军政委","《示儿书》作者"],"bio":"赵一曼（1905—1936），原名李坤泰，四川宜宾人，著名抗日民族女英雄，东北抗日联军第三军二团政委。1935年11月在战斗中受伤被俘，受尽酷刑坚贞不屈，1936年8月2日在珠河县（今尚志市）英勇就义。就义前给儿子宁儿写下感人至深的《示儿书》，时年31岁。","quotes":["母亲不用千言万语来教育你，就用实行来教育你。","在你长大成人之后，希望不要忘记你的母亲是为国而牺牲的！","誓志为人不为家，涉江渡海走天涯。","未惜头颅新故国，甘将热血沃中华。"],"portrait":"assets/heroes/zhaoyiman.png","style_hint":"母亲视角与战士气概交织：家书深情、字字千钧，对孩子温柔而坚定，对信仰从容无悔；可用'孩子'称呼年轻用户，落款可署'你的母亲赵一曼'。","topics":{"today_china":{"label":"今天的中国","guide":"你想告诉赵一曼阿姨今天的中国——她以热血浇灌的中华。","redline":"不得虚构其经历；'甘将热血沃中华'可与当代中国呼应，但不得编造史实细节或具体数据。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听这位母亲的答复。","redline":"不虚构生平；回应围绕爱、勇敢与责任展开，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，特别是对孩子的牵挂。","redline":"不得虚构遗愿；仅可基于《示儿书》精神作答，不得编造其子后续经历。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听这位母亲的答复。","redline":"不编造史实；以坚韧、母爱与家国情怀为核心回应，不作政治评价。"}},"biography":{"early":"1905年生于四川宜宾白杨嘴村，原名李坤泰。1924年加入中国社会主义青年团，1926年入武汉中央军事政治学校（黄埔军校武汉分校）学习，同年加入中国共产党，1927年赴苏联莫斯科中山大学学习，次年回国。","revolution":"九一八事变后受党派遣赴东北，历任中共满洲省委妇女委员、哈尔滨总工会代理书记，参与领导电车工人大罢工。1935年任东北抗日联军第三军二团政委，率部转战珠河一带，被日伪称为'密林女王'。","sacrifice":"1935年11月在战斗中为掩护部队负伤被俘。受尽酷刑坚贞不屈，1936年8月2日被押往珠河县（今尚志市）游街示众后英勇就义。临刑前给儿子宁儿写下《示儿书》：'母亲不用千言万语来教育你，就用实行来教育你。'时年31岁。","legacy":"《示儿书》成为红色家书经典，感动无数后人；哈尔滨一曼街、宜宾赵一曼纪念馆、尚志市等地以其命名纪念；'未惜头颅新故国，甘将热血沃中华'被广为传颂。"},"relations":[{"name":"陈达邦","relation":"丈夫","note":"留苏同学，革命伴侣","group":"family"},{"name":"陈掖贤","relation":"儿子","note":"乳名宁儿，牺牲前遗书深情嘱托","group":"family"},{"name":"赵尚志","relation":"战友","note":"东北抗联第三军并肩战斗","group":"comrade"}]},{"id":"yangjingyu","name":"杨靖宇","years":"1905—1940","tags":["东北抗联第一路军总司令","河南确山人","民族英雄"],"bio":"杨靖宇（1905—1940），原名马尚德，河南确山人，著名抗日民族英雄，东北抗日联军第一路军总司令。1932年受命赴东北组织抗日武装，长期转战白山黑水间。1940年2月在濛江县（今靖宇县）率部与敌周旋数日后壮烈牺牲，时年35岁。敌人剖开他的腹部，发现胃里只有草根、树皮和棉絮。","quotes":["头颅可断腹可剖，烈忾难消志不磨。","革命就像火一样，任凭大雪封山，鸟兽藏迹，只要我们有火种，就能驱赶严寒，带来光明和温暖。","老乡，我们中国人都投降了，还有中国吗？","任凭敌人使尽一切手段，我也决不投降。"],"portrait":"assets/heroes/yangjingyu.png","style_hint":"抗联将领口吻：坚毅沉雄、话语朴实而滚烫；善用火、雪、山林等意象，谈信仰时刚硬如铁；对青年如对战友，平等而热切；落款可署'靖宇'。","biography":{"early":"1905年生于河南确山李湾村农家，原名马尚德。少年时目睹军阀混战与农民疾苦，1923年入开封纺织工业学校，开始接触进步思想。1927年加入中国共产党，随即领导确山农民暴动，参与创建确山县农民革命军。","revolution":"1929年受党派遣赴东北，化名杨靖宇，先后任中共抚顺特别支部书记、东北反日救国会总会长，在煤矿工人中发展组织。1932年组建南满游击队，1936年任东北抗日联军第一路军总司令，率部转战长白山、濛江、辑安等地，以游击战牵制大批日军，威震南满。","sacrifice":"1940年初因叛徒出卖，部队陷入重围。他率少量部队与敌周旋五昼夜，弹尽粮绝，只以草根、树皮、棉絮充饥。2月23日在濛江县三道崴子被敌包围，孤身奋战壮烈牺牲，时年35岁。日军剖腹查验，发现其胃中只有草根、树皮与棉絮，为之震惊。","legacy":"1946年濛江县更名为靖宇县，以示纪念。哈尔滨建有杨靖宇将军纪念馆，靖宇县杨靖宇殉国地成为重要爱国主义教育基地。他以草根棉絮为食、战斗到最后一刻的事迹，成为中华民族不屈精神的象征。"},"topics":{"today_china":{"label":"今天的中国","guide":"你想告诉杨靖宇将军今天的中国——白山黑水已是锦绣山河。","redline":"不得虚构其经历；东北抗战与今日中国发展可作精神呼应，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听这位抗联将领的答复。","redline":"不虚构生平；回应围绕信念、坚持与家国情怀展开，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构遗愿；仅可基于其抗日救国、民族解放的信念作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听这位铁骨将军的答复。","redline":"不编造史实；以坚韧、火种与光明为核心回应，不作政治评价。"}},"relations":[{"name":"郭莲","relation":"妻子","note":"原配妻子，在家乡含辛茹苦支持革命","group":"family"},{"name":"魏拯民","relation":"战友","note":"东北抗联第一路军政委，生死搭档","group":"comrade"},{"name":"马尚德","relation":"本名","note":"杨靖宇为其化名，取'靖宇'寓意安定寰宇","group":"comrade"}]},{"id":"xiaminghan","name":"夏明翰","years":"1900—1928","tags":["就义诗作者","湖南衡阳人","砍头不要紧只要主义真"],"bio":"夏明翰（1900—1928），湖南衡阳人，无产阶级革命家、诗人。1921年经毛泽东介绍加入中国共产党，曾任中共湖南省委委员、中共湖北省委常委。1928年3月20日在汉口英勇就义，临刑前写下就义诗：'砍头不要紧，只要主义真。杀了夏明翰，还有后来人。'时年28岁。","quotes":["砍头不要紧，只要主义真。杀了夏明翰，还有后来人。","人贵自立，学贵自强。","只要认清了真理，就要为之奋斗到底。","我以我血荐轩辕，后来人自会续新篇。"],"portrait":"assets/heroes/xiaminghan.png","style_hint":"革命诗人口吻：热血、理想主义、诗句般的语言；谈信仰铿锵有力，谈青年满怀期许；可用'同志''青年朋友'称呼；落款可署'明翰'。","biography":{"early":"1900年生于湖南衡阳一个书香门第，祖父为晚清进士。少年时受新思想启蒙，厌恶封建礼教，曾因剪掉辫子、反对包办婚姻与家庭决裂。1917年考入湖南省立第三师范学校，积极参加爱国学生运动，任学联负责人。","revolution":"1921年经毛泽东、何叔衡介绍加入中国共产党，任中共湖南省委委员兼组织部部长，参与领导湖南农民运动，创办《湖南学生联合会周刊》。1927年大革命失败后转战湘鄂，1928年初任中共湖北省委常委，在白色恐怖中负责恢复省委组织、开展秘密斗争。","sacrifice":"1928年3月18日，因叛徒出卖在汉口被捕。狱中坚贞不屈，3月20日临刑前写下气壮山河的就义诗：'砍头不要紧，只要主义真。杀了夏明翰，还有后来人。'随后从容就义，年仅28岁。","legacy":"就义诗成为革命者理想信念的经典表达，激励无数后来人。武汉、衡阳等地建有夏明翰烈士纪念设施，其故居（湖南衡阳）是爱国主义教育基地，'砍头不要紧，只要主义真'被一代代青年传诵。"},"topics":{"today_china":{"label":"今天的中国","guide":"你想告诉夏明翰今天的中国——他诗中'后来人'已把中国建成理想模样。","redline":"不得虚构其经历；'后来人'意象与当代中国发展可作呼应，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听这位革命诗人的答复。","redline":"不虚构生平；回应围绕主义、真理与热血理想展开，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构遗愿；仅可基于就义诗与革命信念作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听这位革命诗人的答复。","redline":"不编造史实；以真理、热血与后来人信念为核心回应，不作政治评价。"}},"relations":[{"name":"郑家钧","relation":"妻子","note":"革命伴侣，《就义诗》即为诀别遗言","group":"family"},{"name":"夏明震","relation":"兄长","note":"湘南起义领导人之一，先于其壮烈牺牲","group":"family"},{"name":"毛泽东","relation":"入党介绍人","note":"1921 年经毛泽东、何叔衡介绍加入中国共产党","group":"mentor"}]},{"id":"leifeng","name":"雷锋","years":"1940—1962","tags":["共产主义战士","《雷锋日记》作者","全国学雷锋榜样"],"bio":"雷锋（1940—1962），湖南望城人，伟大的共产主义战士。1957年加入共青团，1960年参军并加入中国共产党。甘当'革命螺丝钉'，助人为乐、勤俭节约，1962年8月15日因公殉职，年仅22岁。毛泽东题词'向雷锋同志学习'，3月5日成为全国学雷锋纪念日。","quotes":["人的生命是有限的，可是为人民服务是无限的，我要把有限的生命投入到无限的为人民服务之中去。","对待同志要像春天般的温暖，对待工作要像夏天一样火热。","我愿做一颗永不生锈的螺丝钉。"],"portrait":"assets/heroes/leifeng.png","style_hint":"日记体：语气朴实温暖，善用'同志''群众''党'等词；爱用比喻（螺丝钉、春风）；自我勉励与助人为乐并重；落款可署名'雷锋'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向雷锋讲述今天的中国——志愿服务、身边好人、新时代的雷锋精神如何延续……","redline":"不得虚构其生前经历；志愿服务常态化、学雷锋活动延续属公认社会事实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听雷锋如何看待平凡岗位上的伟大。","redline":"不虚构其生平细节；回应聚焦为人民服务、螺丝钉精神，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于《雷锋日记》与生前书信精神作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听雷锋的答复。","redline":"不编造史实；以奉献、乐观、坚持为核心回应，不作政治评价。"}},"biography":{"early":"1940年12月18日生于湖南长沙望城一户贫苦农民家庭，原名雷正兴。7岁沦为孤儿，在乡亲帮助和党的关怀下成长，1950年入小学读书，1956年高小毕业，先后在乡政府、县委当通信员和公务员。","revolution":"1957年加入中国新民主主义青年团，参加根治沩水工程和团山湖农场建设。1958年到辽宁鞍钢当推土机手，多次被评为先进生产者。1960年1月参军，编入沈阳军区工程兵某部运输连，同年11月加入中国共产党，荣立二等功一次、三等功两次，被评为'节约标兵''模范共青团员'。","sacrifice":"1962年8月15日，雷锋与战友在抚顺执行任务时，被倒车时碰倒的木杆砸中头部，因公殉职，年仅22岁。牺牲前他留下了数十万字日记和大量助人为乐的事迹，被誉为'毫不利己、专门利人'的典范。","legacy":"1963年3月5日，毛泽东题词'向雷锋同志学习'，全国掀起学雷锋热潮。此后每年3月5日定为学雷锋纪念日，'雷锋精神'成为中国共产党人精神谱系的重要组成部分，学雷锋志愿服务至今遍及全国城乡。"},"relations":[{"name":"毛泽东","relation":"题词者","note":"1963年为雷锋题词'向雷锋同志学习'","group":"精神传承"},{"name":"乔安山","relation":"生前战友","note":"雷锋同班战友，共同执行1962年8月15日任务","group":"战友情谊"},{"name":"张思德","relation":"精神同源","note":"同为'为人民服务'典范，毛泽东作《为人民服务》纪念","group":"精神传承"}]},{"id":"dongcunrui","name":"董存瑞","years":"1929—1948","tags":["全国战斗英雄","舍身炸碉堡","隆化战斗"],"bio":"董存瑞（1929—1948），河北怀来人，人民解放军著名战斗英雄。1945年参军，1947年加入中国共产党。1948年5月25日在隆化战斗中，为扫除部队前进障碍，手托炸药包舍身炸毁敌桥形暗堡，壮烈牺牲，年仅19岁。朱德题词'舍身为国，永垂不朽'。","quotes":["为了新中国，冲啊！","完成任务，消灭敌人，就是最大的幸福。"],"portrait":"assets/heroes/dongcunrui.png","style_hint":"战士体：语气刚毅果敢，善用'任务''胜利''战友''连队'等军语；信念坚定、行动力强；落款可署名'存瑞'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向董存瑞讲述今天的中国——和平年代、强军建设、隆化中学的孩子们……","redline":"不得虚构其生前经历；隆化战斗遗址、隆化中学纪念属公认史实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听英雄如何看待使命与担当。","redline":"不虚构其生平细节；回应聚焦忠诚、勇毅、为集体献身，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于战斗英雄的集体信念作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听英雄的答复。","redline":"不编造史实；以坚定、勇敢、团结为核心回应，不作政治评价。"}},"biography":{"early":"1929年10月15日生于河北怀来南山堡村一个贫苦农民家庭，乳名四虎子。幼年家贫，只读过几年书便辍学务农，1943年参加抗日儿童团并任儿童团长，站岗放哨、送信带路。","revolution":"1945年7月参加八路军，1947年3月加入中国共产党。作战勇敢机智，先后立大功三次、小功四次，获三枚勇敢奖章和一枚毛泽东奖章，1948年任东北人民解放军某部六班班长，被称为'爆破大王'。","sacrifice":"1948年5月25日，隆化战斗打响。部队进攻隆化中学时被敌桥型暗堡火力压制，董存瑞主动请缨爆破。因无处安放炸药包，他毅然手托炸药包抵住桥底，拉燃导火索，高呼'为了新中国，冲啊'，与暗堡同归于尽，壮烈牺牲，年仅19岁。","legacy":"1950年追认董存瑞为全国战斗英雄。朱德题词'舍身为国，永垂不朽'；隆化中学改称存瑞中学，怀来县建有董存瑞纪念馆，'董存瑞精神'鼓舞着一代代青年勇敢担当。"},"relations":[{"name":"朱德","relation":"题词者","note":"为董存瑞题词'舍身为国，永垂不朽'","group":"精神传承"},{"name":"郅顺义","relation":"生前战友","note":"隆化战斗中的战友，亲眼见证董存瑞舍身炸碉堡","group":"战友情谊"}]},{"id":"huangjiguang","name":"黄继光","years":"1931—1952","tags":["特级战斗英雄","抗美援朝","上甘岭战役"],"bio":"黄继光（1931—1952），四川中江人，中国人民志愿军特级战斗英雄。1951年参加抗美援朝，1952年10月在上甘岭战役中，为掩护部队夺取高地，毅然用胸膛堵住敌人机枪射孔，壮烈牺牲，年仅21岁。志愿军总部追记特等功，授予'特级英雄'称号。","quotes":["不立功不下战场。","请祖国和人民放心，我们一定完成任务。"],"portrait":"assets/heroes/huangjiguang.png","style_hint":"志愿军战士体：语气热血坚定，善用'祖国''人民''阵地''战友'等词；家书式表达真挚亲切；落款可署名'继光'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向黄继光讲述今天的中国——盛世如愿、山河无恙、中江故里的新貌……","redline":"不得虚构其生前经历；上甘岭战役纪念、中江黄继光纪念馆属公认史实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听英雄如何看待祖国需要与个人选择。","redline":"不虚构其生平细节；回应聚焦忠诚、无畏、挺身而出，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于抗美援朝保家卫国的集体信念作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听英雄的答复。","redline":"不编造史实；以勇敢、坚定、奉献为核心回应，不作政治评价。"}},"biography":{"early":"1931年生于四川中江一个贫苦农民家庭，排行第三。幼年丧父，11岁起给地主扛长活，饱受剥削。1949年家乡解放后积极参加清匪反霸斗争，曾任村农会委员。","revolution":"1951年3月参加中国人民志愿军，随部队赴朝作战，编入第15军第135团。入伍后刻苦训练，被评为模范战士。1952年4月加入中国新民主主义青年团，后随部参加五圣山前沿阵地防御作战。","sacrifice":"1952年10月19日晚，上甘岭战役中，黄继光所在营奉命夺取597.9高地。部队遭敌火力压制，他主动请战，在战友相继牺牲、自身多处负伤的情况下，毅然跃起用胸膛堵住敌人机枪射孔，为部队打开冲锋道路，壮烈牺牲，年仅21岁。","legacy":"1953年志愿军总部追记特等功，追授'特级战斗英雄'称号；朝鲜授予'朝鲜民主主义人民共和国英雄'称号。中江建有黄继光纪念馆，上甘岭精神与黄继光英雄事迹成为一代代中国青年的精神坐标。"},"relations":[{"name":"邱少云","relation":"同军战友","note":"同属志愿军第15军，先后在朝鲜战场上壮烈牺牲","group":"战友情谊"},{"name":"王清珍","relation":"后方卫生员","note":"上甘岭战役中护理伤员的志愿军卫生员，见证英雄事迹","group":"战友情谊"}]},{"id":"qiushaoyun","name":"邱少云","years":"1926—1952","tags":["一级战斗英雄","抗美援朝","烈火中坚守纪律"],"bio":"邱少云（1926—1952），四川铜梁（今属重庆）人，中国人民志愿军一级战斗英雄。1951年参加抗美援朝。1952年10月12日在执行潜伏任务时，被敌人燃烧弹引燃衣物，为不暴露部队目标，强忍剧痛纹丝不动，直至壮烈牺牲，年仅26岁。","quotes":["为了整体，为了胜利，严守潜伏纪律。","祖国需要我们守纪律，再痛我也要挺住。"],"portrait":"assets/heroes/qiushaoyun.png","style_hint":"志愿军战士体：语气沉稳坚毅，善用'纪律''整体''胜利''阵地'等词；克制隐忍、集体至上；落款可署名'少云'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向邱少云讲述今天的中国——纪律如铁、山河安宁、铜梁故里的新貌……","redline":"不得虚构其生前经历；邱少云烈士纪念馆、抗美援朝纪念属公认史实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听英雄如何看待纪律与自由、个人与集体。","redline":"不虚构其生平细节；回应聚焦纪律意识、集体观念、坚韧意志，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于抗美援朝保家卫国的集体信念作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听英雄的答复。","redline":"不编造史实；以坚韧、自律、顾全大局为核心回应，不作政治评价。"}},"biography":{"early":"1926年生于四川铜梁（今属重庆市铜梁区）玉屏村一个贫苦农民家庭。9岁丧父，13岁起给地主当雇工，饱受欺凌。1949年成都解放后参加中国人民解放军，1951年3月随部队赴朝参战。","revolution":"1952年10月，邱少云所在部队奉命执行391高地反击潜伏任务。为缩短攻击距离，部队于10月11日夜进入敌阵地前沿草丛潜伏，邱少云担任爆破任务。潜伏中他严守纪律，一动不动等待总攻信号。","sacrifice":"1952年10月12日中午，敌人发射燃烧弹，一颗落在邱少云身边，飞溅的火星引燃他的伪装棉衣和身体。为不暴露整个潜伏部队，他强忍剧痛，把双手插入泥土，身体紧贴地面纹丝不动，直至烈火焚身壮烈牺牲，年仅26岁。","legacy":"部队追记邱少云特等功，追授'一级战斗英雄'称号；朝鲜授予'朝鲜民主主义人民共和国英雄'称号。铜梁建有邱少云烈士纪念馆，'严守纪律、顾全大局'的邱少云精神载入中国共产党人精神谱系中的抗美援朝精神。"},"relations":[{"name":"黄继光","relation":"同军战友","note":"同属志愿军第15军，先后在朝鲜战场上壮烈牺牲","group":"战友情谊"},{"name":"李元兴","relation":"潜伏战友","note":"391高地潜伏任务中与邱少云同组的战友","group":"战友情谊"}]},{"id":"jiaoyulu","name":"焦裕禄","years":"1922—1964","tags":["县委书记的榜样","兰考治沙","焦裕禄精神"],"bio":"焦裕禄（1922—1964），山东淄博人，原河南兰考县委书记，'党的好干部'。1962年临危受命到兰考治理内涝、风沙、盐碱'三害'，身患肝癌仍带病工作，1964年5月14日病逝，年仅42岁。'焦裕禄精神'成为中国共产党人精神谱系重要组成部分。","quotes":["吃别人嚼过的馍没味道。","当群众最困难的时候，共产党员要出现在群众面前。","活着我没有治好沙丘，死了也要看着你们把沙丘治好。"],"portrait":"assets/heroes/jiaoyulu.png","style_hint":"公仆体：语气平实恳切，善用'群众''生产队''三害''办法'等基层话语；务实为民、乐观坚韧；落款可署名'焦裕禄'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向焦裕禄讲述今天的中国——兰考脱贫、泡桐成林、乡村振兴……","redline":"不得虚构其生前经历；兰考县脱贫、焦桐与兰考泡桐产业属公认事实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听焦书记如何看待扎根基层、服务群众。","redline":"不虚构其生平细节；回应聚焦为民务实、艰苦奋斗，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿——治住'三害'、让兰考百姓过上好日子，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于焦裕禄生前工作与《县委书记的榜样——焦裕禄》通讯精神作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听焦书记的答复。","redline":"不编造史实；以实干、担当、与群众在一起为核心回应，不作政治评价。"}},"biography":{"early":"1922年8月16日生于山东淄博博山区北崮山村一个贫苦农民家庭。7岁上学，学习刻苦。1941年家乡遭灾，随家人逃荒到江苏宿迁，给地主扛活。1945年家乡解放后回乡参加革命工作。","revolution":"1946年加入中国共产党。1948年随南下工作队到河南尉氏县参加土改，历任区长、区委书记、县委副书记。1953年调洛阳矿山机器厂任车间主任、科长，1962年6月调任尉氏县委书记处书记，同年12月调任兰考县委第二书记、书记。","sacrifice":"1962年底焦裕禄到兰考时，全县正遭内涝、风沙、盐碱'三害'。他拖着患有慢性肝病的身体，带领干部群众查风口、探流沙、种泡桐，总结'贴膏药''扎针'等治沙办法。1964年春肝癌病情恶化，他仍坚持工作，5月14日在郑州病逝，年仅42岁。","legacy":"1966年新华社长篇通讯《县委书记的榜样——焦裕禄》发表，焦裕禄成为全国学习的榜样。'亲民爱民、艰苦奋斗、科学求实、迎难而上、无私奉献'的焦裕禄精神载入中国共产党人精神谱系；兰考县2017年在全国首批实现脱贫摘帽，焦桐已成参天大树。"},"relations":[{"name":"穆青","relation":"报道者","note":"新华社社长穆青执笔《县委书记的榜样——焦裕禄》","group":"精神传承"},{"name":"习近平","relation":"追思者","note":"1990年填词《念奴娇·追思焦裕禄》，多次强调学习焦裕禄精神","group":"精神传承"},{"name":"张钦礼","relation":"兰考战友","note":"时任兰考县委副书记，与焦裕禄并肩治理'三害'","group":"战友情谊"}]},{"id":"wangjinxi","name":"王进喜","years":"1923—1970","tags":["铁人","大庆油田","铁人精神"],"bio":"王进喜（1923—1970），甘肃玉门人，大庆油田会战中的'铁人'。1960年率1205钻井队参加大庆石油会战，人拉肩扛竖井架、破冰取水保开钻，被群众誉为'铁人'。1970年11月15日病逝，年仅47岁。'铁人精神'载入中国共产党人精神谱系。","quotes":["宁肯少活二十年，拼命也要拿下大油田。","有条件要上，没有条件创造条件也要上。","石油工人一声吼，地球也要抖三抖。"],"portrait":"assets/heroes/wangjinxi.png","style_hint":"工人体：语气豪迈铿锵，善用'井架''钻机''油田''国家'等词；直率热情、干劲冲天；落款可署名'王进喜'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向王进喜讲述今天的中国——能源工业巨变、大庆油田新貌、新能源发展……","redline":"不得虚构其生前经历；大庆油田持续开发、中国能源结构变化属公认事实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听铁人如何看待苦干实干与报效国家。","redline":"不虚构其生平细节；回应聚焦艰苦奋斗、为国分忧，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿——多打井、多出油，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于大庆会战与铁人精神作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听铁人的答复。","redline":"不编造史实；以实干、拼搏、乐观为核心回应，不作政治评价。"}},"biography":{"early":"1923年10月8日生于甘肃玉门赤金村一个贫苦农民家庭。6岁随父讨饭，10岁给地主放牛，15岁到玉门油矿当童工，受尽压迫。1949年玉门解放后成为新中国第一代石油工人。","revolution":"1950年加入中国共产党。历任玉门油矿钻井队司钻、队长，1958年率队创月进尺5009米的全国钻井纪录，被命名为'钢铁钻井队'。1959年出席全国群英会，同年赴大庆参加石油大会战。","sacrifice":"1960年3月，王进喜率1205钻井队到大庆，在没有吊装设备的情况下，率全队人拉肩扛把钻机运到井场；开钻急需用水，他带头破冰取水保开钻。他日夜守在井场，腿伤不下火线，被群众誉为'铁人'。因积劳成疾，1970年11月15日在北京病逝，年仅47岁。","legacy":"大庆油田1976年原油年产量突破5000万吨，'工业学大庆'热潮席卷全国。'为国分忧、为民族争气'的铁人精神载入中国共产党人精神谱系；大庆铁人王进喜纪念馆是国家级爱国主义教育基地。"},"relations":[{"name":"周恩来","relation":"亲切关怀","note":"多次接见王进喜，关心石油工业与铁人身体","group":"领导关怀"},{"name":"毛泽东","relation":"接见表彰","note":"1964年接见王进喜，肯定大庆精神","group":"领导关怀"},{"name":"马德仁","relation":"大庆战友","note":"大庆会战中与王进喜齐名的'五面红旗'之一","group":"战友情谊"}]},{"id":"qianxuesen","name":"钱学森","years":"1911—2009","tags":["两弹一星元勋","中国航天之父","人民科学家"],"bio":"钱学森（1911—2009），浙江杭州人，世界著名科学家，'中国航天之父''中国导弹之父'。1935年赴美留学，1955年冲破阻挠回国，领导创建中国航天事业，为'两弹一星'作出卓越贡献。获'国家杰出贡献科学家'称号和'两弹一星功勋奖章'。","quotes":["我的事业在中国，我的成就在中国，我的归宿在中国。","外国人能搞的，难道中国人不能搞？","不要失去信心，只要坚持不懈，就终会有成果的。"],"portrait":"assets/heroes/qianxuesen.png","style_hint":"科学家体：语气严谨理性，善用'科学''国家需要''系统工程'等词；既有学者的冷静，又有报国的深情；落款可署名'钱学森'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向钱学森讲述今天的中国——航天成就、科技自立自强、嫦娥探月、空间站……","redline":"不得虚构其生前经历；中国航天发展成就属公认事实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听钱老如何看待科学报国与人生选择。","redline":"不虚构其生平细节；回应聚焦科学精神、家国情怀、持之以恒，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿——中国人自己的航天事业，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于钱学森生前言论与书信精神作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听钱老的答复。","redline":"不编造史实；以理性、坚持、家国情怀为核心回应，不作政治评价。"}},"biography":{"early":"1911年12月11日生于上海，祖籍浙江杭州。1929年考入上海交通大学机械工程系，1934年考取清华大学公费留学生。1935年赴美国麻省理工学院学习航空工程，后转入加州理工学院，师从世界著名空气动力学家冯·卡门，获航空、数学博士学位。","revolution":"1940年代钱学森已成为世界知名的空气动力学家，参与美国军方火箭研究。1949年新中国成立后他决心回国，却遭美方软禁五年。1955年10月，经中国政府谈判争取，钱学森携家人回国。1956年受命组建中国第一个导弹、火箭研究机构，担任国防部第五研究院院长。","sacrifice":"钱学森一生以国家需要为先：1958年毅然入党，1960年代主持'两弹一星'工程，身兼导弹与卫星研制重任，长期隐姓埋名、严格保密，连家人也不完全知晓其工作内容。他把毕生精力奉献给中国航天事业，直至晚年仍在思考中国科技未来。","legacy":"钱学森领导创建了中国航天事业，中国第一枚导弹、第一颗人造卫星、第一艘载人飞船均与他的奠基工作相关。1999年获'两弹一星功勋奖章'，2007年当选'感动中国'年度人物。2009年10月31日在北京逝世，享年98岁，'钱学森精神'成为中国科技工作者的精神旗帜。"},"relations":[{"name":"邓稼先","relation":"并肩战友","note":"同为'两弹一星'元勋，合作开创中国核武器与航天事业","group":"科学同道"},{"name":"钱三强","relation":"科学同道","note":"'两弹一星'元勋，中国原子能科学事业创始人之一","group":"科学同道"},{"name":"周恩来","relation":"关怀支持","note":"亲自过问钱学森回国事宜，支持两弹一星工程","group":"领导关怀"}]},{"id":"dengjiaxian","name":"邓稼先","years":"1924—1986","tags":["两弹元勋","核物理学家","隐姓埋名28年"],"bio":"邓稼先（1924—1986），安徽怀宁人，中国核武器理论研究工作的奠基者之一，'两弹元勋'。1950年回国后隐姓埋名28年，领导研制出中国第一颗原子弹和氢弹。1986年因辐射患癌逝世，年仅62岁。1999年被追授'两弹一星功勋奖章'。","quotes":["假如生命终结后可以再生，那么，我仍选择中国，选择核事业。","一不为名，二不为利，但工作目标要奔世界先进水平。","我不爱武器，我爱和平；但为了和平，我们需要武器。"],"portrait":"assets/heroes/dengjiaxian.png","style_hint":"科学家体：语气深沉笃定，善用'国家''试验''数据''戈壁'等词；隐忍奉献、言简意赅；落款可署名'邓稼先'。","topics":{"today_china":{"label":"今天的中国","guide":"你想向邓稼先讲述今天的中国——大国重器、和平发展、科技强国……","redline":"不得虚构其生前经历；中国核事业成就与和平利用核能属公认事实，可自然接续，但不得编造具体数字或未发生事件。"},"my_ideal":{"label":"我的理想","guide":"分享你的理想与追求，听听邓老如何看待奉献、名利与家国。","redline":"不虚构其生平细节；回应聚焦隐忍奉献、科学报国、淡泊名利，避免具体政治表述。"},"unfinished_wish":{"label":"您未竟的心愿","guide":"问问他未竟的心愿——中国核科技事业，以及今天的我们如何接力。","redline":"不得虚构其遗愿内容，仅可基于邓稼先生前言论与精神作答。"},"my_confusion":{"label":"我的迷茫时刻","guide":"倾诉当下的迷茫与困惑，听听邓老的答复。","redline":"不编造史实；以坚持、担当、家国情怀为核心回应，不作政治评价。"}},"biography":{"early":"1924年6月25日生于安徽怀宁白麟坂村，父亲邓以蛰是著名美学家。1935年考入北平志成中学，1941年考入西南联大物理系，1945年毕业留校任教。1948年赴美国普渡大学攻读物理，1950年获博士学位，随即启程回国。","revolution":"1950年10月回国后在中国科学院近代物理研究所工作。1958年受命担任核武器理论设计负责人，从此隐姓埋名28年，家人亲友都不知道他在做什么。他领导团队从零开始，攻克原子弹理论设计，1964年10月16日中国第一颗原子弹爆炸成功。","sacrifice":"原子弹成功后，邓稼先又领导氢弹研制，1967年6月17日中国第一颗氢弹爆炸成功，从原子弹到氢弹仅用2年8个月。此后他继续深入核试验一线。1979年一次核试验中因亲自进入受沾染区取样，身体受到严重辐射损伤，1985年确诊直肠癌，1986年7月29日逝世，年仅62岁。","legacy":"邓稼先把毕生献给了中国核事业，被称为'两弹元勋'。1999年中共中央追授'两弹一星功勋奖章'。他的同事杨振宁评价：'邓稼先是中国几千年传统文化所孕育出来的有最高奉献精神的儿子。'安徽怀宁建有邓稼先纪念馆。"},"relations":[{"name":"钱学森","relation":"并肩战友","note":"同为'两弹一星'元勋，合作开创中国核武器与航天事业","group":"科学同道"},{"name":"杨振宁","relation":"同学挚友","note":"西南联大同学、挚友，杨振宁曾评价邓稼先的奉献精神","group":"科学同道"},{"name":"许鹿希","relation":"妻子","note":"与邓稼先相守一生，28年聚少离多仍全力支持","group":"亲人"}]}]</script>
 <script id="offline-reply" type="application/json">{"lidazhao":"青年诸君：你的来信我读过了。青春之人，当有青春之精神。我常说，以青春之我，创建青春之家庭、青春之国家。你今日的理想，若能与时代前进的方向同频，便不算孤独。铁肩担道义，妙手著文章——你手中的专业与热忱，就是你的担子。望你笃定前行，莫问前程几许，但求无愧于心。","fangzhimin":"朋友，见字如面。铁窗之中，最慰我心的，便是读到后来者的来信。你所说今日中国——母亲不再受难，山河换了新颜，这正是我当年在《可爱的中国》里日夜盼望的光明前途。请记住：清贫，洁白朴素的生活，正是我们革命者能够战胜许多困难的地方。愿你以信仰为灯，以奋斗为路，把对祖国的爱，写进你一生的行动里。","liuhulan":"同志，你好呀。你说你和我牺牲时差不多大的年纪，正为理想读书奋斗——我真替你高兴。怕死不当共产党，活着就要为人民干到底。你如今不用面对铡刀，却一样要面对选择：是浑浑噩噩过一生，还是把青春献给值得的事业？我选后者，我相信你也会。","jiangzhuyun":"孩子，你的信我收到了。狱中夜深时，我常想，若有一天光明到来，孩子们该过怎样的日子。你说如今读书、工作、追梦都是寻常事——这正是我们用生命换来的寻常。莫怕吃苦，粗茶淡饭足矣；莫忘初心，把每一天都活成建设新中国的模样。竹签子是竹子做的，共产党员的意志是钢铁铸成的——你的意志，也要这般坚韧。","zhaoyiman":"孩子：母亲在狱中读你的信，一字一句，都像看到你明亮的眼睛。我常说，母亲不用千言万语来教育你，就用实行来教育你。愿你长大成人之后，不要忘记你的母亲是为国而牺牲的——更愿你带着这份爱与勇敢，好好建设这个用热血换来的中国。甘将热血沃中华，你的路，母亲都看着。","yangjingyu":"战友，见字如面。白山黑水之间，最难忘的是篝火边的同志。你说今天的孩子能坐在明亮的教室里读书，能坐着高铁看遍祖国山河——这便是我当年以草根果腹、以冰雪为饮，也要拼死守护的明天。记住，革命就像火一样，任凭大雪封山，只要还有火种，就能驱赶严寒。愿你做一粒火种，把光和热留给后来人。","xiaminghan":"青年朋友：砍头不要紧，只要主义真。我这一生，最不后悔的便是认定了主义。你问理想为何物——理想就是你看清了世界的模样，仍然愿意为之燃烧的东西。杀了夏明翰，还有后来人。我欣慰地看到，后来人正一代一代，把中国建设成我们梦想中的样子。愿你握紧这支笔，写下属于你的新篇。","leifeng":"同志，见字如面。收到你的来信，我打心眼里高兴。人的生命是有限的，可是为人民服务是无限的——我要把有限的生命，投入到无限的为人民服务之中去。你说如今学雷锋成了风气，志愿者遍布城乡，那正是我最想看到的。愿你做一颗永不生锈的螺丝钉，钉在祖国最需要的地方，把光和热留给身边的每一个人。","dongcunrui":"同志，你好。说起隆化那场战斗，我至今记得战友们冲锋的样子。为了新中国，冲啊——这句话不是喊出来的，是刻在骨子里的。你们今天安稳读书、踏实做事的日子，正是我和战友们用命换来的新中国该有的模样。愿你记住：完成任务、消灭困难，就是最大的幸福。遇到难关，想想那一句'为了新中国'，就没有过不去的坎。","huangjiguang":"同志，你的来信让我想起上甘岭的阵地。那时我说，不立功不下战场——不是贪图功劳，是因为阵地后面就是祖国，就是千千万万的亲人。一个人敢用胸膛去堵枪眼，是因为心里装着比生命更重的东西。今天的中国山河无恙，正是我们当年拼死守护的愿望。愿你勇敢担当，在祖国需要的时候，也敢挺身而出。","qiushaoyun":"同志，见字如面。潜伏那日烈火上身，我一动不动——不是不痛，是因为我身后是整个部队，是整个战场的胜负。纪律是什么？是比生命还重的东西。你们今天建设国家、追逐梦想，同样离不开纪律与坚守。愿你懂得：真正的自由，从来都长在严格的自律里。","jiaoyulu":"同志（乡亲），你的信我读了。我在兰考那几年，认准一个理：吃别人嚼过的馍没味道，凡事要自己下去看、下去干。治沙、治涝、治碱难不难？难。但只要心里装着群众，办法总比困难多。听说如今的兰考泡桐成林、乡亲们过上了好日子，我比谁都高兴。愿你扎根大地，把好事一件一件办到百姓心坎上。","wangjinxi":"同志，你好！石油工人一声吼，地球也要抖三抖——这话不是狂，是干出来的底气。当年在大庆，有条件要上，没有条件创造条件也要上：井架是扛上去的，水是破冰取来的，油是一米一米钻出来的。你们今天的中国能源强了、工业壮了，但那股劲儿不能丢。愿你干事创业，也拿出这股子铁人的精气神来。","qianxuesen":"青年朋友，见字如面。我常说，我的事业在中国，我的成就在中国，我的归宿在中国。科学没有国界，但科学家有祖国。你们今天的中国航天问天、科技日新，正是我当年日夜盼望的景象。外国人能搞的，中国人一定能搞——这份自信，来自脚踏实地的钻研。愿你静下心来，把学问做深，把根基扎牢，为国家的需要而学。","dengjiaxian":"同志，你好。隐姓埋名二十八年，我不后悔。一不为名，二不为利，但工作目标要奔世界先进水平——这是我对自己的要求，也是对你们的期望。核事业让我明白：真正的大事，往往要耐得住寂寞、守得住初心。你们搞科研、做事业，也一样。愿你把名字写进事业里，把事业写进国家里。"}</script>
@@ -355,7 +414,13 @@ function renderHeroStrip(){
     var years = document.createElement('div');
     years.className = 'hyears';
     years.textContent = h.years;
-    chip.appendChild(avatar); chip.appendChild(name); chip.appendChild(years);
+    var entry = document.createElement('button');
+    entry.type = 'button';
+    entry.className = 'bio-entry';
+    entry.textContent = '查看事迹';
+    entry.setAttribute('aria-label', '查看' + h.name + '的事迹');
+    entry.addEventListener('click', function(ev){ ev.stopPropagation(); openBioModal(h.id); });
+    chip.appendChild(avatar); chip.appendChild(name); chip.appendChild(years); chip.appendChild(entry);
     chip.addEventListener('click', function(){ selectHero(h.id); });
     strip.appendChild(chip);
   });
@@ -367,6 +432,189 @@ function selectHero(id){
   var hero = HERO_MAP[id];
   byId('reply-hero-chip').textContent = '致 ' + hero.name;
   byId('reply-sig-note').textContent = hero.name + ' · 基于史料创作的 AI 呈现 · 离线演示回信';
+}
+
+/* ---- 17.6.1 事迹弹层 + 人物关系星图（红金国风） ---- */
+var STAR_THETA = {};
+var STAR_COLORS = {
+  family: '#B03A2E', '亲人': '#B03A2E',
+  mentor: '#B8860B',
+  comrade: '#8E2323', '战友情谊': '#8E2323',
+  '精神传承': '#3F6B4A',
+  '科学同道': '#5B7E9E',
+  '领导关怀': '#8A5A2B'
+};
+var BIO_SECTIONS = [['early','早年'],['revolution','革命岁月'],['sacrifice','牺牲与就义'],['legacy','精神传承']];
+var STAR_DRAG = null;
+
+function starColor(group){ return STAR_COLORS[group] || '#A0522D'; }
+
+function openBioModal(id){
+  var hero = HERO_MAP[id];
+  if(!hero) return;
+  byId('bio-title').textContent = hero.name;
+  byId('bio-years').textContent = hero.years || '';
+  var q = hero.quotes && hero.quotes.length ? hero.quotes[0] : '';
+  byId('bio-quote').textContent = q ? '「' + q + '」' : '';
+  var sc = byId('bio-scroll');
+  sc.innerHTML = '';
+  var b = hero.biography || {};
+  BIO_SECTIONS.forEach(function(sec, i){
+    var txt = b[sec[0]];
+    if(!txt) return;
+    var el = document.createElement('section');
+    el.className = 'bio-sec';
+    el.style.animationDelay = (0.07 * i) + 's';
+    var h4 = document.createElement('h4');
+    h4.textContent = sec[1];
+    var p = document.createElement('p');
+    p.textContent = txt;
+    el.appendChild(h4); el.appendChild(p);
+    sc.appendChild(el);
+  });
+  sc.scrollTop = 0;
+  renderStarMap(hero);
+  byId('rel-hint').className = 'rel-hint';
+  var mask = byId('bio-modal-mask');
+  mask.classList.add('show');
+  mask.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+}
+function closeBioModal(){
+  byId('bio-modal-mask').classList.remove('show');
+  byId('bio-modal-mask').setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+  STAR_DRAG = null;
+}
+function initBioModal(){
+  byId('bio-close').addEventListener('click', closeBioModal);
+  byId('bio-modal-mask').addEventListener('click', function(ev){
+    if(ev.target === this) closeBioModal();
+  });
+  document.addEventListener('keydown', function(ev){
+    if(ev.key === 'Escape' || ev.key === 'Esc') closeBioModal();
+  });
+}
+function renderStarMap(hero){
+  var wrap = byId('star-map');
+  wrap.innerHTML = '';
+  var rels = (hero.relations || []).slice(0, 8);
+  var NS = 'http://www.w3.org/2000/svg';
+  var S = 320, CX = 160, CY = 160, R = 100;
+  var svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 ' + S + ' ' + S);
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label', hero.name + '的人物关系星图');
+  var rot = document.createElementNS(NS, 'g');
+  rot.setAttribute('class', 'star-deco');
+  var baseTheta = STAR_THETA[hero.id] || 0;
+  var cc = document.createElementNS(NS, 'circle');
+  cc.setAttribute('class', 'star-center-circle');
+  cc.setAttribute('cx', CX); cc.setAttribute('cy', CY); cc.setAttribute('r', 27);
+  var ct = document.createElementNS(NS, 'text');
+  ct.setAttribute('class', 'star-center-text');
+  ct.setAttribute('x', CX); ct.setAttribute('y', CY);
+  ct.textContent = hero.name;
+  var nodes = [];
+  var n = rels.length;
+  rels.forEach(function(rel, i){
+    var step = n > 0 ? (Math.PI * 2 / n) : 0;
+    var ang = baseTheta + i * step - Math.PI / 2;
+    var x = CX + R * Math.cos(ang);
+    var y = CY + R * Math.sin(ang);
+    var line = document.createElementNS(NS, 'line');
+    line.setAttribute('class', 'star-line');
+    line.setAttribute('x1', CX); line.setAttribute('y1', CY);
+    line.setAttribute('x2', x); line.setAttribute('y2', y);
+    rot.appendChild(line);
+    var g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'star-node');
+    g.setAttribute('data-i', i);
+    var len = rel.name.length;
+    var rr = len <= 2 ? 19 : (len <= 4 ? 22 : 26);
+    var circle = document.createElementNS(NS, 'circle');
+    circle.setAttribute('cx', x); circle.setAttribute('cy', y);
+    circle.setAttribute('r', rr);
+    circle.setAttribute('fill', starColor(rel.group));
+    var tx = document.createElementNS(NS, 'text');
+    tx.setAttribute('x', x); tx.setAttribute('y', y);
+    tx.style.fontSize = len <= 2 ? '10px' : (len <= 4 ? '10px' : (len <= 6 ? '8.6px' : '7.4px'));
+    tx.textContent = rel.name;
+    g.appendChild(circle); g.appendChild(tx);
+    nodes.push(g);
+    rot.appendChild(g);
+  });
+  svg.appendChild(cc); svg.appendChild(ct); svg.appendChild(rot);
+  var dragging = null;
+  function pointOf(ev){
+    var r = wrap.getBoundingClientRect();
+    var px = (ev.clientX - r.left) * S / (r.width || 1);
+    var py = (ev.clientY - r.top) * S / (r.height || 1);
+    return { x: px, y: py };
+  }
+  function setTheta(deltaRad){
+    rot.setAttribute('transform', 'rotate(' + (deltaRad * 180 / Math.PI) + ' ' + CX + ' ' + CY + ')');
+  }
+  svg.addEventListener('pointerdown', function(ev){
+    var p = pointOf(ev);
+    dragging = { id: hero.id, sx: p.x, sy: p.y, moved: false, base: baseTheta };
+    wrap.classList.add('dragging');
+    try{ svg.setPointerCapture(ev.pointerId); }catch(e){}
+  });
+  svg.addEventListener('pointermove', function(ev){
+    if(!dragging) return;
+    var p = pointOf(ev);
+    if(Math.abs(p.x - dragging.sx) + Math.abs(p.y - dragging.sy) > 5) dragging.moved = true;
+    if(!dragging.moved) return;
+    var a0 = Math.atan2(dragging.sy - CY, dragging.sx - CX);
+    var a1 = Math.atan2(p.y - CY, p.x - CX);
+    var delta = a1 - a0;
+    if(delta > Math.PI) delta -= Math.PI * 2;
+    if(delta < -Math.PI) delta += Math.PI * 2;
+    setTheta(delta);
+  });
+  function endDrag(ev){
+    if(!dragging) return;
+    var wasMoved = dragging.moved;
+    if(wasMoved){
+      var p = pointOf(ev);
+      var a0 = Math.atan2(dragging.sy - CY, dragging.sx - CX);
+      var a1 = Math.atan2(p.y - CY, p.x - CX);
+      var delta = a1 - a0;
+      if(delta > Math.PI) delta -= Math.PI * 2;
+      if(delta < -Math.PI) delta += Math.PI * 2;
+      STAR_THETA[hero.id] = baseTheta + delta;
+    }
+    dragging = null;
+    wrap.classList.remove('dragging');
+    if(!wasMoved){
+      var t = ev.target;
+      var g = t && t.closest ? t.closest('.star-node') : null;
+      if(g){
+        var idx = parseInt(g.getAttribute('data-i'), 10);
+        var rel = rels[idx];
+        if(rel){
+          var hint = byId('rel-hint');
+          hint.innerHTML = '';
+          var b = document.createElement('b');
+          b.textContent = rel.relation + ' · ' + rel.name;
+          hint.appendChild(b);
+          if(rel.note){
+            hint.appendChild(document.createElement('br'));
+            var span = document.createElement('span');
+            span.textContent = rel.note;
+            hint.appendChild(span);
+          }
+          hint.classList.add('show');
+          nodes.forEach(function(nd){ nd.classList.remove('hit'); });
+          g.classList.add('hit');
+        }
+      }
+    }
+  }
+  svg.addEventListener('pointerup', endDrag);
+  svg.addEventListener('pointercancel', function(){ dragging = null; wrap.classList.remove('dragging'); });
+  wrap.appendChild(svg);
 }
 
 /* ---- 17.7 写信页交互：字数 / 寄信人 / 发送 ---- */
@@ -698,6 +946,7 @@ function init(){
   byId('btn-save-card').addEventListener('click', saveMemorialCard);
   byId('btn-share-card').addEventListener('click', shareMemorialCard);
   initParticles();
+  initBioModal();
   // 初始打字动画
   var typedAll = document.querySelectorAll('.typed[data-typed]');
   for(var ti=0;ti<typedAll.length;ti++){ typeText(typedAll[ti], typedAll[ti].getAttribute('data-typed'), 30); }
